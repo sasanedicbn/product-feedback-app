@@ -1,5 +1,6 @@
+import { InputProps } from "../types/types";
 
-const Input = ({type, name, onChange, styleType, placeholder}) => {
+const Input = ({type, name, onChange, styleType, placeholder}:InputProps) => {
     const styles = {
         feedback: 'w-[220px]  p-1 border rounded-lg bg-gray-300 text-ml pl-2',
     }
