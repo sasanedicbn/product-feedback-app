@@ -25,4 +25,10 @@ export type SelectProps = {
     children: React.ReactNode; 
     value?: any;
     className?: string;
-  }
+}
+
+export type OptionProps = {
+    value: string; 
+    children: React.ReactNode; 
+}
+
