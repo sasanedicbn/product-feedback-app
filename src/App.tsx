@@ -4,7 +4,7 @@ import './App.css'
 function App() {
 
   return (
-   <div></div>
+   <div className='bg-amber-500'>Sasa</div>
   )
 }
 
