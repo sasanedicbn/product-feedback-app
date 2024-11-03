@@ -1,4 +1,6 @@
-const Select = ({ name, onChange, children, className }) => {
+import { SelectProps } from "../types/types";
+
+const Select = ({ name, onChange, children, className }:SelectProps) => {
     return (
         <select
             name={name}

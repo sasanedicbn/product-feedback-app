@@ -18,3 +18,11 @@ export type InputProps = {
 export type LabelProps = {
     text: string;
 }
+
+export type SelectProps = {
+    name: string;
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    children: React.ReactNode; 
+    value?: any;
+    className?: string;
+  }
