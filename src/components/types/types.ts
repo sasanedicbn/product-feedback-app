@@ -14,3 +14,7 @@ export type InputProps = {
     placeholder: string,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+export type LabelProps = {
+    text: string;
+}
