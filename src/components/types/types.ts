@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type ButtonProps = {
     type: 'login'  ;
     buttonType?: 'button' | 'submit' | 'reset'; 
@@ -32,3 +34,7 @@ export type OptionProps = {
     children: React.ReactNode; 
 }
 
+export type WrapperProps = {
+    children: ReactNode; 
+    type: 'pageWrapper'; 
+  }
