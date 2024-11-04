@@ -1,8 +1,10 @@
+import Wrapper from "../../../UX/Wrapper";
+
 const Category = () => {
     return(
-        <div>
+        <Wrapper type="sideBarItem">
             <p>Category</p>
-        </div>
+        </Wrapper>
     )
 }
 
