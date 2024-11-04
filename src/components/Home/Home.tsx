@@ -1,10 +1,16 @@
 import Wrapper from "../UX/Wrapper"
+import SideBar from "./SideBar/SideBar";
 
 const Home = () => {
     return(
-       <div >
-Sasa
+     <div className="bg-gray-100 h-screen px-32 pt-24 font-serif">
+      <div>
+        <SideBar/>
+      </div>
+       <div className="font-bold">
+        Sasa
        </div>
+    </div>
     )
 }
 
