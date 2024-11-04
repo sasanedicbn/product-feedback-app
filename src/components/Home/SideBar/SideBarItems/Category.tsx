@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Wrapper from "../../../UX/Wrapper";
 import { fetchCategory } from "../../../../supabase/supabaseFunctions";
 
