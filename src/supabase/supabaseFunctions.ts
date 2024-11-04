@@ -1,6 +1,6 @@
 import { supabase } from "./supabase"
 
-export const fetchCategory = async (tableName) => {
+export const fetchCategory = async (tableName:string) => {
     try {
         const { data, error } = await supabase
             .from(tableName)
@@ -9,8 +9,9 @@ export const fetchCategory = async (tableName) => {
         if (error) {
             throw new Error(error.message)
         }
-
+        console.log(data)
         return data
+        
     } catch (error) {
         console.error("Error fetching data:", error)
         return null

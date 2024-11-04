@@ -36,5 +36,5 @@ export type OptionProps = {
 
 export type WrapperProps = {
     children: ReactNode; 
-    type: 'pageWrapper'; 
+    type: 'pageWrapper' | 'sideBarTitle' |  'sideBarItem' | 'content'; 
   }
