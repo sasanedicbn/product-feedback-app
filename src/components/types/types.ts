@@ -38,3 +38,7 @@ export type WrapperProps = {
     children: ReactNode; 
     type: 'pageWrapper' | 'sideBarTitle' |  'sideBarItem' | 'content'; 
   }
+export type RoadmapItemProps = {
+    label: string,
+    count: number,
+}
