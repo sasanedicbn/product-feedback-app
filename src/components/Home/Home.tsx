@@ -1,4 +1,3 @@
-import Wrapper from "../UX/Wrapper"
 import SideBar from "./SideBar/SideBar";
 
 const Home = () => {
