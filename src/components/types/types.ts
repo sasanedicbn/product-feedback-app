@@ -38,8 +38,17 @@ export type WrapperProps = {
     children: ReactNode; 
     type: 'pageWrapper' | 'sideBarTitle' |  'sideBarItem' | 'content'; 
   }
+  
 export type RoadmapItemProps = {
     label: string,
     count: number,
     status: 'planned' | 'inProgress' | 'live'
 }
+
+export type IconProps = {
+    name: 'suggestion';
+    size?: number;
+    color?: string;
+    onClick?: () => void;
+    type?: string;
+  }
