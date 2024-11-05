@@ -1,4 +1,4 @@
-import { HiLightBulb, HiPlus } from "react-icons/hi";
+import { HiChevronDown, HiChevronUp, HiLightBulb, HiPlus } from "react-icons/hi";
 import { IconProps } from "../types/types";
 
 const Icon = ({ name, size = 84, color = 'black', onClick= () => {}, type = 'none' }) => {
@@ -8,7 +8,9 @@ const Icon = ({ name, size = 84, color = 'black', onClick= () => {}, type = 'non
 
   const icons = {
     suggestion:  <HiLightBulb size={size} color={color} onClick={onClick} />, 
-    add: <HiPlus size={size} color={color} onClick={onClick} />,
+    plus: <HiPlus size={size} color={color} onClick={onClick} />,
+    down: <HiChevronDown size={size} color={color} onClick={onClick}/>,
+    up: <HiChevronUp size={size} color={color} onClick={onClick}/>
   };
 
   return icons[name] || null;
