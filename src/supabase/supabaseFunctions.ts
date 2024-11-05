@@ -1,21 +1,18 @@
-import { supabase } from "./supabase"
+import { supabase } from "./supabase";
 
-export const fetchCategory = async (tableName:string) => {
+export const fetchCategory = async (tableName: string) => {
     try {
         const { data, error } = await supabase
             .from(tableName)
-            .select('*') 
+            .select('UX, Ul, Bug, Enhancement, Feature, All'); 
 
         if (error) {
-            throw new Error(error.message)
+            throw new Error(error.message);
         }
-        console.log(data)
-        return data
         
+        return data;
     } catch (error) {
-        console.error("Error fetching data:", error)
-        return null
+        console.error("Error fetching data:", error);
+        return null;
     }
 }
-
-
