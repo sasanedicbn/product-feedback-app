@@ -11,9 +11,9 @@ const RoadmapItem = ({ label, count, status }:RoadmapItemProps) => {
         <div className="flex justify-between items-center mb-2">
             <div className="flex items-center">
                 <span className={`w-2 h-2 rounded-full mr-2 ${statusClasses[status]}`}></span>
-                <p className="text-sm">{label}</p>
+                <p className="text-gray-500">{label}</p>
             </div>
-            <p>{count}</p>
+            <p className="text-blue-700 font-medium">{count}</p>
         </div>
     );
 }

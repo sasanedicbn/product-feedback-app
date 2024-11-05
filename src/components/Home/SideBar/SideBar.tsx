@@ -4,7 +4,7 @@ import TitleSideBar from "./SideBarItems/TitleSideBar";
 
 const SideBar = () => {
     return(
-        <div className="w-[235px] h-[300px] bg-slate-500">
+        <div className="w-[250px]">
          <TitleSideBar/>
          <Category/>
          <Roadmap/>

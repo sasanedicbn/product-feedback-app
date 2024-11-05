@@ -24,7 +24,7 @@ const Category = () => {
                 {categories.map((category, index) => (
                     <li 
                         key={index} 
-                        className="bg-[#f2f4ff] text-xs rounded-lg px-3 py-1.5 font-semibold text-[13px] leading-[19px] text-[#4661e6] mt-3 mr-3 cursor-pointer hover:bg-blue-200" 
+                        className="bg-[#f2f4ff] text-xs rounded-lg px-3 py-1.5 font-semibold leading-[19px] text-[#4661e6] mt-3 mr-3 cursor-pointer hover:bg-blue-200" 
                     >
                         {category} 
                     </li> 
