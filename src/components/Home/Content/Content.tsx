@@ -4,10 +4,10 @@ import ContentTitle from "./ContentTitle"
 
 const Content = () => {
     return(
-       <Wrapper type="content">
+        <div className="w-[800px] bg-orange-300">
         <ContentTitle/>
         <ContentBody/>
-       </Wrapper>
+       </div>
     )
 }
 

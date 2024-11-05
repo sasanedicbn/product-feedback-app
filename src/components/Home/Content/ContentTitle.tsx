@@ -1,9 +1,15 @@
 const ContentTitle = () => {
-    return(
-        <div>
-            <p>ContentTitle</p>
+    return (
+        <div className="flex items-center justify-between bg-slate-400 p-4">
+            <div className="flex items-center space-x-3">
+               
+                <p className="text-white text-lg font-semibold">6 Suggestions</p>
+            </div>
+            <div className="flex items-center">
+                <p className="text-sm text-gray-200">Sort by: <strong className="text-white">Most Upvotes</strong></p>
+            </div>
         </div>
-    )
-}
+    );
+};
 
 export default ContentTitle;
