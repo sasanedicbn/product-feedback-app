@@ -41,4 +41,5 @@ export type WrapperProps = {
 export type RoadmapItemProps = {
     label: string,
     count: number,
+    status: 'planned' | 'inProgress' | 'live'
 }
