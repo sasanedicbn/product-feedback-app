@@ -8,7 +8,6 @@ const Home = () => {
         <SideBar/>
       </div>
        <div className="font-bold">
-        Sasa
        </div>
     </div>
     )

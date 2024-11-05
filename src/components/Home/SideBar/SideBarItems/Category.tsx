@@ -9,8 +9,9 @@ const Category = () => {
         const getCategory = async () => { 
             const data = await fetchCategory('Category'); 
             if (data) {
-                const valuesArray = data.map(item => Object.values(item)); // Izvlači vrednosti
-                setCategories(valuesArray);
+                const keysArray = data.map(item => Object.keys(item)).flat();
+                console.log(keysArray, 'keysarr');
+                setCategories(keysArray);
             }
         };
 
@@ -18,11 +19,15 @@ const Category = () => {
     }, []);
 
     return (
-        <Wrapper type="sideBarItem" className="bg-light-blue-100 p-4">
-            <p>Category</p>
-            <ul>
+        <Wrapper type="sideBarItem">
+            <ul className="text-sm h-full flex flex-wrap justify-start">
                 {categories.map((category, index) => (
-                    <li key={index}>{category.join(', ')}</li> // Prikazuje vrednosti kao tekst
+                    <li 
+                        key={index} 
+                        className="bg-[#f2f4ff] text-xs rounded-lg px-3 py-1.5 font-semibold text-[13px] leading-[19px] text-[#4661e6] mt-3 mr-3 cursor-pointer hover:bg-blue-200" 
+                    >
+                        {category} 
+                    </li> 
                 ))}
             </ul>
         </Wrapper>
