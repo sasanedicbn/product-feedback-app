@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Wrapper from "../../../UX/Wrapper";
 import { fetchCategory } from "../../../../supabase/supabaseFunctions";
-import SingleCategory from "./SingleCategory";
+import SingleCategory from "../../../UX/SingleCategory";
 
 const Category = () => {
     const [categories, setCategories] = useState([]);
@@ -23,7 +23,7 @@ const Category = () => {
         <Wrapper type="sideBarItem">
             <ul className="text-sm h-full flex flex-wrap justify-start">
                 {categories.map((category, index) => (
-                    <SingleCategory key={index} category={category} index={index} />
+                    <SingleCategory key={index} category={category} />
                 ))}
             </ul>
         </Wrapper>
