@@ -1,20 +1,31 @@
-import { HiChevronDown } from "react-icons/hi";
+import { useState } from "react";
 import Button from "../../UX/Button";
 import Icon from "../../UX/Icon";
+import DropDown from "../../UX/DropDown";
 
 const ContentTitle = () => {
+    const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
+
+    const handleSortOptionChange = (option) => {
+        setSelectedSortOption(option);
+    };
+
+    const sortOptions = ["Most Upvotes", "Least Upvotes", "Most Comments", "Least Comments"];
+
     return (
         <div className="flex items-center justify-between bg-slate-400 p-4 rounded-lg">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center">
                 <Icon name="suggestion" size={26} color="white" />
-                <p className="text-white text-lg font-semibold">6 Suggestions</p>
-                
-                <p className="text-sm pl-6 text-gray-200">Sort by: <strong className="text-white">Most Upvotes</strong>  </p>
+                <p className="text-white text-lg pl-4 mr-8 font-semibold">6 Suggestions</p>
+                <DropDown
+                    options={sortOptions} 
+                    selectedOption={selectedSortOption} 
+                    onOptionSelect={handleSortOptionChange}
+                />
             </div>
-            
             <div className="flex items-center">
                 <Button type="addFeedBack" className="flex items-center space-x-2 text-white bg-blue-500 rounded-lg px-4 py-2">
-                    <Icon name="plus" size={18} color="white" /> 
+                    <Icon name="plus" size={18} color="white" />
                     <span>Add Feedback</span>
                 </Button>
             </div>
