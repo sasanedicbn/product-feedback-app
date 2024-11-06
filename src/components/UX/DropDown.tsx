@@ -11,12 +11,12 @@ const DropDown = ({ options, selectedOption, onOptionSelect }) => {
 
     return (
         <div>
-            <button onClick={() => setIsOpen(!isOpen)} className=" flex items-center gap-1">
-                Sort by: <strong>{selectedOption}</strong>
-                <Icon name="down" size={16} color="white" />
+            <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 text-sm">
+                <span className="text-gray-300">Sort by:</span> <strong className="text-gray-200">{selectedOption}</strong>
+                <Icon name="down" size={16} color="#e1e1e6" />
             </button>
             {isOpen && (
-                <ul className="absolute bg-white w-[200px] h-[150px] mt-8 rounded-lg">
+                <ul className="absolute bg-white w-[200px] h-[150px] mt-9 rounded-lg shadow-xl border border-solid border-gray-200">
                     {options.map((option) => (
                         <li
                             key={option}

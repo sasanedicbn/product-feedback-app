@@ -1,6 +1,6 @@
 const ContentBody = () => {
     return(
-        <div>
+        <div className="bg-slate-400">
             <p>ContentBody</p>
         </div>
     )
