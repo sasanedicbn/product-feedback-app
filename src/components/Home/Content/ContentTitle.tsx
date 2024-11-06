@@ -25,8 +25,8 @@ const ContentTitle = () => {
             </div>
             <div className="flex items-center">
                 <Button type="addFeedBack" className="flex items-center space-x-2 text-white bg-blue-500 rounded-lg px-6 py-2">
-                    <Icon name="plus" size={18} color="white" />
-                    <span>Add Feedback</span>
+                    <Icon name="plus" size={14} color="white" />
+                    <span className="text-sm ml-1">Add Feedback</span>
                 </Button>
             </div>
         </div>
