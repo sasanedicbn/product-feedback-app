@@ -5,8 +5,10 @@ import Upvotes from "./ContentBodyItems.tsx/Upvotes";
 const ContentBody = () => {
     return(
         <div className="bg-white w-full h-[140px] p-4 rounded-lg flex justify-between items-center px-6">
-            <Upvotes/>
-            <ContentItem/>
+            <div className="flex items-start gap-8 ">
+             <Upvotes/>
+             <ContentItem/>
+            </div>
             <Comments/>
         </div>
     )
