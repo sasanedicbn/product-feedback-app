@@ -2,9 +2,9 @@ import Icon from "../../../UX/Icon";
 
 const Comments = () => {
     return(
-        <div>
+        <div className="flex gap-1">
             <Icon name="message" color="gray" size={22}/>
-            <span>2</span>
+            <span className="text-gray-500">2</span>
         </div>
     )
 }
