@@ -52,3 +52,11 @@ export type IconProps = {
     onClick?: () => void;
     type?: string;
   }
+
+  export type ActionProps = {
+    iconName: string;  
+    iconColor: string;
+    iconSize: number;
+    text: string;
+    onClick: () => void;
+};
