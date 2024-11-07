@@ -17,9 +17,10 @@ const AnimationCircle = () => {
                 ],
             }}
             transition={{
-                duration: 0.8,
+                duration: 0.6,  
                 ease: "easeOut",
                 bounce: 0.6,
+                delay: 2,  
                 background: {
                     duration: 12,  
                     repeat: Infinity,
