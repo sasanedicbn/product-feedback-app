@@ -5,7 +5,7 @@ const Select = ({ name, onChange, children, className }: SelectProps) => {
         <select
             name={name}
             onChange={onChange}
-            className={`border border-gray-300 rounded-lg ${className}`}
+            className={`border border-gray-300 rounded-lg p-2 w-full bg-gray-200 text-gray-700 ${className} cursor-pointer`}
         >
             {children}
         </select>
