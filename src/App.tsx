@@ -5,13 +5,18 @@ import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux';
 import Home from './components/Home/Home';
 import store from './components/store/store';
+import FeedBack from './components/FeedBack/FeedBack';
 
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Home />
+      element: <Home />,
+    },
+    {
+      path: '/add',
+      element: <FeedBack />,
     }
   ]);
 
