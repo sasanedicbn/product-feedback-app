@@ -2,23 +2,14 @@ import Wrapper from "../UX/Wrapper";
 import Label from "../UX/Label";
 import Input from "../UX/Input";
 import Button from "../UX/Button";
+import FeedBackTitle from "./FeedBackItems/FeedBackTitle";
 
 const FeedBack = () => {
     return(
         <div className="bg-gray-100 flex justify-center items-center h-screen px-8 pt-16 font-serif">
             <div className="bg-white w-[500px] p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-purple-600">Create New Feedback</h3>
-                
-                <section className="mb-4">
-                    <Label text="Feedback Title" />
-                    <p className="text-sm text-gray-500 mb-2">Add a short, descriptive headline</p>
-                    <Input 
-                        type="text" 
-                        name="title" 
-                        styleType="feedback" 
-                        placeholder="Enter feedback title"
-                    />
-                </section>
+                <h3 className="text-2xl  text-left mb-6 text-blue-900 font-semibold">Create New Feedback</h3>
+                <FeedBackTitle/>
                 
                 <section className="mb-4">
                     <Label text="Category" />
