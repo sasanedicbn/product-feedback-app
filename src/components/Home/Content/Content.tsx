@@ -1,4 +1,3 @@
-import Wrapper from "../../UX/Wrapper"
 import ContentBody from "./ContentBody"
 import ContentTitle from "./ContentTitle"
 
