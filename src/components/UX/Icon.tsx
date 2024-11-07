@@ -2,10 +2,8 @@ import { HiChevronDown, HiChevronUp, HiLightBulb, HiPlus } from "react-icons/hi"
 import { IconProps } from "../types/types";
 import { FaArrowLeft, FaCheck, FaRegComment } from "react-icons/fa";
 
-const Icon = ({ name, size = 84, color = 'black', onClick= () => {}, type = 'none' }) => {
-  const style = {
-    cursor: type === 'pointer' ? 'pointer' : 'default',
-  };
+const Icon = ({ name, size = 84, color = 'black', onClick= () => {}}:IconProps) => {
+  
 
   const icons = {
     suggestion:  <HiLightBulb size={size} color={color} onClick={onClick} />, 

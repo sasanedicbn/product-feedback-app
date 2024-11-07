@@ -4,6 +4,8 @@ import FeedBackTitle from "./FeedBackItems/FeedBackTitle";
 import Select from "../UX/Select";
 import Option from "../UX/Option";
 import Action from "../UX/Action";
+import AnimationCircle from "../UX/AnimationCircle";
+
 
 const FeedBack = () => {
     return (
@@ -15,7 +17,7 @@ const FeedBack = () => {
                 text="Go back"
                 onClick={() => console.log("Back action triggered")}
             />
-
+            <AnimationCircle/>
             <div className="bg-white w-[500px] p-8 rounded-lg shadow-lg">
                 <h3 className="text-2xl text-left mb-6 text-blue-900 font-semibold">Create New Feedback</h3>
 

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export type ButtonProps = {
-    type: 'login'  ;
+    type: 'login' | 'cancelFeedBack' | 'addFeedBack' ;
     buttonType?: 'button' | 'submit' | 'reset'; 
     children: React.ReactNode;
     onClick: () => void; 
@@ -19,6 +19,7 @@ export type InputProps = {
 
 export type LabelProps = {
     text: string;
+    type: 'addFeedBack' | 'back'
 }
 
 export type SelectProps = {

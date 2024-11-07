@@ -1,6 +1,6 @@
 import Label from "../../UX/Label";
 
-const FeedBackTitle = ({ title, subtitle }) => {
+const FeedBackTitle = ({ title, subtitle }:any) => {
     return (
         <section className="mb-4">
             <Label text={title} type="addFeedBack" />
