@@ -15,7 +15,7 @@ const ContentBody = () => {
             dispatch(setCategories(data)); 
         };
         fetchComments();
-    }, [dispatch]);
+    }, []);
 
     const commentsData = useSelector((state) => state.categories.items); 
     console.log(commentsData, 'commentsData')
