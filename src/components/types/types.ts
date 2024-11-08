@@ -47,12 +47,13 @@ export type RoadmapItemProps = {
 }
 
 export type IconProps = {
-    name: 'suggestion' | 'plus' | 'down' | 'up' | 'check' | 'message' | 'back' ;
+    name: 'suggestion' | 'plus' | 'down' | 'up' | 'check' | 'message' | 'back';
     size?: number;
     color?: string;
     onClick?: () => void;
     type?: string;
   }
+
 
   export type ActionProps = {
     iconName: string;  
@@ -62,19 +63,27 @@ export type IconProps = {
     onClick: () => void;
 };
 
-export type Category {
+export type Category = {
     Category: string;
 }
 
-export type Comment {
+export type Comment = {
     id: number | string;
     content: string;
 }
 
-export type FeedbackItem {
+export type FeedbackItem = {
     id: number | string;
     title: string;
     feedback: string;
     Category: Category;
     comments: Comment[];
 }
+
+export type OptionType = "Most Upvotes" | "Least Upvotes" | "Most Comments" | "Least Comments";
+
+export type DropDownProps = {
+    options: OptionType[];
+    selectedOption: OptionType;
+    onOptionSelect: (option: OptionType) => void;
+};

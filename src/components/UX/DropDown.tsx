@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Icon from "./Icon";
+import { DropDownProps, OptionType } from "../types/types";
 
-const DropDown = ({ options, selectedOption, onOptionSelect }) => {
+
+
+const DropDown = ({ options, selectedOption, onOptionSelect }: DropDownProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleOptionClick = (option) => {
+    const handleOptionClick = (option: OptionType) => {
         onOptionSelect(option);
         setIsOpen(false);
     };
