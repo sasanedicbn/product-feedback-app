@@ -9,7 +9,7 @@ import AnimationCircle from "../UX/AnimationCircle";
 
 const FeedBack = () => {
     return (
-        <div className="bg-gray-100 flex justify-center items-center flex-col h-screen px-8 pt-16 font-serif">
+        <div className="bg-gray-100 flex justify-center items-center flex-col h-screen px-8 pt-16 font-serif ">
             <Action 
                 iconName="back" 
                 iconColor="gray" 
@@ -40,6 +40,7 @@ const FeedBack = () => {
                         name="title" 
                         styleType="addFeedBack" 
                         placeholder="Enter feedback title"
+                        onChange={() => console.log('')}
                     />
                 </motion.div>
 
