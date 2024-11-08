@@ -47,7 +47,7 @@ export type RoadmapItemProps = {
 }
 
 export type IconProps = {
-    name: 'suggestion';
+    name: 'suggestion' | 'plus' | 'down' | 'up' | 'check' | 'message' | 'back' ;
     size?: number;
     color?: string;
     onClick?: () => void;
@@ -61,3 +61,20 @@ export type IconProps = {
     text: string;
     onClick: () => void;
 };
+
+export type Category {
+    Category: string;
+}
+
+export type Comment {
+    id: number | string;
+    content: string;
+}
+
+export type FeedbackItem {
+    id: number | string;
+    title: string;
+    feedback: string;
+    Category: Category;
+    comments: Comment[];
+}
