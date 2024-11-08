@@ -1,12 +1,13 @@
 import SingleCategory from "../../../UX/SingleCategory";
 
-const ContentItem = () => {
+const ContentItem = ({title, feedback, category}) => {
+  
     return (
         <div className="text-dark-blue">
-            <h2 className="text-blue-950 text-xl font-bold">Preview images is not loading</h2>
-            <p className="text-gray-500 text-sm font-light my-1">Challenge preview images are missing when you apply a filter.</p>
+            <h2 className="text-blue-950 text-xl font-bold">{title}</h2>
+            <p className="text-gray-500 text-sm font-light my-1">{feedback}</p>
             <div className="flex flex-wrap justify-start">
-             <SingleCategory category="Enhancement"/>
+             <SingleCategory category={category}/>
             </div>
         </div>
     );

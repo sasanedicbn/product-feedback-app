@@ -19,7 +19,7 @@ export const fetchCategory = async (tableName: string) => {
 }
 
 
-async function fetchFeedbacksWithAllRelations() {
+export async function fetchFeedbacksWithAllRelations() {
     try {
         let { data: feedbacks, error } = await supabase
             .from('Feedbacks')
@@ -42,7 +42,3 @@ async function fetchFeedbacksWithAllRelations() {
     }
 }
 
-
-
-const data = await fetchFeedbacksWithAllRelations()
-console.log(data, 'sve')

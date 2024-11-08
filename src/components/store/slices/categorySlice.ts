@@ -2,13 +2,15 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const categorySlice = createSlice({
   name: 'categories',
-  initialState: [],
+  initialState: {
+    items: [],  // Dodaj 'items' za bolje strukturirano stanje
+  },
   reducers: {
     setCategories: (state, action) => {
-      return action.payload;
+      state.items = action.payload; // Podesi kompletan niz kategorija
     },
     addCategory: (state, action) => {
-      state.push(action.payload);
+      state.items = action.payload
     },
   },
 });

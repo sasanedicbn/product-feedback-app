@@ -11,7 +11,7 @@ const Category = () => {
             const data = await fetchCategory('Category'); 
             if (data) {
                 const keysArray = data.map(item => Object.values(item)).flat();
-                console.log(keysArray, 'keysArray');
+                // console.log(keysArray, 'keysArray');
                 setCategories(keysArray);
             }
         };

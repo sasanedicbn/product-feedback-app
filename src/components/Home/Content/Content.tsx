@@ -3,7 +3,7 @@ import ContentTitle from "./ContentTitle"
 
 const Content = () => {
     return(
-        <div className="w-[800px]">
+        <div className="w-[800px] h-[800px]">
         <ContentTitle/>
         <ContentBody/>
        </div>
