@@ -9,7 +9,7 @@ const Roadmap = () => {
             <motion.section
                 initial={{ opacity: 0, x: -70 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.62, ease: "easeOut" }}
                 className="flex justify-between items-center color-bg mb-5"
             >
                 <p className="font-semibold text-blue-900">RoadMap</p>
@@ -20,7 +20,7 @@ const Roadmap = () => {
                 initial={{ opacity: 0, x: -70 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
-                    duration: 0.6,
+                    duration: 0.62,
                     ease: "easeOut",
                     staggerChildren: 0.2
                 }}
