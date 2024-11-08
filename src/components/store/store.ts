@@ -3,7 +3,7 @@ import { setCategory } from './slices/categorySlice';
 
 const store = configureStore({
   reducer: {
-    category: setCategory,
+    categories: setCategory,
   },
 });
 
