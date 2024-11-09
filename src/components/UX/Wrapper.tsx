@@ -6,7 +6,8 @@ const Wrapper = ({ children, type }:WrapperProps) => {
     const styles = {
         pageWrapper: `${base} w-full sm:w-1/2 md:w-1/3 lg:w-1/4`, 
         sideBarTitle: `${baseSideBar} bg-diagonal-gradient mb-4`,
-        sideBarItem: `${baseSideBar} bg-white mb-4 `
+        sideBarItem: `${baseSideBar} bg-white mb-4 `,
+        feedBackContainer: `bg-white w-full h-[140px] p-4 rounded-lg flex justify-between items-center px-6`
     };
     return (
       <div className={styles[type]}>
