@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const feedBackSlice = createSlice({
   name: 'feedback',
   initialState: {
-    feedback: [], 
+    feedback: null, 
   },
   reducers: {
     setFeedBack: (state, action) => {
