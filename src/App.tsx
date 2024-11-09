@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import Home from './components/Home/Home';
 import store from './components/store/store';
 import FeedBack from './components/FeedBack/FeedBack';
+import Details from './components/Details/Details';
 
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
     {
       path: '/add',
       element: <FeedBack />,
+    },
+    {
+      path:'/details/:id',
+      element: <Details/>
     }
   ]);
 
