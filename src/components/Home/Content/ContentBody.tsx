@@ -21,7 +21,6 @@ const ContentBody = () => {
     }, []);
 
     const commentsData = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
-    console.log(commentsData, 'commentsData');
 
     return (
         <div className="space-y-4"> 

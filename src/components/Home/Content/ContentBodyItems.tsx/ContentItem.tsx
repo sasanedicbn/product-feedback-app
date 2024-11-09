@@ -6,7 +6,6 @@ const ContentItem = ({ title, feedback, category, itemId = null }) => {
     const navigate = useNavigate();
 
     const handleItemClick = () => {
-        // Navigacija ka stranici details sa ID-jem kategorije
         navigate(`/details/${itemId}`);
     };
 
