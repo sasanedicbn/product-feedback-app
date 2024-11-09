@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchFeedbackById } from "../../supabase/supabaseFunctions";
 import { useDispatch, useSelector } from "react-redux";
 import { setFeedBack } from "../store/slices/feedBackSlice";
+import UserFeedBack from "../Home/Content/UserFeedBack";
 
 const Details = () => {
     const { id } = useParams();
@@ -23,29 +24,8 @@ const Details = () => {
     if (!feedback) return <div>Loading...</div>;
 
     return (
-        <div>
-            <h1>Details for Feedback ID: {feedback.id}</h1>
-            <h2>Title: {feedback.title}</h2>
-            <p>Feedback: {feedback.feedback}</p>
-            <p>Created At: {feedback.created_at}</p>
-            
-            <div>
-                <h3>Category: {feedback.Category?.Category || 'N/A'}</h3>
-            </div>
-
-            <div>
-                <h3>Comments:</h3>
-                {feedback.Comments ? (
-                    <div>
-                        <p>User: {feedback.Comments.user}</p>
-                        <p>Username: {feedback.Comments.user_name}</p>
-                        <p>Comment: {feedback.Comments.user_comment}</p>
-                        <img src={feedback.Comments.user_image} alt="User" />
-                    </div>
-                ) : (
-                    <p>No comments available.</p>
-                )}
-            </div>
+        <div className="bg-gray-100 flex justify-between h-[1000px] px-80 pt-16 font-serif">
+               <UserFeedBack item={feedback}/>
         </div>
     );
 };

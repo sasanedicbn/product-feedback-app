@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import SingleCategory from "../../../UX/SingleCategory";
 
 const ContentItem = ({ title, feedback, category, itemId = null }) => {
-    console.log(itemId, 'itemid ic contentitem')
     const navigate = useNavigate();
 
     const handleItemClick = () => {
@@ -12,7 +11,7 @@ const ContentItem = ({ title, feedback, category, itemId = null }) => {
     return (
         <div
             onClick={handleItemClick} 
-            className="text-dark-blue bg-red-400 w-[600px] cursor-pointer" 
+            className="text-dark-blue  cursor-pointer" 
         >
             <h2 className="text-blue-950 text-xl font-bold">{title}</h2>
             <p className="text-gray-500 text-sm font-light my-1">{feedback}</p>
