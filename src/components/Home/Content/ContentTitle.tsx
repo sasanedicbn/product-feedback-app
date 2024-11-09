@@ -6,7 +6,7 @@ import DropDown from "../../UX/DropDown";
 const ContentTitle = () => {
     const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
 
-    const handleSortOptionChange = (option) => {
+    const handleSortOptionChange = (option:any) => {
         setSelectedSortOption(option);
     };
 

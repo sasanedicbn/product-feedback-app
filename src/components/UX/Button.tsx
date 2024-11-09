@@ -6,7 +6,8 @@ const Button = ({ type, children, onClick, disabled = false }:ButtonProps) => {
     const styles = {
         login: `${base} w-full bg-blue-500 text-white hover:bg-blue-600 mt-2 rounded-lg transition-all duration-300`,
         addFeedBack: `${base}  text-white flex items-center bg-purple-500 rounded-lg hover:bg-purple-600 transition-all duration-300`,
-        cancelFeedBack: `${base} w-[86px] text-white flex items-center bg-blue-900 rounded-lg hover:bg-blue-800 transition-all duration-300`
+        cancelFeedBack: `${base} w-[86px] text-white flex items-center bg-blue-900 rounded-lg hover:bg-blue-800 transition-all duration-300`,
+        editFeedBack: `${base}  text-gray-100 flex items-center bg-blue-500 rounded-lg hover:bg-blue-800 transition-all duration-300 `
     };
     
 

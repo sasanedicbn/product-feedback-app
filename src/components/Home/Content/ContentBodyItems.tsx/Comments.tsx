@@ -1,6 +1,6 @@
 import Icon from "../../../UX/Icon";
 
-const Comments = ({comments}) => {
+const Comments = ({comments}:any) => {
     return(
         <div className="flex gap-1">
             <Icon name="message" color="gray" size={22}/>
