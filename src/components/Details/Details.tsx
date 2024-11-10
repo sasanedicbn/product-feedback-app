@@ -7,6 +7,7 @@ import UserFeedBack from "../Home/Content/UserFeedBack";
 import Action from "../UX/Action";
 import Button from "../UX/Button";
 import Wrapper from "../UX/Wrapper";
+import FeedBackComments from "./feedBackComments/FeedBackComments";
 
 const Details = () => {
     const { id } = useParams();
@@ -45,17 +46,9 @@ const homePageHanlder = () => {
               </Button>
               </div>
             <UserFeedBack item={feedback}/>
-            <Wrapper type="feedBackContainer">
-                <p>SASA</p>
-                </Wrapper>
+            <FeedBackComments feedback={feedback}/>
         </div>
     );
 };
 
 export default Details;
-{/* <Button type="cancelFeedBack" onClick={() => console.log("Cancelled")}>
-Cancel
-</Button>
-<Button type="addFeedBack" onClick={() => console.log("Feedback added")}>
-Add Feedback
-</Button> */}
