@@ -4,12 +4,12 @@ import Wrapper from "../../UX/Wrapper";
 import LengthComments from "./LengthComments";
 
 const AddComment = () => {
-    const [lengthComment, setLengthComment] = useState(0);
+    const [lengthComment, setLengthComment] = useState(225);
 
     const updateLengthComment = (e) => {
-        setLengthComment(e.target.value.length);
+        const remainingLength = 225 - e.target.value.length;
+        setLengthComment(remainingLength >= 0 ? remainingLength : 0);
     };
-    console.log(lengthComment)
 
     return (
         <Wrapper type="feedBackComments">
@@ -27,4 +27,5 @@ const AddComment = () => {
         </Wrapper>
     );
 };
+
 export default AddComment;
