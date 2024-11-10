@@ -6,8 +6,8 @@ import { setFeedBack } from "../store/slices/feedBackSlice";
 import UserFeedBack from "../Home/Content/UserFeedBack";
 import Action from "../UX/Action";
 import Button from "../UX/Button";
-import Wrapper from "../UX/Wrapper";
 import FeedBackComments from "./feedBackComments/FeedBackComments";
+import AddComment from "./addComment.tsx/addComment";
 
 const Details = () => {
     const { id } = useParams();
@@ -47,6 +47,7 @@ const homePageHanlder = () => {
               </div>
             <UserFeedBack item={feedback}/>
             <FeedBackComments feedback={feedback}/>
+            <AddComment/>
         </div>
     );
 };
