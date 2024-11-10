@@ -4,7 +4,7 @@ import Label from "../../UX/Label";
 const FeedBackTitle = ({ title, subtitle }: any) => {
     return (
         <motion.section
-            className="mb-4"
+            className="mb-4 w-full"
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ delay: 1.0, duration: 0.6 }} 
