@@ -1,3 +1,4 @@
+import Button from "../../UX/Button";
 import Wrapper from "../../UX/Wrapper";
 
 const FeedBackComments = ({ feedback }) => {
@@ -7,7 +8,7 @@ const FeedBackComments = ({ feedback }) => {
 
     return (
         <Wrapper type="feedBackContainer">
-            <div className="flex items-start p-4 shadow-sm">
+            <div className="flex bg-red-200 w-full ">
                 <img
                     src={Comments.user_image}
                     alt="User"
@@ -21,9 +22,9 @@ const FeedBackComments = ({ feedback }) => {
                             <p className="text-gray-500 text-sm">{Comments.user_name}</p>
                         </div>
 
-                        <button className="text-blue-600 font-semibold hover:text-blue-800 transition duration-150">
+                        <Button type="replay" >
                             Reply
-                        </button>
+                        </Button>
                     </div>
                     
                     <p className="mt-2 text-gray-700">{Comments.user_comment}</p>
