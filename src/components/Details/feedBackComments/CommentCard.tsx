@@ -1,4 +1,5 @@
 import Button from "../../UX/Button";
+import ReplayComment from "./ReplayComment";
 
 const CommentCard = ({ user_image, user, user_name, user_comment, buttonType, containerClass = "", showButton = true }) => {
     return (
@@ -22,6 +23,7 @@ const CommentCard = ({ user_image, user, user_name, user_comment, buttonType, co
                 </div>
                 <p className="text-gray-500 text-sm font-light mt-4 break-all">{user_comment}</p>
             </div>
+            {/* <ReplayComment Comments={Comments} /> */}
         </div>
     );
 };
