@@ -1,19 +1,15 @@
 import Button from "../../UX/Button";
-import Wrapper from "../../UX/Wrapper";
-import ReplayComment from "./ReplayComment";
 
-const FeedBackComments = ({ feedback }) => {
-    const { Comments } = feedback;
-
+const ReplayComment = ({Comments}) => {
     if (!Comments) return <p>No comments available.</p>;
 
-    return (
-        <Wrapper type="feedBackComments">
-            <div className="flex w-full">
+    return(
+    <div className="w-full mt-4 mx-12 bg-cyan-200 border-b border-gray-200 pb-8 mb-8">
+          <div className="flex w-full">
                 <img
                     src={Comments.user_image}
                     alt="User"
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
+                    className="w-12 h-12 ml-14 rounded-full mr-4 object-cover"
                 />
                 
                 <div className="flex-1">
@@ -28,12 +24,11 @@ const FeedBackComments = ({ feedback }) => {
                         </Button>
                     </div>
                     
-                    <p className="text-gray-500 text-sm font-light mt-4">dasdksdkdasdasdasdasdasasddklasdklsklajdklajdksajdklasjdkljaskldjaskljdklasjdklajskldjaskldjaskdjaklsjdlkjaklsd</p>
+                    <p className="text-gray-500 text-sm font-light mt-4 mr-0">klldasjdklasjdklasjdklasjkldasjkldjaskldjaskldjklasjdklsajdklasjdklsjakldjaskldjaskldjaskdjaskldjaldjaskldjklasjdklasjaskl</p>
                 </div>
             </div>
-            <ReplayComment Comments={Comments}/>
-        </Wrapper>
-    );
-};
+    </div>
+    )
+}
 
-export default FeedBackComments;
+export default ReplayComment;
