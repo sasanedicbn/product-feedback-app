@@ -4,12 +4,12 @@ const ReplayComment = ({Comments}) => {
     if (!Comments) return <p>No comments available.</p>;
 
     return(
-    <div className="w-full mt-4 mx-12 bg-cyan-200 border-b border-gray-200 pb-8 mb-8">
-          <div className="flex w-full">
+    <div className="w-full mt-6 pl-6 border-b border-gray-200 pb-8 mb-8 break-all">
+          <div className="flex w-full border-l border-gray-200">
                 <img
                     src={Comments.user_image}
                     alt="User"
-                    className="w-12 h-12 ml-14 rounded-full mr-4 object-cover"
+                    className="w-12 h-12 ml-10 rounded-full mr-4 object-cover"
                 />
                 
                 <div className="flex-1">
@@ -24,7 +24,7 @@ const ReplayComment = ({Comments}) => {
                         </Button>
                     </div>
                     
-                    <p className="text-gray-500 text-sm font-light mt-4 mr-0">klldasjdklasjdklasjdklasjkldasjkldjaskldjaskldjklasjdklsajdklasjdklsjakldjaskldjaskldjaskdjaskldjaldjaskldjklasjdklasjaskl</p>
+                    <p className="text-gray-500 text-sm font-light mt-4 ">klldasjdklasjdklasjdklasjkldasjkldjaskldjaskldjklasjdklsajdklasjdklsjakldjaskldjaskldjaskdjaskldjaldjaskldjklasjdklasjaskl</p>
                 </div>
             </div>
     </div>

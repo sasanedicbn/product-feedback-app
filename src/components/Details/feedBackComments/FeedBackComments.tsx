@@ -9,7 +9,7 @@ const FeedBackComments = ({ feedback }) => {
 
     return (
         <Wrapper type="feedBackComments">
-            <div className="flex w-full">
+            <div className="flex w-full break-all">
                 <img
                     src={Comments.user_image}
                     alt="User"
