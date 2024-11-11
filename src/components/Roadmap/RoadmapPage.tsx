@@ -4,8 +4,12 @@ import Button from "../UX/Button";
 
 const RoadmapPage = () => {
   const navigation = useNavigate()
+
+  const feedBackPageHandler = () => {
+    navigation('/add')
+  }
  
-   const homePageHandler = () => {
+  const homePageHandler = () => {
     navigation('/')
 }
     return(
@@ -23,7 +27,7 @@ const RoadmapPage = () => {
                     />
                     <h2 className="text-white mt-2 font-semibold text-xl">Roadmap</h2>
                 </div>
-                <Button type="addFeedBack" onClick={() => console.log("Feedback added")}>
+                <Button type="addFeedBack" onClick={() => feedBackPageHandler()}>
                     Add Feedback
                 </Button>
             </div>

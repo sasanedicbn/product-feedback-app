@@ -2,13 +2,19 @@ import { useState } from "react";
 import Button from "../../UX/Button";
 import Icon from "../../UX/Icon";
 import DropDown from "../../UX/DropDown";
+import { useNavigate } from "react-router-dom";
 
 const ContentTitle = () => {
     const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
+    const navigation = useNavigate()
 
     const handleSortOptionChange = (option:any) => {
         setSelectedSortOption(option);
     };
+    const feedBackPageHandler = () => {
+        console.log('clicked')
+        navigation('/add')
+      }
 
     const sortOptions = ["Most Upvotes", "Least Upvotes", "Most Comments", "Least Comments"];
 
@@ -24,7 +30,7 @@ const ContentTitle = () => {
                 />
             </div>
             <div className="flex items-center">
-                <Button type="addFeedBack" >
+                <Button type="addFeedBack" onClick={feedBackPageHandler}>
                     <Icon name="plus" size={14} color="white" />
                     <span className="text-sm ml-1">Add Feedback</span>
                 </Button>

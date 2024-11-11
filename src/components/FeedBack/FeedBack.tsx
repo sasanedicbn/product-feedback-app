@@ -6,8 +6,15 @@ import Select from "../UX/Select";
 import Option from "../UX/Option";
 import Action from "../UX/Action";
 import AnimationCircle from "../UX/AnimationCircle";
+import { useNavigate } from "react-router-dom";
 
 const FeedBack = () => {
+    const navigation = useNavigate()
+
+    const homePageHandler = () => {
+        navigation('/')
+    }
+
     return (
         <div className="bg-gray-100 flex justify-center items-center flex-col h-screen px-8 pt-16 font-serif ">
             <Action 
@@ -16,7 +23,7 @@ const FeedBack = () => {
                 iconSize={14} 
                 text="Go back"
                 labelType="back"
-                onClick={() => console.log("Back action triggered")}
+                onClick={homePageHandler}
             />
             <AnimationCircle/>
             <motion.div
