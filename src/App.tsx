@@ -7,7 +7,7 @@ import Home from './components/Home/Home';
 import store from './components/store/store';
 import FeedBack from './components/FeedBack/FeedBack';
 import Details from './components/Details/Details';
-import Roadmap from './components/Roadmap/Roadmap';
+import RoadmapPage from './components/Roadmap/RoadmapPage';
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
     },
     {
       path:'/roadmap',
-      element: <Roadmap/>
+      element: <RoadmapPage/>
     }
   ]);
 
