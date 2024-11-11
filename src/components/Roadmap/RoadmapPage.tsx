@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import Action from "../UX/Action";
 import Button from "../UX/Button";
 
 const RoadmapPage = () => {
+  const navigation = useNavigate()
+ 
+   const homePageHandler = () => {
+    navigation('/')
+}
     return(
         // <Wrapper type="pageWrapper">
         <div className="bg-gray-100 flex gap-5 flex-col h-screen px-32 pt-16 font-serif">
@@ -13,7 +19,7 @@ const RoadmapPage = () => {
                         iconSize={14} 
                         text="Go back"
                         labelType='backRoadMap'
-                        onClick={() => console.log("Back action triggered")}
+                        onClick={() => homePageHandler()}
                     />
                     <h2 className="text-white mt-2 font-semibold text-xl">Roadmap</h2>
                 </div>
