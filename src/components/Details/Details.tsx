@@ -7,7 +7,7 @@ import UserFeedBack from "../Home/Content/UserFeedBack";
 import Action from "../UX/Action";
 import Button from "../UX/Button";
 import FeedBackComments from "./feedBackComments/FeedBackComments";
-import AddComment from "./addComment.tsx/addComment";
+import AddComment from "./addComment.tsx/AddComment";
 
 const Details = () => {
     const { id } = useParams();
@@ -39,6 +39,7 @@ const homePageHanlder = () => {
                 iconColor="gray" 
                 iconSize={14} 
                 text="Go back"
+                labelType="back"
                 onClick={() => homePageHanlder()}
             />
              <Button type="editFeedBack" onClick={() => console.log("Cancelled")}>

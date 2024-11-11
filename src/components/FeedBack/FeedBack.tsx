@@ -15,6 +15,7 @@ const FeedBack = () => {
                 iconColor="gray" 
                 iconSize={14} 
                 text="Go back"
+                labelType="back"
                 onClick={() => console.log("Back action triggered")}
             />
             <AnimationCircle/>

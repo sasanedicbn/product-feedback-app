@@ -19,7 +19,7 @@ export type InputProps = {
 
 export type LabelProps = {
     text: string;
-    type: 'addFeedBack' | 'back'
+    type: 'addFeedBack' | 'back' | 'backRoadMap';
 }
 
 export type SelectProps = {
@@ -60,6 +60,7 @@ export type IconProps = {
     iconColor: string;
     iconSize: number;
     text: string;
+    labelType: string,
     onClick: () => void;
 };
 
