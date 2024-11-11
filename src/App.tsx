@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import store from './components/store/store';
 import FeedBack from './components/FeedBack/FeedBack';
 import Details from './components/Details/Details';
+import Roadmap from './components/Roadmap/Roadmap';
 
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
     {
       path:'/details/:id',
       element: <Details/>
+    },
+    {
+      path:'/roadmap',
+      element: <Roadmap/>
     }
   ]);
 
