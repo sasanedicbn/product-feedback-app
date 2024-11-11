@@ -1,5 +1,5 @@
-import Button from "../../UX/Button";
 import Wrapper from "../../UX/Wrapper";
+import CommentCard from "./CommentCard";
 import ReplayComment from "./ReplayComment";
 
 const FeedBackComments = ({ feedback }) => {
@@ -9,31 +9,16 @@ const FeedBackComments = ({ feedback }) => {
 
     return (
         <Wrapper type="feedBackComments">
-            <div className="flex w-full break-all">
-                <img
-                    src={Comments.user_image}
-                    alt="User"
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
-                />
-                
-                <div className="flex-1">
-                    <div className="flex justify-between items-center">
-                        <div>
-                            <p className="font-semibold text-blue-950">{Comments.user}</p>
-                            <p className="text-gray-500 text-sm font-light">{Comments.user_name}</p>
-                        </div>
-
-                        <Button type="replay">
-                            Reply
-                        </Button>
-                    </div>
-                    
-                    <p className="text-gray-500 text-sm font-light mt-4">dasdksdkdasdasdasdasdasasddklasdklsklajdklajdksajdklasjdkljaskldjaskljdklasjdklajskldjaskldjaskdjaklsjdlkjaklsd</p>
-                </div>
-            </div>
-            <ReplayComment Comments={Comments}/>
+            <CommentCard
+                user_image={Comments.user_image}
+                user={Comments.user}
+                user_name={Comments.user_name}
+                user_comment="dasdksdkdasdasdasdasdasasddklasdklsklajdklajdksajdklasjdkljaskldjaskljdklasjdklajskldjaskldjaskdjaklsjdlkjaklsd"
+            />
+            <ReplayComment Comments={Comments} />
         </Wrapper>
     );
 };
 
 export default FeedBackComments;
+
