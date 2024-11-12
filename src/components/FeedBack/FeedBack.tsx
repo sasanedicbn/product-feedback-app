@@ -96,7 +96,7 @@ const FeedBack = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.2, duration: 0.5 }}
                 >
-                    <Button type="cancelFeedBack" onClick={() => console.log("Cancelled")}>
+                    <Button type="cancelFeedBack" onClick={homePageHandler}>
                         Cancel
                     </Button>
                     <Button type="addFeedBack" onClick={() => console.log("Feedback added")}>
