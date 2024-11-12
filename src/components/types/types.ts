@@ -88,3 +88,11 @@ export type DropDownProps = {
     selectedOption: OptionType;
     onOptionSelect: (option: OptionType) => void;
 };
+
+export type TextareaProps = {
+    placeholder: string,
+    rows: number,
+    additionalStyles: string | null,
+    onChange: () => void,
+    maxLength: number
+}
