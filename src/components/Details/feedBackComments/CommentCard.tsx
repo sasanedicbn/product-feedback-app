@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Button from "../../UX/Button";
 import ReplayComment from "./ReplayComment";
+import PostReplay from "./PostReplay";
 
-const CommentCard = ({ user_image, user, user_name, user_comment, buttonType, containerClass = "", showButton = true }) => {
+const CommentCard = ({ user_image, user, user_name, user_comment, buttonType, containerClass = "",  Comments}) => {
+    const [openTextarea, setTextarea] = useState(false)
     return (
         <div className={`flex w-full ${containerClass}`}>
             <img
@@ -15,15 +18,14 @@ const CommentCard = ({ user_image, user, user_name, user_comment, buttonType, co
                         <p className="font-semibold text-blue-950">{user}</p>
                         <p className="text-gray-500 text-sm font-light">{user_name}</p>
                     </div>
-                    {showButton && (
                         <Button type={buttonType || "replay"}>
                             Reply
                         </Button>
-                    )}
                 </div>
                 <p className="text-gray-500 text-sm font-light mt-4 break-all">{user_comment}</p>
+                {/* <ReplayComment Comments={Comments} /> */}
+                <PostReplay/>
             </div>
-            {/* <ReplayComment Comments={Comments} /> */}
         </div>
     );
 };

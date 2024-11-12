@@ -4,7 +4,7 @@ const ReplayComment = ({Comments}) => {
     if (!Comments) return <p>No comments available.</p>;
 
     return(
-    <div className="w-full mt-6 pl-6 border-b border-gray-200 pb-8 mb-8 break-all">
+    <div className="w-full mt-6  border-b border-gray-200 pb-8 mb-8 break-all">
           <div className="flex w-full border-l border-gray-200">
                 <img
                     src={Comments.user_image}

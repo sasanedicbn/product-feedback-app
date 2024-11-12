@@ -11,11 +11,12 @@ const FeedBackComments = ({ feedback }) => {
         <Wrapper type="feedBackComments">
             <CommentCard
                 user_image={Comments.user_image}
+                Comments={Comments}
                 user={Comments.user}
                 user_name={Comments.user_name}
                 user_comment="dasdksdkdasdasdasdasdasasddklasdklsklajdklajdksajdklasjdkljaskldjaskljdklasjdklajskldjaskldjaskdjaklsjdlkjaklsd"
             />
-            <ReplayComment Comments={Comments} />
+            {/* <ReplayComment Comments={Comments} /> */}
         </Wrapper>
     );
 };
