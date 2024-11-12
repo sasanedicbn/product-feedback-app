@@ -37,7 +37,7 @@ export type OptionProps = {
 
 export type WrapperProps = {
     children: ReactNode; 
-    type: 'pageWrapper' | 'sideBarTitle' |  'sideBarItem' | 'content' | 'feedBackContainer' | 'feedBackComments'; 
+    type: 'pageWrapper' | 'sideBarTitle' |  'sideBarItem' | 'feedBackContainer' | 'feedBackComments'; 
   }
   
 export type RoadmapItemProps = {
