@@ -9,17 +9,19 @@ const FeedBackComments = ({ feedback }) => {
 
     return (
         <Wrapper type="feedBackComments">
-            <CommentCard
-                user_image={Comments.user_image}
-                Comments={Comments}
-                user={Comments.user}
-                user_name={Comments.user_name}
-                user_comment="dasdksdkdasdasdasdasdasasddklasdklsklajdklajdksajdklasjdkljaskldjaskljdklasjdklajskldjaskldjaskdjaklsjdlkjaklsd"
-            />
+             {Comments.map((comment) => (
+                <CommentCard
+                    key={comment.id}  // Svaki komentar treba imati jedinstveni ključ
+                    user_image={comment.user_image}
+                    user={comment.user}
+                    user_name={comment.user_name}
+                    user_comment={comment.user_comment}  // Pretpostavljam da je ovo polje za tekst komentara
+                    Comments={Comments}  // Prosleđujemo ceo niz komentara ako je potrebno u CommentCard
+                />
+            ))}
             {/* <ReplayComment Comments={Comments} /> */}
         </Wrapper>
     );
 };
 
 export default FeedBackComments;
-

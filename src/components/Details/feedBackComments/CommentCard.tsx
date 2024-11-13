@@ -11,7 +11,7 @@ const CommentCard = ({ user_image, user, user_name, user_comment, buttonType, co
     };
 
     return (
-        <div className={`flex w-full ${containerClass}`}>
+        <div className={`flex w-full mb-20 ${containerClass}`}>
             <img
                 src={user_image}
                 alt="User"
