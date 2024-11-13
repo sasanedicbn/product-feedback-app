@@ -30,7 +30,7 @@ const FeedBackAnimation = () => {
                alt="background"
               className="object-cover w-full h-full"
              />
-               <h2 className="absolute top-4 left-4 text-3xl tracking-widest font-bold opacity-50">{title}</h2>
+               <h2 className="absolute top-4 right-4 text-3xl tracking-widest font-bold opacity-20">{title}</h2>
         </div>
     )
 }
