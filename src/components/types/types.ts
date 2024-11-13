@@ -9,7 +9,7 @@ export type ButtonProps = {
   }
   
 export type InputProps = {
-    styleType: 'feedback' | 'addFeedBack' | 'authForm',
+    styleType: 'feedback' | 'addFeedBack',
     type: string,
     name: string,
     value: string,
