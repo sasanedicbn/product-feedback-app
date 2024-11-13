@@ -8,6 +8,7 @@ import store from './components/store/store';
 import FeedBack from './components/FeedBack/FeedBack';
 import Details from './components/Details/Details';
 import RoadmapPage from './components/Roadmap/RoadmapPage';
+import Login from './auth/Login';
 
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
     {
       path: '/add',
       element: <FeedBack />,
+    },
+    {
+      path: '/login',
+      element: <Login />,
     },
     {
       path:'/details/:id',
