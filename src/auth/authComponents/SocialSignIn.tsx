@@ -10,13 +10,13 @@ const SocialSignIn = () => {
                 <hr className="flex-grow border-gray-300" />
             </div>
             <div className="flex gap-4">
-                <Button type='iconLogIn'>
+                <Button type='iconSignUp'>
                     <FaGoogle className="w-6 h-6 hover:text-red-400" />
                 </Button>
-                <Button type='iconLogIn'>
+                <Button type='iconSignUp'>
                     <FaFacebook className="w-6 h-6 hover:text-blue-600" />
                 </Button>
-                <Button type="iconLogIn">
+                <Button type="iconSignUp">
                     <FaInstagram className="w-6 h-6 hover:text-pink-500" />
                 </Button>
             </div>
