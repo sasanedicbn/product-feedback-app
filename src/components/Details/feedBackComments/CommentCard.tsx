@@ -36,4 +36,3 @@ const CommentCard = ({ user_image, user, user_name, user_comment, buttonType, co
 };
 
 export default CommentCard;
-// WORKING IN SUPABASE TABLES

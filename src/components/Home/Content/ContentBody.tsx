@@ -13,13 +13,15 @@ const ContentBody = () => {
     useEffect(() => {
         const fetchComments = async () => {
             const data = await fetchFeedbacksWithAllRelations();
+            console.log(data, 'data 22')
             dispatch(setCategories(data));
         };
         fetchComments();
     }, []);
 
     const commentsData = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
-
+   
+    console.log(commentsData, 'commentsData 22')
     return (
         <div className="space-y-4"> 
             {commentsData.map((item: FeedbackItem) => (

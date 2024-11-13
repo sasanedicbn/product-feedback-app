@@ -27,10 +27,8 @@ const Details = () => {
 const homePageHanlder = () => {
     navigation('/')
 }
-    console.log(feedback, 'feedback from store');
 
     if (!feedback) return <div>Loading...</div>;
-    // bg-white w-full h-[140px] p-4 rounded-lg flex justify-between items-center px-6
     return (
         <div className="bg-gray-100 flex gap-5 flex-col h-[1000px] px-80 pt-16 font-serif">
             <div className="flex items-center justify-between">
