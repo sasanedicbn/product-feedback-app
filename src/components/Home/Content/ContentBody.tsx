@@ -5,8 +5,6 @@ import { setCategories } from "../../store/slices/categorySlice";
 import { FeedbackItem } from "../../types/types";
 import UserFeedBack from "./UserFeedBack";
 
-
-
 const ContentBody = () => {
     const dispatch = useDispatch();
 
@@ -21,7 +19,6 @@ const ContentBody = () => {
 
     const commentsData = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
    
-    console.log(commentsData, 'commentsData 22')
     return (
         <div className="space-y-4"> 
             {commentsData.map((item: FeedbackItem) => (

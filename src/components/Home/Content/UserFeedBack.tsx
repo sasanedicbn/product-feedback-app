@@ -4,7 +4,6 @@ import ContentItem from "./ContentBodyItems.tsx/ContentItem";
 import Upvotes from "./ContentBodyItems.tsx/Upvotes";
 
 const UserFeedBack = ({item}) => {
-    console.log(item, 'item 22')
     return(
     <Wrapper type="feedBackContainer">
         <div className="flex items-start gap-8">
