@@ -1,5 +1,5 @@
-import React from 'react';
 import { FaGoogle, FaFacebook, FaInstagram } from 'react-icons/fa';
+import Button from '../../components/UX/Button';
 
 const SocialSignIn = () => {
     return (
@@ -10,15 +10,15 @@ const SocialSignIn = () => {
                 <hr className="flex-grow border-gray-300" />
             </div>
             <div className="flex gap-4">
-                <button className="p-2 rounded-full border border-gray-300 text-gray-500 hover:text-red-400">
-                    <FaGoogle className="w-6 h-6" />
-                </button>
-                <button className="p-2 rounded-full border border-gray-300 text-gray-500 hover:text-blue-600">
-                    <FaFacebook className="w-6 h-6" />
-                </button>
-                <button className="p-2 rounded-full border border-gray-300 text-gray-500 hover:text-pink-500">
-                    <FaInstagram className="w-6 h-6" />
-                </button>
+                <Button type='iconLogIn'>
+                    <FaGoogle className="w-6 h-6 hover:text-red-400" />
+                </Button>
+                <Button type='iconLogIn'>
+                    <FaFacebook className="w-6 h-6 hover:text-blue-600" />
+                </Button>
+                <Button type="iconLogIn">
+                    <FaInstagram className="w-6 h-6 hover:text-pink-500" />
+                </Button>
             </div>
         </div>
     );

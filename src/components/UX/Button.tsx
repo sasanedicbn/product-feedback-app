@@ -8,7 +8,8 @@ const Button = ({ type, children, onClick, disabled = false }:ButtonProps) => {
         addFeedBack: `${base}  text-white flex items-center bg-purple-500 rounded-lg hover:bg-purple-600 transition-all duration-300`,
         cancelFeedBack: `${base} w-[86px] text-white flex items-center bg-blue-900 rounded-lg hover:bg-blue-800 transition-all duration-300`,
         editFeedBack: `${base}  text-gray-100 flex items-center bg-blue-500 rounded-lg hover:bg-blue-800 transition-all duration-300 `,
-        replay: `text-blue-600 font-semibold hover:text-blue-800 transition duration-150`
+        replay: `text-blue-600 font-semibold hover:text-blue-800 transition duration-150`,
+        iconSignUp: `p-2 rounded-full border border-gray-300 text-gray-500`
     };
     
 
