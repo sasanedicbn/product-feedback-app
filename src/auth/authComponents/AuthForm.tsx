@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Button from "../../components/UX/Button";
 import { useState } from "react";
 import { signIn } from "../../supabase/supabaseFunctions";
 
@@ -20,6 +19,7 @@ const AuthForm = () => {
     if (credentials.email && credentials.password) {
       const data = await signIn(credentials);
       if (data) {
+        console.log(data)
       } else {
       }
     }

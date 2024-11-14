@@ -80,8 +80,16 @@ export async function signIn(credentials) {
             return null;
         }
 
-        console.log("Log in Data:", data);
-        return data;
+        let { data: Users, userError } = await supabase
+         .from('Users')
+         .select("user_image, full_name, user_name")
+         .eq('id', data.user.id )
+         .single()
+
+         if(userError){
+            console.log('UserError', userError.message)
+         }
+        return {data, Users};
     } catch (error) {
         console.error("Unexpected error:", error);
         return null;
