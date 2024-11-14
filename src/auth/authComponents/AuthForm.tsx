@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { signIn } from "../../supabase/supabaseFunctions";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { setUser } from "../../components/store/slices/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const schema = z.object({
   email: z.string().email("Your email is not correct."),
@@ -10,24 +13,27 @@ const schema = z.object({
 });
 
 const AuthForm = () => {
-  const [credentials, setCredentials] = useState('');
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
   });
 
-  const signUpHandler = async () => {
+  const signUpHandler = async (credentials) => {
     if (credentials.email && credentials.password) {
+        console.log('validno u sing up hanlderu')
       const data = await signIn(credentials);
       if (data) {
-        console.log(data)
+        dispatch(setUser(data.users))    
+        navigate('/')
       } else {
+        toast.error('Invalid credentials please try again!')
       }
     }
   };
 
   const onSubmit = (data) => {
-    setCredentials(data);  
-    signUpHandler();       
+    signUpHandler(data);       
   };
 
   return (

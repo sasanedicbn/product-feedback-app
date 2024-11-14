@@ -80,7 +80,7 @@ export async function signIn(credentials) {
             return null;
         }
 
-        let { data: Users, userError } = await supabase
+        let { data: users, userError } = await supabase
          .from('Users')
          .select("user_image, full_name, user_name")
          .eq('id', data.user.id )
@@ -89,7 +89,7 @@ export async function signIn(credentials) {
          if(userError){
             console.log('UserError', userError.message)
          }
-        return {data, Users};
+        return {data, users};
     } catch (error) {
         console.error("Unexpected error:", error);
         return null;
