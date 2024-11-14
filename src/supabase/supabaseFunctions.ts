@@ -66,3 +66,26 @@ export async function fetchFeedbackById(id) {
         return null;
     }
 }
+
+export async function signIn(credentials) {
+    try {
+        let { data, error } = await supabase.auth.signInWithPassword({
+            email: credentials.email,
+            password: credentials.password
+          })
+
+
+        if (error) {
+            console.error("Error fetching feedback by ID:", error);
+            return null;
+        }
+
+        console.log("Log in Data:", data);
+        return data;
+    } catch (error) {
+        console.error("Unexpected error:", error);
+        return null;
+    }
+}
+
+

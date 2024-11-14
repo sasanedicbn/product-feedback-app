@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "../../components/UX/Button";
+import { useState } from "react";
+import { signIn } from "../../supabase/supabaseFunctions";
 
 const schema = z.object({
   email: z.string().email("Your email is not correct."),
@@ -9,36 +11,44 @@ const schema = z.object({
 });
 
 const AuthForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const [credentials, setCredentials] = useState('');
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
   });
 
+  const signUpHandler = async () => {
+    if (credentials.email && credentials.password) {
+      const data = await signIn(credentials);
+      if (data) {
+      } else {
+      }
+    }
+  };
+
   const onSubmit = (data) => {
-    console.log(data, 'data iz forme');
+    setCredentials(data);  
+    signUpHandler();       
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-3/4">
-        <input
-          type="email"
-          placeholder="Email"
-          className="border p-2 rounded-md"
-          {...register("email")}
-        />
-        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+      <input
+        type="email"
+        placeholder="Email"
+        className="border p-2 rounded-md"
+        {...register("email")}
+      />
+      {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+
+      <input
+        type="password"
+        placeholder="Password"
+        className="border p-2 rounded-md"
+        {...register("password")}
+      />
+      {errors.password && <p className="text-red-500">{errors.password.message}</p>}
       
-        <input
-          type="password"
-          placeholder="Password"
-          className="border p-2 rounded-md"
-          {...register("password")}
-        />
-        {errors.password && <p className="text-red-500">{errors.password.message}</p>}
-      <Button onClick={() => {}} type="signUp">Sign Up</Button>
+      <button type="submit" className="bg-blue-500 text-white py-2 rounded-md mt-4">Sign Up</button> 
     </form>
   );
 };
