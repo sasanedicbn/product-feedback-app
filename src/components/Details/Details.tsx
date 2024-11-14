@@ -11,6 +11,7 @@ import AddComment from "./addComment.tsx/AddComment";
 
 const Details = () => {
     const { id } = useParams();
+    console.log(id, 'IJDI')
     const dispatch = useDispatch();
     const navigation = useNavigate()
     const feedback = useSelector((state) => state.feedback.feedback);
@@ -46,7 +47,7 @@ const homePageHanlder = () => {
               </div>
             <UserFeedBack item={feedback}/>
             <FeedBackComments feedback={feedback}/>
-            <AddComment/>
+            <AddComment id={id}/>
         </div>
     );
 };

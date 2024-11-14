@@ -6,7 +6,7 @@ import Textarea from "../../UX/Textarea";
 import { useSelector } from "react-redux";
 import { postComment } from "../../../supabase/supabaseFunctions";
 
-const AddComment = () => {
+const AddComment = ({id}) => {
     const [lengthComment, setLengthComment] = useState(225);
     const [updateComment, setUpdateComment] = useState({});
     const currentUser = useSelector((user) => user.user.user);
@@ -20,7 +20,8 @@ const AddComment = () => {
             user: currentUser.full_name,
             user_name: currentUser.user_name,
             user_image: currentUser.user_image,
-            user_comment: comment
+            user_comment: comment,
+            feedback_id: id
         });
     };
 
