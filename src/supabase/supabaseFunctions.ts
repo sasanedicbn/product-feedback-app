@@ -95,5 +95,28 @@ export async function signIn(credentials) {
         return null;
     }
 }
+export async function postComment(commentData) {
+    try {
+        const { data, error } = await supabase
+            .from('Comments')
+            .insert([
+                {
+                    user: commentData.user,
+                    user_name: commentData.user_name,
+                    user_image: commentData.user_image,
+                    user_comment: commentData.user_comment
+                }
+            ])
+            .select();
 
+        if (error) {
+            throw new Error(error.message);
+        }
+        console.log('POSLATI PODACI', data)
+        return data;
+    } catch (error) {
+        console.error("Unexpected error:", error);
+        return null;
+    }
+}
 
