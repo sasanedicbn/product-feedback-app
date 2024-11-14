@@ -4,18 +4,19 @@ import Wrapper from "../../UX/Wrapper";
 import LengthComments from "./LengthComments";
 import Textarea from "../../UX/Textarea";
 import { useSelector } from "react-redux";
+import { postComment } from "../../../supabase/supabaseFunctions";
 
 const AddComment = () => {
     const [lengthComment, setLengthComment] = useState(225);
-    const [postComment, setPostComment] = useState({});
+    const [updateComment, setUpdateComment] = useState({});
     const currentUser = useSelector((user) => user.user.user);
     console.log('CURRENT USER', currentUser);
 
-    const postCommentHandler = (e) => {
+    const updateCommentHandler = (e) => {
         const comment = e.target.value;
         console.log('comment za text-area', comment);
-        console.log('postComment objekat', postComment)
-        setPostComment({
+        console.log('postComment objekat', updateComment)
+        setUpdateComment({
             user: currentUser.full_name,
             user_name: currentUser.user_name,
             user_image: currentUser.user_image,
@@ -23,6 +24,9 @@ const AddComment = () => {
         });
     };
 
+    const postCommentHandler = async(comment) => {
+        postComment(comment)
+       }
     const updateLengthComment = (e) => {
         const remainingLength = 225 - e.target.value.length;
         setLengthComment(remainingLength >= 0 ? remainingLength : 0);
@@ -30,7 +34,7 @@ const AddComment = () => {
 
     const handleChange = (e) => {
         updateLengthComment(e);
-        postCommentHandler(e);
+        updateCommentHandler(e);
     };
 
     return (
@@ -46,7 +50,8 @@ const AddComment = () => {
                 onChange={handleChange} 
                 maxLength={225}
             />
-            <LengthComments length={lengthComment} />
+            <button onClick={postCommentHandler}></button>
+            <LengthComments length={lengthComment} postCommentHandler={postCommentHandler} />
         </Wrapper>
     );
 };
