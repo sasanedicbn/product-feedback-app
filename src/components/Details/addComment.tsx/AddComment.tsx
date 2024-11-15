@@ -17,6 +17,7 @@ const AddComment = ({id}) => {
         console.log('comment za text-area', comment);
         console.log('postComment objekat', updateComment)
         setUpdateComment({
+            // id: '1',
             user: currentUser.full_name,
             user_name: currentUser.user_name,
             user_image: currentUser.user_image,
@@ -25,8 +26,9 @@ const AddComment = ({id}) => {
         });
     };
 
-    const postCommentHandler = async(comment) => {
-        postComment(comment)
+    const postCommentHandler = async() => {
+        console.log('iz fn', updateComment)
+        postComment(updateComment)
        }
     const updateLengthComment = (e) => {
         const remainingLength = 225 - e.target.value.length;
@@ -51,7 +53,6 @@ const AddComment = ({id}) => {
                 onChange={handleChange} 
                 maxLength={225}
             />
-            <button onClick={postCommentHandler}></button>
             <LengthComments length={lengthComment} postCommentHandler={postCommentHandler} />
         </Wrapper>
     );

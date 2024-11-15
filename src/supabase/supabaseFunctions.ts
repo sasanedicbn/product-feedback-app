@@ -96,15 +96,18 @@ export async function signIn(credentials) {
     }
 }
 export async function postComment(commentData) {
+    const randomId = Math.floor(Math.random() * 100000);
     try {
         const { data, error } = await supabase
             .from('Comments')
             .insert([
                 {
+                    id:randomId ,
                     user: commentData.user,
                     user_name: commentData.user_name,
                     user_image: commentData.user_image,
-                    user_comment: commentData.user_comment
+                    user_comment: commentData.user_comment,
+                    feedback_id: commentData.feedback_id
                 }
             ])
             .select();
