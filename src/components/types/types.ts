@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export type ButtonProps = {
-    type: 'login' | 'cancelFeedBack' | 'addFeedBack' | 'replay' | 'signUp' | 'iconSignUp' ;
+    type: 'login' | 'cancelFeedBack' | 'addFeedBack' | 'replay' | 'iconSignUp' ;
     buttonType?: 'button' | 'submit' | 'reset'; 
     children: React.ReactNode;
     onClick?: () => void; 
