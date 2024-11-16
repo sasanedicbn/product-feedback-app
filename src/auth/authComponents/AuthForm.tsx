@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "../../supabase/supabaseFunctions";
@@ -9,35 +9,42 @@ import { useNavigate } from "react-router-dom";
 
 const schema = z.object({
   email: z.string().email("Your email is not correct."),
-  password: z.string().min(6, "Password must have least 6 characters."),
+  password: z.string().min(6, "Password must have at least 6 characters."),
 });
 
+type FormData = z.infer<typeof schema>;
+
 const AuthForm = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
-  const signUpHandler = async (credentials) => {
+  const signUpHandler: SubmitHandler<FormData> = async (credentials) => {
     if (credentials.email && credentials.password) {
-        console.log('validno u sing up hanlderu')
-      const data = await signIn(credentials);
-      if (data) {
-        dispatch(setUser(data.users))    
-        navigate('/')
-      } else {
-        toast.error('Invalid credentials please try again!')
+      try {
+        const data = await signIn(credentials); 
+        if (data) {
+          dispatch(setUser(data.users)); 
+          navigate("/");
+        } else {
+          toast.error("Invalid credentials, please try again!");
+        }
+      } catch (error) {
+        console.error("Error during sign in:", error);
+        toast.error("Something went wrong. Please try again.");
       }
     }
   };
 
-  const onSubmit = (data) => {
-    signUpHandler(data);       
-  };
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-3/4">
+    <form onSubmit={handleSubmit(signUpHandler)} className="flex flex-col gap-4 w-3/4">
       <input
         type="email"
         placeholder="Email"
@@ -53,8 +60,10 @@ const AuthForm = () => {
         {...register("password")}
       />
       {errors.password && <p className="text-red-500">{errors.password.message}</p>}
-      
-      <button type="submit" className="bg-blue-500 text-white py-2 rounded-md mt-4">Sign Up</button> 
+
+      <button type="submit" className="bg-blue-500 text-white py-2 rounded-md mt-4">
+        Sign Up
+      </button>
     </form>
   );
 };
