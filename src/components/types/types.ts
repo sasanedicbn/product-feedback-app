@@ -4,7 +4,7 @@ export type ButtonProps = {
     type: 'login' | 'cancelFeedBack' | 'addFeedBack' | 'replay' | 'signUp' | 'iconSignUp' ;
     buttonType?: 'button' | 'submit' | 'reset'; 
     children: React.ReactNode;
-    onClick: () => void; 
+    onClick?: () => void; 
     disabled?: boolean; 
   }
   
