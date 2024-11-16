@@ -1,6 +1,6 @@
 import AuthForm from "./authComponents/AuthForm";
 import ImageBackgorund from "./authComponents/ImageBackgorund";
-import SocialSignIn from "./authComponents/SocialSignin";
+import SocialSignIn from "./authComponents/SocialSignIn";
 import Title from "./authComponents/Title";
 
 
