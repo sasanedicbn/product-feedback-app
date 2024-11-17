@@ -96,3 +96,17 @@ export type TextareaProps = {
     onChange: () => void,
     maxLength: number
 }
+
+export type Comments = {
+    id: string; 
+    user_image: string;
+    user: string;
+    user_name: string;
+    user_comment: string;
+}
+
+export type FeedBackCommentsProps = {
+    feedback: {
+        Comments: Comments[] | null;
+    };
+}
