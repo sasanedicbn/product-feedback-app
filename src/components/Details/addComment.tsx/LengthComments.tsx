@@ -1,4 +1,3 @@
-import { postComment } from "../../../supabase/supabaseFunctions";
 import Button from "../../UX/Button";
 
 const LengthComments = ({length, postCommentHandler}) => {

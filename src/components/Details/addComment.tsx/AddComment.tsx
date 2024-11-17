@@ -42,7 +42,10 @@ const AddComment = ({id}) => {
 
     return (
         <Wrapper type="feedBackComments">
-          
+            <FeedBackTitle
+                title="Add Comment"
+                subtitle="Share with us your opinion about this feedback"
+            />
             <Textarea
                 placeholder="Add comment"
                 rows={4}
