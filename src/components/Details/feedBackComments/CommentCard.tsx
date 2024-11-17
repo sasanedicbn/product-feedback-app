@@ -1,13 +1,19 @@
 import { useState } from "react";
 import Button from "../../UX/Button";
-import ReplayComment from "./ReplayComment";
 import PostReplay from "./PostReplay";
 
-const CommentCard = ({ user_image, user, user_name, user_comment, buttonType, containerClass = "", Comments }) => {
+const CommentCard = ({
+    user_image,
+    user,
+    user_name,
+    user_comment,
+    buttonType,
+    containerClass = "",
+}: CommentCardProps) => {
     const [isReplyOpen, setIsReplyOpen] = useState(false);
 
     const toggleReply = () => {
-        setIsReplyOpen(prevState => !prevState);
+        setIsReplyOpen((prevState) => !prevState);
     };
 
     return (
@@ -27,8 +33,9 @@ const CommentCard = ({ user_image, user, user_name, user_comment, buttonType, co
                         Reply
                     </Button>
                 </div>
-                <p className="text-gray-500 text-sm font-light mt-4 break-all">{user_comment}</p>
-                {/* <ReplayComment Comments={Comments} /> */}
+                <p className="text-gray-500 text-sm font-light mt-4 break-all">
+                    {user_comment}
+                </p>
                 {isReplyOpen && <PostReplay />}
             </div>
         </div>

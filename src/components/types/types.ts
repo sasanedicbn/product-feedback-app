@@ -110,3 +110,11 @@ export type FeedBackCommentsProps = {
         Comments: Comments[] | null;
     };
 }
+export type CommentCardProps = {
+    user_image: string;
+    user: string;
+    user_name: string;
+    user_comment: string;
+    buttonType?: string;
+    containerClass?: string;
+}
