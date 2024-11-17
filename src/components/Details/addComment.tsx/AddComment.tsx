@@ -17,6 +17,7 @@ const AddComment = ({id}) => {
         console.log('comment za text-area', comment);
         console.log('postComment objekat', updateComment)
         setUpdateComment({
+            // id: '1',
             user: currentUser.full_name,
             user_name: currentUser.user_name,
             user_image: currentUser.user_image,
@@ -41,10 +42,7 @@ const AddComment = ({id}) => {
 
     return (
         <Wrapper type="feedBackComments">
-            <FeedBackTitle
-                title="Add Comment"
-                subtitle="Share with us your opinion about this feedback"
-            />
+          
             <Textarea
                 placeholder="Add comment"
                 rows={4}
