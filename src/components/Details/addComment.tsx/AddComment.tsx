@@ -10,7 +10,6 @@ const AddComment = ({id}) => {
     const [lengthComment, setLengthComment] = useState(225);
     const [updateComment, setUpdateComment] = useState({});
     const currentUser = useSelector((user) => user.user.user);
-    console.log('CURRENT USER', currentUser);
 
     const updateCommentHandler = (e) => {
         const comment = e.target.value;
@@ -27,15 +26,14 @@ const AddComment = ({id}) => {
     };
 
     const postCommentHandler = async() => {
-        console.log('iz fn', updateComment)
         postComment(updateComment)
        }
-    const updateLengthComment = (e) => {
+    const updateLengthComment = (e:any) => {
         const remainingLength = 225 - e.target.value.length;
         setLengthComment(remainingLength >= 0 ? remainingLength : 0);
     };
 
-    const handleChange = (e) => {
+    const handleChange = (e:any) => {
         updateLengthComment(e);
         updateCommentHandler(e);
     };
