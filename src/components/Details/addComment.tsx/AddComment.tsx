@@ -17,7 +17,6 @@ const AddComment = ({id}) => {
         console.log('comment za text-area', comment);
         console.log('postComment objekat', updateComment)
         setUpdateComment({
-            // id: '1',
             user: currentUser.full_name,
             user_name: currentUser.user_name,
             user_image: currentUser.user_image,
