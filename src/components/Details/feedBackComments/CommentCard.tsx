@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../../UX/Button";
 import PostReplay from "./PostReplay";
+import { CommentCardProps } from "../../types/types";
 
 const CommentCard = ({
     user_image,
