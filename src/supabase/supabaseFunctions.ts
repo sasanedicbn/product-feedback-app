@@ -119,7 +119,4 @@ export async function postComment(commentData) {
         return data;
     } catch (error) {
         console.error("Unexpected error:", error);
-        return null;
-    }
-}
-
+    
