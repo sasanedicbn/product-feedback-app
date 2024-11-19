@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 const SingleCategory = ({ category }) => {
+    console.log(category, 'trebalo bi da je single category')
     return (
         <motion.li
             initial={{ opacity: 0, x: -50 }}

@@ -7,7 +7,7 @@ import Option from "../UX/Option";
 import Action from "../UX/Action";
 import AnimationCircle from "../UX/AnimationCircle";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { postFeedback } from "../../supabase/supabaseFunctions";
 import { useDispatch } from "react-redux";
 import { setCategories } from "../store/slices/categorySlice";
@@ -22,10 +22,6 @@ const FeedBack = () => {
         feedback: ""
     });
     
-    // dispatch(setCategories(data));
-    // const feedbacks = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
-
-
     const FeedBackInputHandler = (e) => {
       const {name, value} = e.target
       setFeedbackData((prevData) =>({
@@ -45,11 +41,6 @@ const FeedBack = () => {
       }
       console.log(feedback, 'ovo se reurn')
     }
-
-
-    // const feedbackHandler = () => {
-    //    const hande = await postFeedBack()
-    // }
 
     const homePageHandler = () => {
         navigation('/')
