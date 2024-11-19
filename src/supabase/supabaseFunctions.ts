@@ -124,3 +124,28 @@ export async function postComment(commentData) {
     }
 }
 
+export async function postFeedback(feedback) {
+    const randomId = Math.floor(Math.random() * 100000);
+    try {
+        const { data, error } = await supabase
+            .from('Feedbacks')
+            .insert([
+                {
+                    id:randomId,
+                    title: feedback.title,
+                    category_id: feedback.category_id,
+                    feedback: feedback.feedback,
+                }
+            ])
+            .select();
+
+        if (error) {
+            throw new Error(error.message);
+        }
+        console.log('POSLATI PODACI', data)
+        return data;
+    } catch (error) {
+        console.error("Unexpected error:", error);
+        return null;
+    }
+}

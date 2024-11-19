@@ -8,9 +8,14 @@ import Action from "../UX/Action";
 import AnimationCircle from "../UX/AnimationCircle";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { postFeedback } from "../../supabase/supabaseFunctions";
+import { useDispatch } from "react-redux";
+import { setCategories } from "../store/slices/categorySlice";
+import { toast } from "react-toastify";
 
 const FeedBack = () => {
     const navigation = useNavigate()
+    const dispatch = useDispatch()
     const [feedbackData, setFeedbackData] = useState({
         title: "",
         category_id: "",
@@ -29,9 +34,19 @@ const FeedBack = () => {
       }))
     }
 
-    useEffect(() => {
-        console.log(feedbackData, 'Feedback data updated');
-    }, [feedbackData]);
+    const postNewFeedback = async() => {
+      const feedback = await postFeedback(feedbackData)
+      if(feedback){
+        dispatch(setCategories(feedback))
+        navigation('/')
+        toast.success('New Feedback!')
+      } else{
+        toast.error('Error, sorry! Try again')
+      }
+      console.log(feedback, 'ovo se reurn')
+    }
+
+
     // const feedbackHandler = () => {
     //    const hande = await postFeedBack()
     // }
@@ -126,7 +141,7 @@ const FeedBack = () => {
                     <Button type="cancelFeedBack" onClick={homePageHandler}>
                         Cancel
                     </Button>
-                    <Button type="addFeedBack" onClick={() => console.log("Feedback added")}>
+                    <Button type="addFeedBack" onClick={postNewFeedback}>
                         Add Feedback
                     </Button>
                 </motion.section>
