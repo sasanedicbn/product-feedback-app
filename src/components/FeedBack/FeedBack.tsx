@@ -11,17 +11,36 @@ import { useState } from "react";
 
 const FeedBack = () => {
     const navigation = useNavigate()
-    const [addFeedBack, setAddFeedBack] = useState({})
+    const [feedbackData, setFeedbackData] = useState({
+        title: "",
+        category_id: "",
+        feedback: ""
+    });
+    
     // dispatch(setCategories(data));
-    // const commentsData = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
+    // const feedbacks = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
 
 
     // const feedBackInputData = (e) => {
-    // setAddFeedBack({
+    // ({
     //     title: 
     //     category_id:
     //     feedback
     // })
+    // }
+
+    const FeedBackInputHandler = (e) => {
+    
+      setAddFeedback({
+        id: randomId,
+        title: feedback.title,
+        category_id: feedback.category_id,
+        feedback: feedback.feedback,
+      })
+    }
+
+    // const feedbackHandler = () => {
+    //    const hande = await postFeedBack()
     // }
 
     const homePageHandler = () => {
