@@ -7,9 +7,22 @@ import Option from "../UX/Option";
 import Action from "../UX/Action";
 import AnimationCircle from "../UX/AnimationCircle";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const FeedBack = () => {
     const navigation = useNavigate()
+    const [addFeedBack, setAddFeedBack] = useState({})
+    // dispatch(setCategories(data));
+    // const commentsData = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
+
+
+    // const feedBackInputData = (e) => {
+    // setAddFeedBack({
+    //     title: 
+    //     category_id:
+    //     feedback
+    // })
+    // }
 
     const homePageHandler = () => {
         navigation('/')
@@ -67,11 +80,11 @@ const FeedBack = () => {
                         className="mb-4"
                     >
                         <Option value="">Select category</Option>
-                        <Option value="feature">Feature</Option>
-                        <Option value="ui">UI</Option>
-                        <Option value="ux">UX</Option>
-                        <Option value="enhancement">Enhancement</Option>
-                        <Option value="bug">Bug</Option>
+                        <Option value="6">Feature</Option>
+                        <Option value="2">UI</Option>
+                        <Option value="3">UX</Option>
+                        <Option value="4">Enhancement</Option>
+                        <Option value="5">Bug</Option>
                     </Select>
                 </motion.div>
 

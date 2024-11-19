@@ -95,6 +95,7 @@ export async function signIn(credentials) {
         return null;
     }
 }
+
 export async function postComment(commentData) {
     const randomId = Math.floor(Math.random() * 100000);
     try {
@@ -119,4 +120,7 @@ export async function postComment(commentData) {
         return data;
     } catch (error) {
         console.error("Unexpected error:", error);
-    
+        return null;
+    }
+}
+
