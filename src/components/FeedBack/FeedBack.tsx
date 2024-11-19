@@ -7,7 +7,7 @@ import Option from "../UX/Option";
 import Action from "../UX/Action";
 import AnimationCircle from "../UX/AnimationCircle";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const FeedBack = () => {
     const navigation = useNavigate()
@@ -21,24 +21,17 @@ const FeedBack = () => {
     // const feedbacks = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
 
 
-    // const feedBackInputData = (e) => {
-    // ({
-    //     title: 
-    //     category_id:
-    //     feedback
-    // })
-    // }
-
     const FeedBackInputHandler = (e) => {
-    
-      setAddFeedback({
-        id: randomId,
-        title: feedback.title,
-        category_id: feedback.category_id,
-        feedback: feedback.feedback,
-      })
+      const {name, value} = e.target
+      setFeedbackData((prevData) =>({
+        ...prevData,
+        [name] : value
+      }))
     }
 
+    useEffect(() => {
+        console.log(feedbackData, 'Feedback data updated');
+    }, [feedbackData]);
     // const feedbackHandler = () => {
     //    const hande = await postFeedBack()
     // }
@@ -80,7 +73,7 @@ const FeedBack = () => {
                         name="title" 
                         styleType="addFeedBack" 
                         placeholder="Enter feedback title"
-                        onChange={() => console.log('')}
+                        onChange={FeedBackInputHandler}
                     />
                 </motion.div>
 
@@ -94,8 +87,8 @@ const FeedBack = () => {
                     transition={{ delay: 0.7, duration: 0.6 }}
                 >
                     <Select 
-                        name="category" 
-                        onChange={(e) => console.log("Selected category:", e.target.value)}
+                        name="category_id" 
+                        onChange={FeedBackInputHandler}
                         className="mb-4"
                     >
                         <Option value="">Select category</Option>
@@ -119,6 +112,8 @@ const FeedBack = () => {
                     <textarea 
                         className="w-full p-2 border rounded-lg bg-gray-200 text-gray-700 h-32 mb-6"
                         placeholder="Describe the feedback"
+                        name='feedback'
+                        onChange={FeedBackInputHandler}
                     />
                 </motion.div>
 
