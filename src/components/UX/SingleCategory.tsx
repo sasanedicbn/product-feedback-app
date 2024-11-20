@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { sortFeedBacksByCategory } from "../../supabase/supabaseFunctions";
 
 const SingleCategory = ({ category }) => {
     const [currentCategory, setCurrentCategory] = useState('')
     const selectedCategoryHandler = () => {
-        setCurrentCategory(category); 
+        sortFeedBacksByCategory(category)
     };
     console.log('currentCategoriiiii', currentCategory)
 

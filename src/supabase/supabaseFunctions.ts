@@ -149,16 +149,18 @@ export async function postFeedback(feedback) {
         return null;
     }
 }
-export async function sortFeedBacksByCategory(category) {
+export async function sortFeedBacksByCategory(categoryId) {
     try {
+        console.log(categoryId, 'da li je dobro')
         const { data, error } = await supabase
             .from("Feedbacks")
             .select("*")
-            .eq("Category.Category", category); 
+            .eq("category_id", categoryId); 
 
         if (error) {
             throw new Error(error.message);
         }
+        console.log(data, 'sortfeedbacksbycateort FNN')
         return data;
     } catch (error) {
         console.error("Unexpected error:", error);
