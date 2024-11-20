@@ -151,7 +151,7 @@ export async function postFeedback(feedback) {
 }
 export async function sortFeedBacksByCategory(categoryId) {
     try {
-        let query = supabase.from("Feedbacks").select("*");
+        let query = supabase.from("Feedbacks").select(`*,Comments (*), Category (*)`);
 
         if (categoryId !== 'All') {
             query = query.eq("category_id", categoryId);
