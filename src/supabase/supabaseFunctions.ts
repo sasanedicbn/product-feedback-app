@@ -151,19 +151,23 @@ export async function postFeedback(feedback) {
 }
 export async function sortFeedBacksByCategory(categoryId) {
     try {
-        console.log(categoryId, 'da li je dobro')
-        const { data, error } = await supabase
-            .from("Feedbacks")
-            .select("*")
-            .eq("category_id", categoryId); 
+        let query = supabase.from("Feedbacks").select("*");
+
+        if (categoryId !== 'All') {
+            query = query.eq("category_id", categoryId);
+        }
+
+        const { data, error } = await query;
 
         if (error) {
             throw new Error(error.message);
         }
-        console.log(data, 'sortfeedbacksbycateort FNN')
+
+        console.log(data, 'sortfeedbacksbycateort FNN');
         return data;
     } catch (error) {
         console.error("Unexpected error:", error);
         return null;
     }
 }
+

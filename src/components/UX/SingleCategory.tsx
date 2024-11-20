@@ -1,13 +1,17 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { sortFeedBacksByCategory } from "../../supabase/supabaseFunctions";
+import { useDispatch } from "react-redux";
+import { setCategories } from "../store/slices/categorySlice";
 
 const SingleCategory = ({ category }) => {
-    const [currentCategory, setCurrentCategory] = useState('')
-    const selectedCategoryHandler = () => {
-        sortFeedBacksByCategory(category)
+const dispatch = useDispatch()
+
+     const selectedCategoryHandler = async () => {
+     const currentCategory = await sortFeedBacksByCategory(category)
+     if(currentCategory){
+        dispatch(setCategories(currentCategory))
+     }
     };
-    console.log('currentCategoriiiii', currentCategory)
 
     return (
         <motion.li
