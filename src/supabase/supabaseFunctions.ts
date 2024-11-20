@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { supabase } from "./supabase";
 
 export const fetchCategory = async (tableName: string) => {
@@ -9,7 +10,6 @@ export const fetchCategory = async (tableName: string) => {
         if (error) {
             throw new Error(error.message);
         }
-        console.log(data, 'sve iz category')
 
         return data;
     } catch (error) {
@@ -33,8 +33,6 @@ export async function fetchFeedbacksWithAllRelations() {
             console.error("Error fetching feedbacks with all relations:", error);
             return null;
         }
-
-        console.log("Feedbacks with related data:", feedbacks);
         return feedbacks;
     } catch (error) {
         console.error("Unexpected error:", error);
@@ -116,10 +114,9 @@ export async function postComment(commentData) {
         if (error) {
             throw new Error(error.message);
         }
-        console.log('POSLATI PODACI', data)
         return data;
     } catch (error) {
-        console.error("Unexpected error:", error);
+        toast.error("Unexpected error");
         return null;
     }
 }
@@ -142,10 +139,9 @@ export async function postFeedback(feedback) {
         if (error) {
             throw new Error(error.message);
         }
-        console.log('POSLATI PODACI', data)
         return data;
     } catch (error) {
-        console.error("Unexpected error:", error);
+        toast.error("Unexpected error");
         return null;
     }
 }
@@ -163,10 +159,9 @@ export async function sortFeedBacksByCategory(categoryId:string) {
             throw new Error(error.message);
         }
 
-        console.log(data, 'sortfeedbacksbycateort FNN');
         return data;
     } catch (error) {
-        console.error("Unexpected error:", error);
+        toast.error("Unexpected error");
         return null;
     }
 }
