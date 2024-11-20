@@ -12,7 +12,6 @@ const ContentTitle = () => {
         setSelectedSortOption(option);
     };
     const feedBackPageHandler = () => {
-        console.log('clicked')
         navigation('/add')
       }
 
