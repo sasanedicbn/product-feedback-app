@@ -149,3 +149,19 @@ export async function postFeedback(feedback) {
         return null;
     }
 }
+export async function sortFeedBacksByCategory(category) {
+    try {
+        const { data, error } = await supabase
+            .from("Feedbacks")
+            .select("*")
+            .eq("Category.Category", category); 
+
+        if (error) {
+            throw new Error(error.message);
+        }
+        return data;
+    } catch (error) {
+        console.error("Unexpected error:", error);
+        return null;
+    }
+}
