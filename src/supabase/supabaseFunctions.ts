@@ -149,7 +149,7 @@ export async function postFeedback(feedback) {
         return null;
     }
 }
-export async function sortFeedBacksByCategory(categoryId) {
+export async function sortFeedBacksByCategory(categoryId:string) {
     try {
         let query = supabase.from("Feedbacks").select(`*,Comments (*), Category (*)`);
 
