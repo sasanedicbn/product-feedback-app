@@ -1,6 +1,7 @@
 import { HiChevronDown, HiChevronUp, HiLightBulb, HiPlus } from "react-icons/hi";
 import { IconProps } from "../types/types";
 import { FaArrowLeft, FaCheck, FaRegComment } from "react-icons/fa";
+import { FiSearch } from "react-icons/fi";
 
 const Icon = ({ name, size = 84, color = 'black', onClick= () => {}}:IconProps) => {
 
@@ -12,6 +13,7 @@ const Icon = ({ name, size = 84, color = 'black', onClick= () => {}}:IconProps) 
     check: <FaCheck size={size} color={color} onClick={onClick}/>,
     message: <FaRegComment size={size} color={color} onClick={onClick}/>,
     back:  <FaArrowLeft size={size} color={color} onClick={onClick}/>,
+    search:  <FiSearch size={size} color={color} onClick={onClick}/>
   };
 
   return icons[name] || null;

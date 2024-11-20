@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCategories } from "../../store/slices/categorySlice";
 import { FeedbackItem } from "../../types/types";
 import UserFeedBack from "./UserFeedBack";
+import EmptyFeedback from "../../UX/EmptyFeedback";
 
 const ContentBody = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,9 @@ const ContentBody = () => {
 
     const commentsData = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
     console.log('commentsData ili feedback', commentsData)
-   
+    if(commentsData.length === 0) {
+        return <EmptyFeedback/>
+    }
     return (
         <div className="space-y-4"> 
             {commentsData.map((item: FeedbackItem) => (
