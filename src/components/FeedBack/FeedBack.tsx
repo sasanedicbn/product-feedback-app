@@ -29,6 +29,7 @@ const FeedBack = () => {
         [name] : value
       }))
     }
+    console.log('objekat koji se salje za feedback',  feedbackData)
 
     const postNewFeedback = async() => {
       const feedback = await postFeedback(feedbackData)
@@ -98,11 +99,11 @@ const FeedBack = () => {
                         className="mb-4"
                     >
                         <Option value="">Select category</Option>
-                        <Option value="6">Feature</Option>
-                        <Option value="2">UI</Option>
-                        <Option value="3">UX</Option>
-                        <Option value="4">Enhancement</Option>
-                        <Option value="5">Bug</Option>
+                        <Option value="Feature">Feature</Option>
+                        <Option value="UI">UI</Option>
+                        <Option value="UX">UX</Option>
+                        <Option value="Enhancement">Enhancement</Option>
+                        <Option value="Bug">Bug</Option>
                     </Select>
                 </motion.div>
 
