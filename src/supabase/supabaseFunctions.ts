@@ -142,6 +142,7 @@ export async function postFeedback(feedback) {
         return data;
     } catch (error) {
         toast.error("Unexpected error");
+        console.log(error.message ,'za post')
         return null;
     }
 }
