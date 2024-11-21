@@ -100,7 +100,7 @@ const FeedBack = () => {
                     >
                         <Option value="">Select category</Option>
                         <Option value="Feature">Feature</Option>
-                        <Option value="UI">UI</Option>
+                        <Option value="Ul">UI</Option>
                         <Option value="UX">UX</Option>
                         <Option value="Enhancement">Enhancement</Option>
                         <Option value="Bug">Bug</Option>
