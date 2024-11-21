@@ -124,28 +124,38 @@ export async function postComment(commentData) {
 export async function postFeedback(feedback) {
     const randomId = Math.floor(Math.random() * 100000);
     try {
-        const { data, error } = await supabase
+        const { data: feedbackData, error: feedbackError } = await supabase
             .from('Feedbacks')
             .insert([
                 {
-                    id:randomId,
+                    id: randomId,
                     title: feedback.title,
                     category_id: feedback.category_id,
                     feedback: feedback.feedback,
-                }
+                },
             ])
             .select();
 
-        if (error) {
-            throw new Error(error.message);
+        if (feedbackError) {
+            throw new Error(feedbackError.message);
         }
-        return data;
+
+        const { data: commentsData, error: commentsError } = await supabase
+            .from('Comments')
+            .select('*');
+
+        if (commentsError) {
+            throw new Error(commentsError.message);
+        }
+
+        return { feedback: feedbackData, comments: commentsData };
     } catch (error) {
         toast.error("Unexpected error");
-        console.log(error.message ,'za post')
+        console.log(error.message, 'za post');
         return null;
     }
 }
+
 export async function sortFeedBacksByCategory(categoryId:string) {
     try {
         let query = supabase.from("Feedbacks").select(`*,Comments (*), Category (*)`);

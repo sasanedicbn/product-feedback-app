@@ -108,7 +108,8 @@ const FeedBack = () => {
                 </motion.div>
 
                 <FeedBackTitle 
-                 btitle="Include any specific comments on what should be improved, added, etc." 
+                    title="Feedback Detail" 
+                    subtitle="Include any specific comments on what should be improved, added, etc." 
                 />
                 <motion.div
                     initial={{ opacity: 0 }}
