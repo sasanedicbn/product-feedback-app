@@ -4,6 +4,7 @@ import Icon from "../../UX/Icon";
 import DropDown from "../../UX/DropDown";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { FeedbackItem } from "../../types/types";
 
 const ContentTitle = () => {
     const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
@@ -15,6 +16,7 @@ const ContentTitle = () => {
     const feedBackPageHandler = () => {
         navigation('/add')
       }
+    
 
     const sortOptions = ["Most Upvotes", "Least Upvotes", "Most Comments", "Least Comments"];
     const commentsData = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
@@ -24,7 +26,7 @@ const ContentTitle = () => {
         <div className="flex items-center justify-between bg-[#464f79] p-4 rounded-lg mb-4">
             <div className="flex items-center">
                 <Icon name="suggestion" size={26} color="white" />
-                <p className="text-white text-lg pl-4 mr-8 font-semibold">${commentsData.length} Suggestions </p>
+                <p className="text-white text-lg pl-4 mr-8 font-semibold">{commentsData.length} Suggestions </p>
                 <DropDown
                     options={sortOptions} 
                     selectedOption={selectedSortOption} 

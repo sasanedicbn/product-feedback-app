@@ -2,16 +2,27 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Icon from "./Icon";
 import { DropDownProps, OptionType } from "../types/types";
+import { sortFeedBacks } from "../../supabase/supabaseFunctions";
+import { useDispatch } from "react-redux";
+import { setCategories } from "../store/slices/categorySlice";
 
 
 
 const DropDown = ({ options, selectedOption, onOptionSelect }: DropDownProps) => {
     const [isOpen, setIsOpen] = useState(false);
+    const dispatch = useDispatch()
 
-    const handleOptionClick = (option: OptionType) => {
+    const handleOptionClick = async (option: OptionType) => {
         onOptionSelect(option);
+        const sortFeedback = await sortFeedBacks(option)
+        if(sortFeedback){
+            console.log('iz if bloka', sortFeedback)
+            dispatch(setCategories(sortFeedback));
+        }
         setIsOpen(false);
     };
+
+    console.log(selectedOption, 'selektovana opcija')
 
     return (
         <div>
