@@ -170,29 +170,34 @@ export async function sortFeedBacksByCategory(categoryId:string) {
     }
 }
 
-// const sortOptions = ["Most Upvotes", "Least Upvotes", "Most Comments", "Least Comments"];
 export async function sortFeedBacks(sortType) {
     try {
-        let query = supabase.from("Feedbacks").select("*,Comments (*), Category (*)"); 
+        let query = supabase.from("Feedbacks").select("*, Comments(*), Category(*)");
 
         switch (sortType) {
             case "Most Upvotes":
-                query = query.order("upvotes", { ascending: false }); 
+                query = query.order("upvotes", { ascending: false });
                 break;
             case "Least Upvotes":
-                query = query.order("upvotes", { ascending: true }); 
+                query = query.order("upvotes", { ascending: true });
                 break;
             default:
-                query = query; 
+                query = query;
         }
 
         const { data, error } = await query;
-        console.log(data, 'unutar fn')
 
         if (error) {
             throw new Error(error.message);
         }
 
+        if (sortType === "Most Comments") {
+            data.sort((a, b) => b.Comments.length - a.Comments.length);
+        } else if (sortType === "Least Comments") {
+            data.sort((a, b) => a.Comments.length - b.Comments.length);
+        }
+
+        console.log(data, "Sortirani podaci");
         return data;
     } catch (error) {
         toast.error("Unexpected error");
@@ -200,5 +205,6 @@ export async function sortFeedBacks(sortType) {
         return null;
     }
 }
+
 
 
