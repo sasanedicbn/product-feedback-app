@@ -32,7 +32,7 @@ const FeedBack = () => {
     console.log('objekat koji se salje za feedback',  feedbackData)
 
     const postNewFeedback = async() => {
-      const feedback = await postFeedback(feedbackData)
+      const feedback = await postFeedback(feedbackData, )
       if(feedback){
         dispatch(setCategories(feedback))
         navigation('/')
