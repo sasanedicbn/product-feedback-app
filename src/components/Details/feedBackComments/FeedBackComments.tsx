@@ -8,7 +8,7 @@ const FeedBackComments = ({ feedback }: FeedBackCommentsProps) => {
     return (
         <Wrapper type="feedBackComments">
             {(!Comments || Comments.length === 0) ? (
-                <p className="text-left text-gray-500">No comments available.</p>
+                <p className="text-gray-500">No comments available.</p>
             ) : (
                 Comments.map((comment) => (
                     <CommentCard
