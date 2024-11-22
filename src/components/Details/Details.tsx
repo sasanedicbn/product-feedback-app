@@ -11,7 +11,6 @@ import AddComment from "./addComment.tsx/AddComment";
 
 const Details = () => {
     const { id } = useParams();
-    console.log(id, 'IJDI')
     const dispatch = useDispatch();
     const navigation = useNavigate()
     const feedback = useSelector((state) => state.feedback.feedback);
@@ -28,7 +27,7 @@ const Details = () => {
 const homePageHanlder = () => {
     navigation('/')
 }
-
+  console.log(feedback, 'za no comments')
     if (!feedback) return <div>Loading...</div>;
     return (
         <div className="bg-gray-100 flex gap-5 flex-col h-[1000px] px-80 pt-16 font-serif">
@@ -46,7 +45,7 @@ const homePageHanlder = () => {
               </Button>
               </div>
             <UserFeedBack item={feedback}/>
-            <FeedBackComments feedback={feedback}/>
+            <FeedBackComments feedback={feedback}/> 
             <AddComment id={id}/>
         </div>
     );

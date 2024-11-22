@@ -150,6 +150,7 @@ export async function postFeedback(feedback) {
 
 
 export async function sortFeedBacksByCategory(categoryId = "", upvotesOrComments = "") {
+    console.log(categoryId, 'prvi arg' , upvotesOrComments, "drugi arg unutar fn");
     try {
         let query = supabase
             .from("Feedbacks")
@@ -167,7 +168,6 @@ export async function sortFeedBacksByCategory(categoryId = "", upvotesOrComments
 
         let sortedData = data;
 
-        console.log(sortedData, 'prije sortiranja')
         switch (upvotesOrComments) {
             case "Most Upvotes":
                 sortedData = data.sort((a, b) => b.upvotes - a.upvotes);
