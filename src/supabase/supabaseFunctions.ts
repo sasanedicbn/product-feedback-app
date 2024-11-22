@@ -149,12 +149,11 @@ export async function postFeedback(feedback) {
 }
 
 
-export async function sortFeedBacksByCategory(categoryId: string, upvotesOrComments = "") {
-    console.log(upvotesOrComments, "unutra funkcije");
+export async function sortFeedBacksByCategory(categoryId = "", upvotesOrComments = "") {
     try {
         let query = supabase
             .from("Feedbacks")
-            .select(`*, Comments(*), Category(*)`); // Povuci sve komentare za svaki feedback
+            .select(`*, Comments(*), Category(*)`); 
 
         if (categoryId !== "All") {
             query = query.eq("category_id", categoryId);
@@ -166,9 +165,9 @@ export async function sortFeedBacksByCategory(categoryId: string, upvotesOrComme
             throw new Error(error.message);
         }
 
-        // Sortiranje lokalno po dužini Comments
         let sortedData = data;
 
+        console.log(sortedData, 'prije sortiranja')
         switch (upvotesOrComments) {
             case "Most Upvotes":
                 sortedData = data.sort((a, b) => b.upvotes - a.upvotes);
@@ -183,7 +182,7 @@ export async function sortFeedBacksByCategory(categoryId: string, upvotesOrComme
                 sortedData = data.sort((a, b) => a.Comments.length - b.Comments.length);
                 break;
             default:
-                break; // Bez dodatnog sortiranja
+                break; 
         }
 
         console.log(sortedData, "sortirani podaci");
@@ -195,42 +194,6 @@ export async function sortFeedBacksByCategory(categoryId: string, upvotesOrComme
     }
 }
 
-
-// export async function sortFeedBacks(sortType) {
-//     try {
-//         let query = supabase.from("Feedbacks").select("*, Comments(*), Category(*)");
-
-//         switch (sortType) {
-//             case "Most Upvotes":
-//                 query = query.order("upvotes", { ascending: false });
-//                 break;
-//             case "Least Upvotes":
-//                 query = query.order("upvotes", { ascending: true });
-//                 break;
-//             default:
-//                 query = query;
-//         }
-
-//         const { data, error } = await query;
-
-//         if (error) {
-//             throw new Error(error.message);
-//         }
-
-//         if (sortType === "Most Comments") {
-//             data.sort((a, b) => b.Comments.length - a.Comments.length);
-//         } else if (sortType === "Least Comments") {
-//             data.sort((a, b) => a.Comments.length - b.Comments.length);
-//         }
-
-//         console.log(data, "Sortirani podaci");
-//         return data;
-//     } catch (error) {
-//         toast.error("Unexpected error");
-//         console.error(error.message);
-//         return null;
-//     }
-// }
 
 
 

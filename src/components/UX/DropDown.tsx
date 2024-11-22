@@ -2,8 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Icon from "./Icon";
 import { DropDownProps, OptionType } from "../types/types";
-import { sortFeedBacks } from "../../supabase/supabaseFunctions";
-import { useDispatch } from "react-redux";
+import { sortFeedBacks, sortFeedBacksByCategory } from "../../supabase/supabaseFunctions";
+import { useDispatch, useSelector } from "react-redux";
 import { setCategories, setCurrentCategory } from "../store/slices/categorySlice";
 
 
@@ -11,20 +11,23 @@ import { setCategories, setCurrentCategory } from "../store/slices/categorySlice
 const DropDown = ({ options, selectedOption, onOptionSelect }: DropDownProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const dispatch = useDispatch()
+    const currentSort = useSelector((state) => state.categories.currentSort)
 
     const handleOptionClick = async (option: OptionType) => {
-        console.log(option, 'sdaaslkdjaskl')
-        onOptionSelect(option);
-        // const sortFeedback = await sortFeedBacks(option)
-        // if(sortFeedback){
-        //     console.log('iz if bloka', sortFeedback)
-        //     dispatch(setCategories(sortFeedback));
-        // }
-        dispatch(setCurrentCategory(option))
-        setIsOpen(false);
+        try {
+            onOptionSelect(option); 
+            const sortFeedback = await sortFeedBacksByCategory(currentSort, option);
+            if (sortFeedback) {
+                dispatch(setCategories(sortFeedback));
+            }
+            dispatch(setCurrentCategory(option)); 
+            setIsOpen(false);
+        } catch (error) {
+            console.error("Error fetching sorted feedbacks:", error);
+        }
     };
+    
 
-    // console.log(selectedOption, 'selektovana opcija')
 
     return (
         <div>

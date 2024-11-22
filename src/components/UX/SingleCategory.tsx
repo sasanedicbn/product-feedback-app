@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 import { sortFeedBacksByCategory } from "../../supabase/supabaseFunctions";
 import { useDispatch, useSelector } from "react-redux";
-import { setCategories } from "../store/slices/categorySlice";
+import { setCategories, setCurrentSort } from "../store/slices/categorySlice";
 
 const SingleCategory = ({ category }) => {
 const dispatch = useDispatch()
 const sortByUpvotes = useSelector((state) => state.categories.currentCategory)
-console.log(sortByUpvotes, 'sortbyupvotes')
 
      const selectedCategoryHandler = async () => {
      const currentCategory = await sortFeedBacksByCategory(category, sortByUpvotes )
      if(currentCategory){
         dispatch(setCategories(currentCategory))
+        dispatch(setCurrentSort(category))
      }
     };
 
