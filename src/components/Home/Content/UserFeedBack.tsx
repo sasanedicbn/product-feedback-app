@@ -8,7 +8,7 @@ const UserFeedBack = ({item}) => {
     return(
     <Wrapper type="feedBackContainer">
         <div className="flex items-start gap-8">
-            <Upvotes upvotes={item.Comments.length} />
+            <Upvotes upvotes={item.upvotes} />
             <ContentItem title={item.title} feedback={item.feedback} category={item.Category.Category} itemId={item.id} />
         </div>
         <Comments comments={item.Comments.length} />
