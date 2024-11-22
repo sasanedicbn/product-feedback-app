@@ -4,7 +4,7 @@ import Icon from "./Icon";
 import { DropDownProps, OptionType } from "../types/types";
 import { sortFeedBacks } from "../../supabase/supabaseFunctions";
 import { useDispatch } from "react-redux";
-import { setCategories } from "../store/slices/categorySlice";
+import { setCategories, setCurrentCategory } from "../store/slices/categorySlice";
 
 
 
@@ -13,16 +13,18 @@ const DropDown = ({ options, selectedOption, onOptionSelect }: DropDownProps) =>
     const dispatch = useDispatch()
 
     const handleOptionClick = async (option: OptionType) => {
+        console.log(option, 'sdaaslkdjaskl')
         onOptionSelect(option);
-        const sortFeedback = await sortFeedBacks(option)
-        if(sortFeedback){
-            console.log('iz if bloka', sortFeedback)
-            dispatch(setCategories(sortFeedback));
-        }
+        // const sortFeedback = await sortFeedBacks(option)
+        // if(sortFeedback){
+        //     console.log('iz if bloka', sortFeedback)
+        //     dispatch(setCategories(sortFeedback));
+        // }
+        dispatch(setCurrentCategory(option))
         setIsOpen(false);
     };
 
-    console.log(selectedOption, 'selektovana opcija')
+    // console.log(selectedOption, 'selektovana opcija')
 
     return (
         <div>
