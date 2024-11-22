@@ -4,6 +4,7 @@ import ContentItem from "./ContentBodyItems.tsx/ContentItem";
 import Upvotes from "./ContentBodyItems.tsx/Upvotes";
 
 const UserFeedBack = ({item}) => {
+    console.log('ovo se treba displejati', item)
     return(
     <Wrapper type="feedBackContainer">
         <div className="flex items-start gap-8">

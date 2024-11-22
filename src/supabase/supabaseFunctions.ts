@@ -124,7 +124,7 @@ export async function postComment(commentData) {
 export async function postFeedback(feedback) {
     const randomId = Math.floor(Math.random() * 100000);
     try {
-        const { data: feedbackData, error: feedbackError } = await supabase
+        const { data, error } = await supabase
             .from('Feedbacks')
             .insert([
                 {
@@ -134,27 +134,20 @@ export async function postFeedback(feedback) {
                     feedback: feedback.feedback,
                 },
             ])
-            .select();
+            .select('*, Comments(*), Category(*)');
 
-        if (feedbackError) {
-            throw new Error(feedbackError.message);
+        if (error) {
+            throw new Error(error.message);
         }
 
-        const { data: commentsData, error: commentsError } = await supabase
-            .from('Comments')
-            .select('*');
-
-        if (commentsError) {
-            throw new Error(commentsError.message);
-        }
-
-        return { feedback: feedbackData, comments: commentsData };
+        return data;
     } catch (error) {
         toast.error("Unexpected error");
         console.log(error.message, 'za post');
         return null;
     }
 }
+
 
 export async function sortFeedBacksByCategory(categoryId:string) {
     try {
