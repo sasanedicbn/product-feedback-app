@@ -14,14 +14,12 @@ const Details = () => {
     const dispatch = useDispatch();
     const navigation = useNavigate()
     const feedback = useSelector((state) => state.feedback.feedback);
-    const comments = useSelector((state) => state.feedback.comments)
 
     useEffect(() => {
         const fetchFeedBack = async () => {
             const feedbackData = await fetchFeedbackById(id);
             console.log(feedbackData, 'feedback data');
             dispatch(setFeedBack(feedbackData));
-            dispatch(setComments(feedbackData.Comments))
         };
         fetchFeedBack();
         console.log('izvrsava se feedback', feedback)
@@ -48,7 +46,7 @@ const homePageHanlder = () => {
               </Button>
               </div>
             <UserFeedBack item={feedback}/>
-            <FeedBackComments comments={comments}/> 
+            <FeedBackComments comments={feedback}/> 
             <AddComment id={id}/>
         </div>
     );

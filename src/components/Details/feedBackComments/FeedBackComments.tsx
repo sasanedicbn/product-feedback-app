@@ -3,15 +3,14 @@ import Wrapper from "../../UX/Wrapper";
 import CommentCard from "./CommentCard";
 
 const FeedBackComments = ({ comments }: FeedBackCommentsProps) => {
-    // const { Comments } = feedback;
-    console.log(comments, 'COmments in feedbackComments')
+    const { Comments } = comments;
 
     return (
         <Wrapper type="feedBackComments">
-            {(!comments || comments.length === 0) ? (
+            {(!Comments || Comments.length === 0) ? (
                 <p className="text-gray-500">No comments available.</p>
             ) : (
-                comments.map((comment) => (
+                Comments.map((comment) => (
                     <CommentCard
                         key={comment.id}
                         user_image={comment.user_image}

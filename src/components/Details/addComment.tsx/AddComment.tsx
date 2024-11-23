@@ -5,7 +5,7 @@ import LengthComments from "./LengthComments";
 import Textarea from "../../UX/Textarea";
 import { useDispatch, useSelector } from "react-redux";
 import { postComment } from "../../../supabase/supabaseFunctions";
-import { setComments } from "../../store/slices/feedBackSlice";
+import { addComment, setComments } from "../../store/slices/feedBackSlice";
 
 const AddComment = ({id}) => {
     const [lengthComment, setLengthComment] = useState(225);
@@ -29,9 +29,8 @@ const AddComment = ({id}) => {
     const postCommentHandler = async() => {
        const newComment = await postComment(updateComment)
        if(newComment){
-        dispatch(setComments(newComment))
-
-       }
+        dispatch(addComment(newComment))
+         }
        }
 
     const updateLengthComment = (e:any) => {
