@@ -37,6 +37,7 @@ const CommentCard = ({
                 <p className="text-gray-500 text-sm font-light mt-4 break-all">
                     {user_comment}
                 </p>
+                
                 {isReplyOpen && <PostReplay />}
             </div>
         </div>
