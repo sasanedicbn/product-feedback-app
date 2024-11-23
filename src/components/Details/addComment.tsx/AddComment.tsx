@@ -16,7 +16,6 @@ const AddComment = ({id}) => {
         console.log('comment za text-area', comment);
         console.log('postComment objekat', updateComment)
         setUpdateComment({
-            // id: '1',
             user: currentUser.full_name,
             user_name: currentUser.user_name,
             user_image: currentUser.user_image,
@@ -28,6 +27,7 @@ const AddComment = ({id}) => {
     const postCommentHandler = async() => {
         postComment(updateComment)
        }
+       
     const updateLengthComment = (e:any) => {
         const remainingLength = 225 - e.target.value.length;
         setLengthComment(remainingLength >= 0 ? remainingLength : 0);

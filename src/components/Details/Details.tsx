@@ -22,6 +22,7 @@ const Details = () => {
             dispatch(setFeedBack(feedbackData));
         };
         fetchFeedBack();
+        console.log('izvrsava se feedback', feedback)
     }, [id, dispatch]);
 
 const homePageHanlder = () => {

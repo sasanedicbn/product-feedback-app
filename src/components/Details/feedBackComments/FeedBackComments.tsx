@@ -4,6 +4,7 @@ import CommentCard from "./CommentCard";
 
 const FeedBackComments = ({ feedback }: FeedBackCommentsProps) => {
     const { Comments } = feedback;
+    console.log(Comments, 'COmments in feedbackComments')
 
     return (
         <Wrapper type="feedBackComments">
