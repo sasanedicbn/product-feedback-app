@@ -3,13 +3,15 @@ import FeedBackTitle from "../../FeedBack/FeedBackItems/FeedBackTitle";
 import Wrapper from "../../UX/Wrapper";
 import LengthComments from "./LengthComments";
 import Textarea from "../../UX/Textarea";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postComment } from "../../../supabase/supabaseFunctions";
+import { setComments } from "../../store/slices/feedBackSlice";
 
 const AddComment = ({id}) => {
     const [lengthComment, setLengthComment] = useState(225);
     const [updateComment, setUpdateComment] = useState({});
     const currentUser = useSelector((user) => user.user.user);
+    const dispatch = useDispatch()
 
     const updateCommentHandler = (e) => {
         const comment = e.target.value;
@@ -25,9 +27,13 @@ const AddComment = ({id}) => {
     };
 
     const postCommentHandler = async() => {
-        postComment(updateComment)
+       const newComment = await postComment(updateComment)
+       if(newComment){
+        dispatch(setComments(newComment))
+
        }
-       
+       }
+
     const updateLengthComment = (e:any) => {
         const remainingLength = 225 - e.target.value.length;
         setLengthComment(remainingLength >= 0 ? remainingLength : 0);

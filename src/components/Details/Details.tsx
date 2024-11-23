@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchFeedbackById } from "../../supabase/supabaseFunctions";
 import { useDispatch, useSelector } from "react-redux";
-import { setFeedBack } from "../store/slices/feedBackSlice";
+import { setComments, setFeedBack } from "../store/slices/feedBackSlice";
 import UserFeedBack from "../Home/Content/UserFeedBack";
 import Action from "../UX/Action";
 import Button from "../UX/Button";
@@ -14,12 +14,14 @@ const Details = () => {
     const dispatch = useDispatch();
     const navigation = useNavigate()
     const feedback = useSelector((state) => state.feedback.feedback);
+    const comments = useSelector((state) => state.feedback.comments)
 
     useEffect(() => {
         const fetchFeedBack = async () => {
             const feedbackData = await fetchFeedbackById(id);
             console.log(feedbackData, 'feedback data');
             dispatch(setFeedBack(feedbackData));
+            dispatch(setComments(feedbackData.Comments))
         };
         fetchFeedBack();
         console.log('izvrsava se feedback', feedback)
@@ -46,7 +48,7 @@ const homePageHanlder = () => {
               </Button>
               </div>
             <UserFeedBack item={feedback}/>
-            <FeedBackComments feedback={feedback}/> 
+            <FeedBackComments comments={comments}/> 
             <AddComment id={id}/>
         </div>
     );
