@@ -39,18 +39,20 @@ export async function fetchFeedbacksWithAllRelations() {
         return null;
     }
 }
-
 export async function fetchFeedbackById(id) {
     try {
         let { data: feedback, error } = await supabase
             .from('Feedbacks')
             .select(`
                 *,
-                Comments (*),
+                Comments (
+                    *,
+                    Answers (*)
+                ),
                 Category (*)
             `)
-            .eq('id', id) 
-            .single(); 
+            .eq('id', id)
+            .single();
 
         if (error) {
             console.error("Error fetching feedback by ID:", error);
@@ -64,6 +66,7 @@ export async function fetchFeedbackById(id) {
         return null;
     }
 }
+
 
 export async function signIn(credentials) {
     try {
