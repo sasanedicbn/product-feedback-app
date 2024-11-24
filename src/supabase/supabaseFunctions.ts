@@ -47,7 +47,15 @@ export async function fetchFeedbackById(id) {
                 *,
                 Comments (
                     *,
-                    Answers (*)
+                    Answers!Answers_comment_id_fkey (
+                        *,
+                        comment_user_answer (
+                            id,
+                            user_image,
+                            user_name,
+                            user_comment
+                        )
+                    )
                 ),
                 Category (*)
             `)
@@ -66,6 +74,7 @@ export async function fetchFeedbackById(id) {
         return null;
     }
 }
+
 
 
 export async function signIn(credentials) {

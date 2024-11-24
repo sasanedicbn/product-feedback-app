@@ -4,7 +4,6 @@ import CommentCard from "./CommentCard";
 
 const FeedBackComments = ({ comments }: FeedBackCommentsProps) => {
     const { Comments } = comments;
-    console.log(Comments, 'ovo gledaj za anserws')
 
     return (
         <Wrapper type="feedBackComments">
@@ -18,7 +17,7 @@ const FeedBackComments = ({ comments }: FeedBackCommentsProps) => {
                         user={comment.user}
                         user_name={comment.user_name}
                         user_comment={comment.user_comment}
-                        answers={comment}
+                        answers={comment.Answers}
                     />
                 ))
             )}
