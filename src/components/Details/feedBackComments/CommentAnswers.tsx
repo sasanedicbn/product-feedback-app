@@ -1,21 +1,23 @@
 import { Answer } from "../../types/types";
+import CommentCard from "./CommentCard";
 
 interface CommentAnswersProps {
-    answer: Answer;
+  answer: Answer;
 }
 
 const CommentAnswers = ({ answer }: CommentAnswersProps) => {
-    console.log(answer, 'zavrsni answer')
-    return (
-        <div className="flex items-start gap-4 bg-gray-100 p-4 rounded-lg shadow-sm">
-            <div>
-                <p className="text-gray-800 font-medium">{answer.answer}</p>
-                <p className="text-sm text-gray-500">
-                    Posted on: {new Date(answer.created_at).toLocaleString()}
-                </p>
-            </div>
-        </div>
-    );
+  console.log(answer, "jeeeedan");
+  return (
+    <div className="pl-8 border-l-2 border-gray-300">
+      <CommentCard
+        user_image={answer.comment_user_answer?.user_image || ""}
+        user={answer.comment_user_answer?.user || "Anonymous"}
+        user_name={answer.comment_user_answer?.user_name || ""}
+        user_comment={answer.answer}
+        answers={[]}
+      />
+    </div>
+  );
 };
 
 export default CommentAnswers;

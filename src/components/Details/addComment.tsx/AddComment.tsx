@@ -10,18 +10,18 @@ import { toast } from "react-toastify";
 
 const AddComment = ({ id }) => {
   const [lengthComment, setLengthComment] = useState(225);
-  const [updateComment, setUpdateComment] = useState({ user_comment: "" }); 
+  const [updateComment, setUpdateComment] = useState({ user_comment: "" });
   const currentUser = useSelector((user) => user.user.user);
   const dispatch = useDispatch();
 
   const updateCommentHandler = (e) => {
     const comment = e.target.value;
     setUpdateComment({
-      ...updateComment, 
+      ...updateComment,
       user: currentUser.full_name,
       user_name: currentUser.user_name,
       user_image: currentUser.user_image,
-      user_comment: comment, 
+      user_comment: comment,
       feedback_id: id,
     });
   };
@@ -55,15 +55,17 @@ const AddComment = ({ id }) => {
       <Textarea
         placeholder="Add comment"
         rows={4}
-        value={updateComment.user_comment} 
+        value={updateComment.user_comment}
         additionalStyles="bg-gray-200 text-gray-700 h-28 mb-6"
         onChange={handleChange}
         maxLength={225}
       />
-      <LengthComments length={lengthComment} postCommentHandler={postCommentHandler} />
+      <LengthComments
+        length={lengthComment}
+        postCommentHandler={postCommentHandler}
+      />
     </Wrapper>
   );
 };
 
 export default AddComment;
-
