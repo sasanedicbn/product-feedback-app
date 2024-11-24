@@ -23,9 +23,7 @@ const PostReplay = () => {
         value={commentText}
       />
       <div className="flex justify-end">
-        <Button type="addFeedBack" onClick={postReplyHandler}>
-          Post Reply
-        </Button>
+        <Button type="addFeedBack">Post Reply</Button>
       </div>
     </div>
   );
