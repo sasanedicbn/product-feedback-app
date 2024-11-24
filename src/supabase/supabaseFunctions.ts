@@ -53,7 +53,8 @@ export async function fetchFeedbackById(id) {
                             id,
                             user_image,
                             user_name,
-                            user_comment
+                            user_comment,
+                            user
                         )
                     )
                 ),
