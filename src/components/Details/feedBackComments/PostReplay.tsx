@@ -22,7 +22,6 @@ const PostReplay = ({ type, postId }) => {
       currentUser,
       commentText.answer
     );
-    console.log(newAnswer, "newAnswer");
   };
 
   return (

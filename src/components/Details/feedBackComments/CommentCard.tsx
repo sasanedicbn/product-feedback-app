@@ -15,8 +15,7 @@ const CommentCard = ({
   type,
   id,
   postId,
-}: //   postId,
-CommentCardProps) => {
+}: CommentCardProps) => {
   const [isReplyOpen, setIsReplyOpen] = useState(false);
 
   const toggleReply = () => setIsReplyOpen((prev) => !prev);
