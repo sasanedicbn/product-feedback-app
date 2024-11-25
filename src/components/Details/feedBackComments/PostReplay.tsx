@@ -10,9 +10,7 @@ const PostReplay = ({ type, postId }) => {
 
   const commentAnswerHandler = (e) => {
     setCommentText({
-      //   comment_id: postId,
       comment_id: postId,
-      //   type: type ? "answerAnswer" : "",
       answer: e.target.value,
     });
 
