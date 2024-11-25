@@ -68,7 +68,7 @@ export async function fetchFeedbackById(id) {
             return null;
         }
 
-        console.log("Feedback with related data by ID:", feedback);
+        console.log("SVE TI JEBEM RADI", feedback);
         return feedback;
     } catch (error) {
         console.error("Unexpected error:", error);
@@ -207,6 +207,50 @@ export async function sortFeedBacksByCategory(categoryId = "", upvotesOrComments
     }
 }
 
-
-
-
+export async function addCommentAndAnswer(commentData, answerText) {
+    console.log(commentData, answerText);
+    const randomId = Math.floor(Math.random() * 100000);
+    try {
+      const { data: newComment, error: commentError } = await supabase
+        .from('Comments')
+        .insert({
+          id: randomId,
+          user: commentData.full_name,
+          user_name: commentData.user_name,
+          user_image: commentData.user_image,
+        })
+        .select('id')
+        .single();
+  
+      if (commentError) {
+        throw new Error('Greška pri dodavanju komentara: ' + commentError.message);
+      }
+  
+      const commentId = newComment.id;
+  
+      const { data: newAnswer, error: answerError } = await supabase
+        .from('Answers')
+        .insert([
+          {
+            comment_id: 1,
+            comment_user_answer: commentId,
+            answer: answerText,
+          },
+        ]);
+  
+      if (answerError) {
+        throw new Error('Greška pri dodavanju odgovora: ' + answerError.message);
+      }
+  
+      console.log('Uspešno dodat komentar i odgovor:', {
+        comment: newComment,
+        answer: newAnswer,
+      });
+  
+      return { comment: newComment, answer: newAnswer };
+    } catch (error) {
+      console.error(error.message);
+      throw error;
+    }
+  }
+  

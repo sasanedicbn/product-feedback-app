@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Button from "../../UX/Button";
 import Textarea from "../../UX/Textarea";
+import { useSelector } from "react-redux";
+import { addCommentAndAnswer } from "../../../supabase/supabaseFunctions";
 
 const PostReplay = ({ type, postId }) => {
   const [commentText, setCommentText] = useState("");
+  const currentUser = useSelector((state) => state.user.user);
 
   const commentAnswerHandler = (e) => {
     setCommentText({
@@ -16,7 +19,13 @@ const PostReplay = ({ type, postId }) => {
     console.log(commentText, "commentText");
   };
 
-  const postReplyHandler = () => {};
+  const postReplyHandler = async () => {
+    const newAnswer = await addCommentAndAnswer(
+      currentUser,
+      commentText.answer
+    );
+    console.log(newAnswer, "newAnswer");
+  };
 
   return (
     <div className="w-full mt-6 rounded-lg">
