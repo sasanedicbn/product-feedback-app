@@ -31,7 +31,7 @@ const RoadmapPage = () => {
           Add Feedback
         </Button>
       </div>
-      <p clas>SASASA</p>
+      <p>SASASA</p>
     </div>
     // </Wrapper>
   );

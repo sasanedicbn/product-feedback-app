@@ -2,11 +2,15 @@ import { useState } from "react";
 import Button from "../../UX/Button";
 import Textarea from "../../UX/Textarea";
 
-const PostReplay = () => {
+const PostReplay = ({ type }) => {
   const [commentText, setCommentText] = useState("");
 
   const commentAnswerHandler = (e) => {
-    setCommentText(e.target.value);
+    setCommentText({
+      type: type ? "answerAnswer" : "",
+      comment: e.target.value,
+    });
+
     console.log(commentText, "commentText");
   };
 
@@ -20,7 +24,7 @@ const PostReplay = () => {
         placeholder="Your text here..."
         additionalStyles="bg-gray-50"
         onChange={commentAnswerHandler}
-        value={commentText}
+        value={commentText.comment}
       />
       <div className="flex justify-end">
         <Button type="addFeedBack">Post Reply</Button>

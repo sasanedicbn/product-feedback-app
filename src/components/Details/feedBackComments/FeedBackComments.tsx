@@ -18,6 +18,7 @@ const FeedBackComments = ({ comments }: FeedBackCommentsProps) => {
             user_name={comment.user_name}
             user_comment={comment.user_comment}
             answers={comment.Answers}
+            type={true}
           />
         ))
       )}
