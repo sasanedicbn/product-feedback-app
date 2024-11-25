@@ -2,21 +2,21 @@ import { useState } from "react";
 import Button from "../../UX/Button";
 import Textarea from "../../UX/Textarea";
 
-const PostReplay = ({ type }) => {
+const PostReplay = ({ type, postId }) => {
   const [commentText, setCommentText] = useState("");
 
   const commentAnswerHandler = (e) => {
     setCommentText({
-      type: type ? "answerAnswer" : "",
-      comment: e.target.value,
+      //   comment_id: postId,
+      comment_id: postId,
+      //   type: type ? "answerAnswer" : "",
+      answer: e.target.value,
     });
 
     console.log(commentText, "commentText");
   };
 
-  //   const postReplyHandler = () => {
-  //     console.log("Posting reply:", commentText);
-  //   };
+  const postReplyHandler = () => {};
 
   return (
     <div className="w-full mt-6 rounded-lg">
@@ -27,7 +27,9 @@ const PostReplay = ({ type }) => {
         value={commentText.comment}
       />
       <div className="flex justify-end">
-        <Button type="addFeedBack">Post Reply</Button>
+        <Button type="addFeedBack" onClick={postReplyHandler}>
+          Post Reply
+        </Button>
       </div>
     </div>
   );

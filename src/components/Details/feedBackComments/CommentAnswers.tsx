@@ -15,6 +15,8 @@ const CommentAnswers = ({ answer }: CommentAnswersProps) => {
         user_name={answer.comment_user_answer?.user_name || ""}
         user_comment={answer.answer}
         answers={[]}
+        answerId={answer.comment_user_answer?.id || ""}
+        //    ovdje msm treba answerid
       />
     </div>
   );

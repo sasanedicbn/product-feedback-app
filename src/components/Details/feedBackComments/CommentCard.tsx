@@ -13,7 +13,10 @@ const CommentCard = ({
   containerClass = "",
   answers = [],
   type,
-}: CommentCardProps) => {
+  id,
+  postId,
+}: //   postId,
+CommentCardProps) => {
   const [isReplyOpen, setIsReplyOpen] = useState(false);
 
   const toggleReply = () => setIsReplyOpen((prev) => !prev);
@@ -38,7 +41,17 @@ const CommentCard = ({
         <p className="text-gray-500 text-sm font-light mt-4 break-all">
           {user_comment}
         </p>
-        {isReplyOpen && <PostReplay type={type} />}
+        {isReplyOpen && (
+          <PostReplay
+            type={type}
+            postId={postId}
+            // answerId={
+            //   answers.length > 0
+            //     ? answers.map((answ) => answ.comment_user_answer?.id)
+            //     : ""
+            // }
+          />
+        )}
         {answers.length > 0 && (
           <div className="mt-4 space-y-4">
             {answers.map((answer) => (

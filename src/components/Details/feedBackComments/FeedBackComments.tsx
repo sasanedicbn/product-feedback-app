@@ -4,6 +4,7 @@ import CommentCard from "./CommentCard";
 
 const FeedBackComments = ({ comments }: FeedBackCommentsProps) => {
   const { Comments } = comments;
+  console.log("ovaj mi id treba", Comments);
 
   return (
     <Wrapper type="feedBackComments">
@@ -13,6 +14,7 @@ const FeedBackComments = ({ comments }: FeedBackCommentsProps) => {
         Comments.map((comment) => (
           <CommentCard
             key={comment.id}
+            postId={comment.id}
             user_image={comment.user_image}
             user={comment.user}
             user_name={comment.user_name}
