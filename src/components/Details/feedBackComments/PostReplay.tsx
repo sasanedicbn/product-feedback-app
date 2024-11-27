@@ -3,7 +3,7 @@ import Button from "../../UX/Button";
 import Textarea from "../../UX/Textarea";
 import { useDispatch, useSelector } from "react-redux";
 import { addCommentAndAnswer } from "../../../supabase/supabaseFunctions";
-import { addComment } from "../../store/slices/feedBackSlice";
+import { addAnswer, addComment } from "../../store/slices/feedBackSlice";
 
 const PostReplay = ({ type, postId }) => {
   const [commentText, setCommentText] = useState("");
@@ -26,7 +26,12 @@ const PostReplay = ({ type, postId }) => {
     );
     console.log(newAnswer, "gledaj ovo dodati podkomentar");
     if (newAnswer) {
-      dispatch(addComment(newAnswer));
+      dispatch(
+        addAnswer({
+          comment_id: postId,
+          answer: newAnswer,
+        })
+      );
     }
   };
 

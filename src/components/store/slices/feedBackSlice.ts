@@ -34,5 +34,5 @@ const feedBackSlice = createSlice({
 }
 });
 
-export const { setFeedBack, addComment } = feedBackSlice.actions;
+export const { setFeedBack, addComment, addAnswer } = feedBackSlice.actions;
 export default feedBackSlice.reducer;
