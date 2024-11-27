@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Button from "../../UX/Button";
 import Textarea from "../../UX/Textarea";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addCommentAndAnswer } from "../../../supabase/supabaseFunctions";
+import { addComment } from "../../store/slices/feedBackSlice";
 
 const PostReplay = ({ type, postId }) => {
   const [commentText, setCommentText] = useState("");
   const currentUser = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
 
   const commentAnswerHandler = (e) => {
     setCommentText({
@@ -23,6 +25,9 @@ const PostReplay = ({ type, postId }) => {
       commentText.answer
     );
     console.log(newAnswer, "gledaj ovo dodati podkomentar");
+    if (newAnswer) {
+      dispatch(addComment(newAnswer));
+    }
   };
 
   return (

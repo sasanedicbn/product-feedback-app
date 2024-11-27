@@ -248,7 +248,7 @@ export async function addCommentAndAnswer(commentData, answerText) {
         answer: newAnswer,
       });
   
-      return { comment: newComment, answer: answerText };
+      return { comment_user_answer: newComment, answer: answerText };
     } catch (error) {
       console.error(error.message);
       throw error;
