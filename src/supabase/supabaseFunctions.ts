@@ -219,12 +219,13 @@ export async function addCommentAndAnswer(commentData, answerText) {
           user_name: commentData.user_name,
           user_image: commentData.user_image,
         })
-        .select('id')
+        .select()
         .single();
   
       if (commentError) {
         throw new Error('Greška pri dodavanju komentara: ' + commentError.message);
       }
+      console.log(newComment, 'ovo je ono prvo u funk')
   
       const commentId = newComment.id;
   
@@ -247,7 +248,7 @@ export async function addCommentAndAnswer(commentData, answerText) {
         answer: newAnswer,
       });
   
-      return { comment: newComment, answer: newAnswer };
+      return { comment: newComment, answer: answerText };
     } catch (error) {
       console.error(error.message);
       throw error;

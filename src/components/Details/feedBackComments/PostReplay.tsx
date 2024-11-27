@@ -22,6 +22,7 @@ const PostReplay = ({ type, postId }) => {
       currentUser,
       commentText.answer
     );
+    console.log(newAnswer, "gledaj ovo dodati podkomentar");
   };
 
   return (
