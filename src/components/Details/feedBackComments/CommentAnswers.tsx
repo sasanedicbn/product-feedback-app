@@ -6,7 +6,7 @@ interface CommentAnswersProps {
 }
 
 const CommentAnswers = ({ answer }: CommentAnswersProps) => {
-  //   console.log(answer, "jeeeedan");
+  console.log(answer, "jeeeedan");
   return (
     <div className="pl-8 border-l-2 border-gray-300">
       <CommentCard

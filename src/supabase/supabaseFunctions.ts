@@ -198,7 +198,6 @@ export async function sortFeedBacksByCategory(categoryId = "", upvotesOrComments
                 break; 
         }
 
-        console.log(sortedData, "sortirani podaci");
         return sortedData;
     } catch (error) {
         toast.error("Unexpected error");
@@ -225,7 +224,6 @@ export async function addCommentAndAnswer(commentData, answerText) {
       if (commentError) {
         throw new Error('Greška pri dodavanju komentara: ' + commentError.message);
       }
-      console.log(newComment, 'ovo je ono prvo u funk')
   
       const commentId = newComment.id;
   
@@ -242,11 +240,7 @@ export async function addCommentAndAnswer(commentData, answerText) {
       if (answerError) {
         throw new Error('Greška pri dodavanju odgovora: ' + answerError.message);
       }
-  
-      console.log('Uspešno dodat komentar i odgovor:', {
-        comment: newComment,
-        answer: newAnswer,
-      });
+
   
       return { comment_user_answer: newComment, answer: answerText };
     } catch (error) {
