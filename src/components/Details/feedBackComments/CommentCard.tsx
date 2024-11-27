@@ -20,7 +20,7 @@ const CommentCard = ({
   const [replyTo, setReplyTo] = useState<string | null>(null);
 
   const toggleReply = () => {
-    setReplyTo(user);
+    setReplyTo(user_name);
     setIsReplyOpen((prev) => !prev);
   };
 
