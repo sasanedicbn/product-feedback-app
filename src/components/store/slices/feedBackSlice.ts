@@ -15,6 +15,22 @@ const feedBackSlice = createSlice({
         action.payload,
       ];
   },
+  addAnswer: (state, action) => {
+    const { comment_id, answer } = action.payload;
+  
+    const commentIndex = state.feedback.Comments.findIndex(
+      (comment) => comment.id === comment_id
+    );
+  
+    if (commentIndex !== -1) {
+      const commentToUpdate = state.feedback.Comments[commentIndex];
+      state.feedback.Comments[commentIndex] = {
+        ...commentToUpdate,
+        Answers: [...(commentToUpdate.Answers || []), answer],
+      };
+    }
+  },
+  
 }
 });
 
