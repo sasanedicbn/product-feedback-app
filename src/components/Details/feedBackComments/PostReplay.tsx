@@ -6,7 +6,7 @@ import { addCommentAndAnswer } from "../../../supabase/supabaseFunctions";
 import { addAnswer } from "../../store/slices/feedBackSlice";
 
 const PostReplay = ({ type, postId, replyTo }) => {
-  const [reply, setReply] = useState<string>(replyTo ? `@${replyTo} ` : "");
+  const [reply, setReply] = useState<string>(replyTo ? `${replyTo} ` : "");
   const currentUser = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
 
@@ -22,7 +22,6 @@ const PostReplay = ({ type, postId, replyTo }) => {
 
     try {
       const newAnswer = await addCommentAndAnswer(currentUser, reply);
-      console.log(newAnswer, "Podkomentar dodat");
 
       if (newAnswer) {
         dispatch(

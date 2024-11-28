@@ -4,7 +4,6 @@ import CommentCard from "./CommentCard";
 
 const FeedBackComments = ({ comments }: FeedBackCommentsProps) => {
   const { Comments } = comments;
-  console.log("ovaj mi id treba", Comments);
 
   return (
     <Wrapper type="feedBackComments">
