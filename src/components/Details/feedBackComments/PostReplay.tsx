@@ -3,47 +3,50 @@ import Button from "../../UX/Button";
 import Textarea from "../../UX/Textarea";
 import { useDispatch, useSelector } from "react-redux";
 import { addCommentAndAnswer } from "../../../supabase/supabaseFunctions";
-import { addAnswer, addComment } from "../../store/slices/feedBackSlice";
+import { addAnswer } from "../../store/slices/feedBackSlice";
 
-const PostReplay = ({ type, postId }) => {
-  const [commentText, setCommentText] = useState("");
+const PostReplay = ({ type, postId, replyTo }) => {
+  const [reply, setReply] = useState<string>(replyTo ? `@${replyTo} ` : "");
   const currentUser = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
 
-  const commentAnswerHandler = (e) => {
-    setCommentText({
-      comment_id: postId,
-      answer: e.target.value,
-    });
-
-    console.log(commentText, "commentText");
+  const commentAnswerHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setReply(e.target.value);
   };
 
   const postReplyHandler = async () => {
-    const newAnswer = await addCommentAndAnswer(
-      currentUser,
-      commentText.answer
-    );
-    console.log(newAnswer, "gledaj ovo dodati podkomentar");
-    if (newAnswer) {
-      dispatch(
-        addAnswer({
-          comment_id: postId,
-          answer: newAnswer,
-        })
-      );
+    if (!reply.trim()) {
+      console.error("Reply cannot be empty.");
+      return;
+    }
+
+    try {
+      const newAnswer = await addCommentAndAnswer(currentUser, reply);
+      console.log(newAnswer, "Podkomentar dodat");
+
+      if (newAnswer) {
+        dispatch(
+          addAnswer({
+            comment_id: postId,
+            answer: newAnswer,
+          })
+        );
+        setReply("");
+      }
+    } catch (error) {
+      console.error("Error while adding answer:", error);
     }
   };
 
   return (
     <div className="w-full mt-6 rounded-lg">
       <Textarea
-        placeholder="Your text here..."
+        placeholder="Write your reply..."
         additionalStyles="bg-gray-50"
         onChange={commentAnswerHandler}
-        value={commentText.comment}
+        value={reply}
       />
-      <div className="flex justify-end">
+      <div className="flex justify-end mt-4">
         <Button type="addFeedBack" onClick={postReplyHandler}>
           Post Reply
         </Button>
