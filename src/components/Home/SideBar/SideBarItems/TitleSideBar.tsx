@@ -1,34 +1,40 @@
 import { motion } from "framer-motion";
 import Wrapper from "../../../UX/Wrapper";
 import { useSelector } from "react-redux";
+import Logout from "../../../../auth/Logout";
 
 const TitleSideBar = () => {
- const currentUser = useSelector((user) => user.user.user)
- console.log(currentUser, 'currentUser')
-    return (
-        <Wrapper type="sideBarTitle">
-            <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-xl text-gray-500 font-medium"
-            >
-               <img
-                src={currentUser.user_image}
-                alt="User"
-                className="w-12 h-12 rounded-full mr-4 object-cover"
-            />
-            <div className="flex-1">
-                <div className="flex justify-between items-center">
-                    <div>
-                        <p className="font-semibold text-blue-950">{currentUser.full_name}</p>
-                        <p className="text-gray-500 text-sm font-light">{currentUser.user_name}</p>
-                    </div>
-                </div>
+  const currentUser = useSelector((user) => user.user.user);
+  console.log(currentUser, "currentUser");
+  return (
+    <Wrapper type="sideBarTitle">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-xl text-gray-500 font-medium"
+      >
+        <img
+          src={currentUser.user_image}
+          alt="User"
+          className="w-12 h-12 rounded-full mr-4 object-cover"
+        />
+        <div className="flex-1">
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="font-semibold text-blue-950">
+                {currentUser.full_name}
+              </p>
+              <p className="text-gray-500 text-sm font-light">
+                {currentUser.user_name}
+              </p>
+              <Logout />
             </div>
-            </motion.div>
-        </Wrapper>
-    );
-}
+          </div>
+        </div>
+      </motion.div>
+    </Wrapper>
+  );
+};
 
 export default TitleSideBar;
