@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Action from "../UX/Action";
 import Button from "../UX/Button";
+import RoadMapContent from "./RoadMapItems/RoadMapContent";
 
 const RoadmapPage = () => {
   const navigation = useNavigate();
@@ -31,7 +32,7 @@ const RoadmapPage = () => {
           Add Feedback
         </Button>
       </div>
-      <p>SASASA</p>
+      <RoadMapContent />
     </div>
     // </Wrapper>
   );
