@@ -29,9 +29,9 @@ const AuthForm = () => {
   const signUpHandler: SubmitHandler<FormData> = async (credentials) => {
     if (credentials.email && credentials.password) {
       try {
-        const data = await signIn(credentials); 
+        const data = await signIn(credentials);
         if (data) {
-          dispatch(setUser(data.users)); 
+          dispatch(setUser(data.users));
           navigate("/");
         } else {
           toast.error("Invalid credentials, please try again!");
@@ -44,7 +44,10 @@ const AuthForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(signUpHandler)} className="flex flex-col gap-4 w-3/4">
+    <form
+      onSubmit={handleSubmit(signUpHandler)}
+      className="flex flex-col gap-4 w-3/4"
+    >
       <input
         type="email"
         placeholder="Email"
@@ -59,10 +62,15 @@ const AuthForm = () => {
         className="border p-2 rounded-md"
         {...register("password")}
       />
-      {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+      {errors.password && (
+        <p className="text-red-500">{errors.password.message}</p>
+      )}
 
-      <button type="submit" className="bg-blue-500 text-white py-2 rounded-md mt-4">
-        Sign Up
+      <button
+        type="submit"
+        className="bg-blue-500 text-white py-2 rounded-md mt-4"
+      >
+        Sign in
       </button>
     </form>
   );
