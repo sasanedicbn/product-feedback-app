@@ -1,9 +1,11 @@
 import { useDispatch } from "react-redux";
 import { clearUser } from "../components/store/slices/userSlice";
+import { supabase } from "../supabase/supabase";
 
 const Logout = () => {
   const dispatch = useDispatch();
-  const LogoutHandler = () => {
+  const LogoutHandler = async () => {
+    await supabase.auth.signOut();
     dispatch(clearUser());
   };
   return (
