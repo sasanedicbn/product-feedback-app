@@ -12,7 +12,7 @@ const feedBackSlice = createSlice({
     addComment: (state, action) => {
       state.feedback.Comments = [
         ...(state.feedback.Comments || []),
-        action.payload,
+        ...action.payload,
       ];
   },
   addAnswer: (state, action) => {
