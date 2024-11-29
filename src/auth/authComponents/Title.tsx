@@ -37,10 +37,7 @@ const Title = () => {
         ))}
       </h1>
       <p className="text-sm mt-2 text-gray-500">
-        Already have an account?{" "}
-        <Link to="/login" className="text-blue-500 hover:underline">
-          Sign up
-        </Link>
+        Log in and enjoy the feedback application
       </p>
     </div>
   );
