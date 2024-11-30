@@ -1,14 +1,22 @@
-import FeedBackTitle from "../../FeedBack/FeedBackItems/FeedBackTitle";
+import UserFeedBack from "../../Home/Content/UserFeedBack";
 
-const InProgress = () => {
+const InProgress = ({ feedbacks }) => {
+  const inProgressFeedbacks = feedbacks.filter(
+    (item) => item.type === "In Progress"
+  );
+
   return (
-    <div className=" w-full">
-      <span>(1)</span>
-      <FeedBackTitle
-        title="In Progress"
-        subtitle="Ideas prioritized for research"
-      />
+    <div className="w-full">
+      <span>({inProgressFeedbacks.length})</span>
+      <h3 className="text-lg font-semibold">In Progress</h3>
+      <p className="text-sm text-gray-500">Currently being developed</p>
+      <div className="mt-4">
+        {inProgressFeedbacks.map((item) => (
+          <UserFeedBack key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 };
+
 export default InProgress;
