@@ -16,22 +16,11 @@ const RoadMapContent = () => {
     fetchFeedbacksHandler();
   }, []);
 
-  // Filtriraj podatke po tipu
-  const plannedFeedbacks = feedbacks.filter(
-    (feedback) => feedback.status === "Planned"
-  );
-  const inProgressFeedbacks = feedbacks.filter(
-    (feedback) => feedback.status === "In Progress"
-  );
-  const liveFeedbacks = feedbacks.filter(
-    (feedback) => feedback.status === "Live"
-  );
-
   return (
     <div className="flex justify-between gap-8">
-      <Planned feedbacks={plannedFeedbacks} />
-      <InProgress feedbacks={inProgressFeedbacks} />
-      <Live feedbacks={liveFeedbacks} />
+      <Planned feedbacks={feedbacks} />
+      <InProgress feedbacks={feedbacks} />
+      <Live feedbacks={feedbacks} />
     </div>
   );
 };
