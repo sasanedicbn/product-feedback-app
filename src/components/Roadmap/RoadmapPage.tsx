@@ -14,6 +14,7 @@ const RoadmapPage = () => {
     navigation("/");
   };
   return (
+    // <Wrapper type="pageWrapper">
     <div className="bg-gray-100 flex gap-5 flex-col h-screen px-32 pt-16 font-serif">
       <div className="flex items-center justify-between bg-[#464f79] p-6 rounded-lg mb-4">
         <div className="">
@@ -33,6 +34,7 @@ const RoadmapPage = () => {
       </div>
       <RoadMapContent />
     </div>
+    // </Wrapper>
   );
 };
 
