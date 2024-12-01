@@ -18,11 +18,9 @@ const Details = () => {
   useEffect(() => {
     const fetchFeedBack = async () => {
       const feedbackData = await fetchFeedbackById(id);
-      console.log(feedbackData, "feedback data");
       dispatch(setFeedBack(feedbackData));
     };
     fetchFeedBack();
-    console.log("izvrsava se feedback", feedback);
   }, [id, dispatch]);
 
   const homePageHanlder = () => {
