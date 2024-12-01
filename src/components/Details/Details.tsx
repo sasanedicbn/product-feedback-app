@@ -28,7 +28,6 @@ const Details = () => {
   const homePageHanlder = () => {
     navigation("/");
   };
-  console.log(feedback, "za no comments");
   if (!feedback) return <div>Loading...</div>;
   return (
     <div className="bg-gray-100 flex gap-5 flex-col pb-12 px-80 pt-16 font-serif">
