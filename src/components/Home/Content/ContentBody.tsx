@@ -7,29 +7,29 @@ import UserFeedBack from "./UserFeedBack";
 import EmptyFeedback from "../../UX/EmptyFeedback";
 
 const ContentBody = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        const fetchComments = async () => {
-            const data = await fetchFeedbacksWithAllRelations();
-            console.log(data, 'data 22')
-            dispatch(setCategories(data));
-        };
-        fetchComments();
-    }, []);
+  useEffect(() => {
+    const fetchComments = async () => {
+      const data = await fetchFeedbacksWithAllRelations();
+      dispatch(setCategories(data));
+    };
+    fetchComments();
+  }, []);
 
-    const commentsData = useSelector((state: { categories: { items: FeedbackItem[] } }) => state.categories.items);
-    console.log('commentsData ili feedback', commentsData)
-    if(commentsData.length === 0) {
-        return <EmptyFeedback/>
-    }
-    return (
-        <div className="space-y-4"> 
-            {commentsData.map((item: FeedbackItem) => (
-                <UserFeedBack item={item} key={item.id}/>
-            ))}
-        </div>
-    );
+  const commentsData = useSelector(
+    (state: { categories: { items: FeedbackItem[] } }) => state.categories.items
+  );
+  if (commentsData.length === 0) {
+    return <EmptyFeedback />;
+  }
+  return (
+    <div className="space-y-4">
+      {commentsData.map((item: FeedbackItem) => (
+        <UserFeedBack item={item} key={item.id} />
+      ))}
+    </div>
+  );
 };
 
 export default ContentBody;
