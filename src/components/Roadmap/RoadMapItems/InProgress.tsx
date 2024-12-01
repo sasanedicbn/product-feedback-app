@@ -2,7 +2,7 @@ import UserFeedBack from "../../Home/Content/UserFeedBack";
 
 const InProgress = ({ feedbacks }) => {
   const inProgressFeedbacks = feedbacks.filter(
-    (item) => item.type === "In Progress"
+    (item) => item.type === "Progress"
   );
 
   return (

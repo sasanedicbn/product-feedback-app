@@ -10,6 +10,7 @@ const RoadMapContent = () => {
   useEffect(() => {
     const fetchFeedbacksHandler = async () => {
       const feedbacksData = await fetchFeedbacksWithAllRelations();
+      console.log("iz useeffecta feedback", feedbacksData);
       setFeedbacks(feedbacksData);
     };
 

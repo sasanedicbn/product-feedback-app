@@ -2,6 +2,7 @@ import UserFeedBack from "../../Home/Content/UserFeedBack";
 
 const Live = ({ feedbacks }) => {
   const liveFeedbacks = feedbacks.filter((item) => item.type === "Live");
+  console.log("feedbacks iz live", liveFeedbacks);
 
   return (
     <div className="w-full">
