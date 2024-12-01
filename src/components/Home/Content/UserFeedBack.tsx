@@ -7,7 +7,7 @@ const UserFeedBack = ({ item }) => {
   return (
     <Wrapper type="feedBackContainer">
       <div className="flex items-start gap-8">
-        <Upvotes upvotes={item.upvotes} />
+        {/* <Upvotes upvotes={item.upvotes} /> */}
         <ContentItem
           title={item.title}
           feedback={item.feedback}
