@@ -11,7 +11,6 @@ const CheckSession = ({ children }) => {
   useEffect(() => {
     const checkSession = async () => {
       const { data: session } = await supabase.auth.getSession();
-      console.log("data1, seassion,", session);
       if (session?.session) {
         const { data: userDetails, error } = await supabase
           .from("Users")
