@@ -11,7 +11,7 @@ const Live = ({ feedbacks }) => {
       <p className="text-sm text-gray-500">Ideas that have been released</p>
       <div className="mt-4">
         {liveFeedbacks.map((item) => (
-          <UserFeedBack key={item.id} item={item} />
+          <UserFeedBack key={item.id} item={item} roadmap={true} />
         ))}
       </div>
     </div>

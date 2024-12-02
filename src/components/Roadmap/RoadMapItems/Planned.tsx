@@ -12,7 +12,7 @@ const Planned = ({ feedbacks }) => {
         {feedbacks
           .filter((item) => item.type === "Planned")
           .map((item) => (
-            <UserFeedBack key={item.id} item={item} />
+            <UserFeedBack key={item.id} item={item} roadmap={true} />
           ))}
       </div>
     </div>
