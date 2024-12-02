@@ -7,9 +7,9 @@ import Upvotes from "./ContentBodyItems.tsx/Upvotes";
 const UserFeedBack = ({ item, roadmap = false }) => {
   return (
     <Wrapper type="feedBackContainer">
-      <div className="flex items-start gap-8">
-        <FeedbackType type={item.type} />
-        {roadmap ? <Upvotes upvotes={item.upvotes} /> : ""}
+      <div className="flex items-start gap-8 flex-col">
+        {roadmap ? <FeedbackType type={item.type} /> : ""}{" "}
+        {roadmap ? "" : <Upvotes upvotes={item.upvotes} />}
         <ContentItem
           title={item.title}
           feedback={item.feedback}
@@ -17,7 +17,7 @@ const UserFeedBack = ({ item, roadmap = false }) => {
           itemId={item.id}
         />
       </div>
-      {roadmap ? <Comments comments={item.Comments.length} /> : ""}
+      {roadmap ? "" : <Comments comments={item.Comments.length} />}
     </Wrapper>
   );
 };

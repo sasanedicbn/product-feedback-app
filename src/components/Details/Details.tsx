@@ -42,7 +42,7 @@ const Details = () => {
           Edit Feedback
         </Button>
       </div>
-      <UserFeedBack item={feedback} />
+      <UserFeedBack item={feedback} roadmap={false} />
       <FeedBackComments comments={feedback} />
       <AddComment id={id} />
     </div>

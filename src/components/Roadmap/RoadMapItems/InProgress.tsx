@@ -12,7 +12,7 @@ const InProgress = ({ feedbacks }) => {
       <p className="text-sm text-gray-500">Currently being developed</p>
       <div className="mt-4">
         {inProgressFeedbacks.map((item) => (
-          <UserFeedBack key={item.id} item={item} />
+          <UserFeedBack key={item.id} item={item} roadmap={true} />
         ))}
       </div>
     </div>
