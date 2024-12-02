@@ -6,10 +6,11 @@ const Live = ({ feedbacks }) => {
 
   return (
     <div className="w-full">
-      <span>({liveFeedbacks.length})</span>
-      <h3 className="text-lg font-semibold">Live</h3>
+      <h3 className="text-lg font-semibold text-blue-950 opacity-85">
+        Live <span>({liveFeedbacks.length})</span>
+      </h3>
       <p className="text-sm text-gray-500">Ideas that have been released</p>
-      <div className="mt-4 bg-red-500 h-[850px] p-4 ">
+      <div className="mt-4">
         {liveFeedbacks.map((item) => (
           <UserFeedBack key={item.id} item={item} roadmap={true} />
         ))}

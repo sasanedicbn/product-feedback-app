@@ -7,8 +7,9 @@ const InProgress = ({ feedbacks }) => {
 
   return (
     <div className="w-full">
-      <span>({inProgressFeedbacks.length})</span>
-      <h3 className="text-lg font-semibold">In Progress</h3>
+      <h3 className="text-lg font-semibold text-blue-950 opacity-85">
+        In Progress <span>({inProgressFeedbacks.length})</span>
+      </h3>
       <p className="text-sm text-gray-500">Currently being developed</p>
       <div className="mt-4">
         {inProgressFeedbacks.map((item) => (
