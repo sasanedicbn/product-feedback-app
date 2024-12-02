@@ -1,13 +1,15 @@
 import Wrapper from "../../UX/Wrapper";
 import Comments from "./ContentBodyItems.tsx/Comments";
 import ContentItem from "./ContentBodyItems.tsx/ContentItem";
+import FeedbackType from "./ContentBodyItems.tsx/FeedbackType";
 import Upvotes from "./ContentBodyItems.tsx/Upvotes";
 
-const UserFeedBack = ({ item }) => {
+const UserFeedBack = ({ item, roadmap = false }) => {
   return (
     <Wrapper type="feedBackContainer">
       <div className="flex items-start gap-8">
-        <Upvotes upvotes={item.upvotes} />
+        <FeedbackType type={item.type} />
+        {roadmap ? <Upvotes upvotes={item.upvotes} /> : ""}
         <ContentItem
           title={item.title}
           feedback={item.feedback}
@@ -15,7 +17,7 @@ const UserFeedBack = ({ item }) => {
           itemId={item.id}
         />
       </div>
-      <Comments comments={item.Comments.length} />
+      {roadmap ? <Comments comments={item.Comments.length} /> : ""}
     </Wrapper>
   );
 };
