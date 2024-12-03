@@ -11,8 +11,6 @@ const Roadmap = () => {
   );
   const liveFeedbacks = feedbacks.filter((item) => item.type === "Live");
   const plannedFeedbacks = feedbacks.filter((item) => item.type === "Planned");
-
-  console.log(inProgressFeedbacks.length, "iz roadaa");
   return (
     <Wrapper type="sideBarItem">
       <motion.section
