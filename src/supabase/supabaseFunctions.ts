@@ -145,6 +145,7 @@ export async function postFeedback(feedback) {
                     title: feedback.title,
                     category_id: feedback.category_id,
                     feedback: feedback.feedback,
+                    type: feedback.type,
                 },
             ])
             .select('*, Comments(*), Category(*)');

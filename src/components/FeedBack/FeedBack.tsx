@@ -29,6 +29,7 @@ const FeedBack = () => {
       [name]: value,
     }));
   };
+  console.log(feedbackData, "gledaj");
 
   const postNewFeedback = async () => {
     const feedback = await postFeedback(feedbackData);
@@ -93,11 +94,7 @@ const FeedBack = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
         >
-          <Select
-            name="category_id"
-            onChange={FeedBackInputHandler}
-            className="mb-4"
-          >
+          <Select name="type" onChange={FeedBackInputHandler} className="mb-4">
             <Option value="">Select category</Option>
             <Option value="Feature">Feature</Option>
             <Option value="Ul">UI</Option>
