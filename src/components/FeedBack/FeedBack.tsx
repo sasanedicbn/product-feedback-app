@@ -108,9 +108,9 @@ const FeedBack = () => {
             className="mb-4"
           >
             <Option value="">Select type</Option>
-            <Option value="Feature">Live</Option>
-            <Option value="Ul">Progress</Option>
-            <Option value="UX">Planned</Option>
+            <Option value="Live">Live</Option>
+            <Option value="Progress">Progress</Option>
+            <Option value="Planned">Planned</Option>
           </Select>
         </motion.div>
 
