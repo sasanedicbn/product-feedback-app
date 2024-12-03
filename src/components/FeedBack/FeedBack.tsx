@@ -5,7 +5,6 @@ import FeedBackTitle from "./FeedBackItems/FeedBackTitle";
 import Select from "../UX/Select";
 import Option from "../UX/Option";
 import Action from "../UX/Action";
-import AnimationCircle from "../UX/AnimationCircle";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { postFeedback } from "../../supabase/supabaseFunctions";
@@ -48,7 +47,6 @@ const FeedBack = () => {
 
   return (
     <div className="bg-gray-100 flex justify-center items-center flex-col px-12 pt-6 pb-6 font-serif ">
-      <AnimationCircle />
       <motion.div
         className="bg-white w-[500px] p-8 rounded-lg shadow-lg"
         initial={{ opacity: 0, y: 50 }}
@@ -94,7 +92,11 @@ const FeedBack = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
         >
-          <Select name="type" onChange={FeedBackInputHandler} className="mb-4">
+          <Select
+            name="category_id"
+            onChange={FeedBackInputHandler}
+            className="mb-4"
+          >
             <Option value="">Select category</Option>
             <Option value="Feature">Feature</Option>
             <Option value="Ul">UI</Option>
@@ -102,11 +104,7 @@ const FeedBack = () => {
             <Option value="Enhancement">Enhancement</Option>
             <Option value="Bug">Bug</Option>
           </Select>
-          <Select
-            name="category_id"
-            onChange={FeedBackInputHandler}
-            className="mb-4"
-          >
+          <Select name="type" onChange={FeedBackInputHandler} className="mb-4">
             <Option value="">Select type</Option>
             <Option value="Live">Live</Option>
             <Option value="Progress">Progress</Option>
