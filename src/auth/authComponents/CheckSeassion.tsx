@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../../supabase/supabase";
 import { setUser, clearUser } from "../../components/store/slices/userSlice";
 
-const CheckSession = ({ children }) => {
+const CheckSession = ({ children }: any) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
