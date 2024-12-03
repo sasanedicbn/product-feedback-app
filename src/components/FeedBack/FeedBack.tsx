@@ -86,7 +86,7 @@ const FeedBack = () => {
 
         <FeedBackTitle
           title="Category"
-          subtitle="Choose a category for your feedback"
+          subtitle="Choose a category for your feedback and type"
         />
         <motion.div
           initial={{ opacity: 0 }}
@@ -104,6 +104,16 @@ const FeedBack = () => {
             <Option value="UX">UX</Option>
             <Option value="Enhancement">Enhancement</Option>
             <Option value="Bug">Bug</Option>
+          </Select>
+          <Select
+            name="category_id"
+            onChange={FeedBackInputHandler}
+            className="mb-4"
+          >
+            <Option value="">Select type</Option>
+            <Option value="Feature">Live</Option>
+            <Option value="Ul">Progress</Option>
+            <Option value="UX">Planned</Option>
           </Select>
         </motion.div>
 
