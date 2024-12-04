@@ -21,7 +21,7 @@ const FeedBack = () => {
     feedback: "",
   });
 
-  const FeedBackInputHandler = (e) => {
+  const FeedBackInputHandler = (e: any) => {
     const { name, value } = e.target;
     setFeedbackData((prevData) => ({
       ...prevData,
@@ -77,6 +77,7 @@ const FeedBack = () => {
           <Input
             type="text"
             name="title"
+            value={feedbackData.title}
             styleType="addFeedBack"
             placeholder="Enter feedback title"
             onChange={FeedBackInputHandler}
