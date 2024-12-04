@@ -2,7 +2,11 @@ import { FeedBackCommentsProps } from "../../types/types";
 import Wrapper from "../../UX/Wrapper";
 import CommentCard from "./CommentCard";
 
-const FeedBackComments = ({ comments }: FeedBackCommentsProps) => {
+const FeedBackComments = ({
+  comments,
+}: {
+  comments: FeedBackCommentsProps;
+}) => {
   const { Comments } = comments;
 
   return (

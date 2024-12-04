@@ -120,7 +120,7 @@ export type CommentCardProps = {
     answers?:[];
     buttonType?: string;
     containerClass?: string;
-    type: string,
+    type: boolean,
     postId: string;
 }
 export type CommentState = {

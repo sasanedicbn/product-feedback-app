@@ -4,10 +4,17 @@ import Textarea from "../../UX/Textarea";
 import { useDispatch, useSelector } from "react-redux";
 import { addCommentAndAnswer } from "../../../supabase/supabaseFunctions";
 import { addAnswer } from "../../store/slices/feedBackSlice";
+import { RootState } from "../../store/store";
 
-const PostReplay = ({ type, postId, replyTo }) => {
+const PostReplay = ({
+  postId,
+  replyTo,
+}: {
+  postId: string;
+  replyTo: string;
+}) => {
   const [reply, setReply] = useState<string>(replyTo ? `${replyTo} ` : "");
-  const currentUser = useSelector((state) => state.user.user);
+  const currentUser = useSelector((state: RootState) => state.user.user);
   const dispatch = useDispatch();
 
   const commentAnswerHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
