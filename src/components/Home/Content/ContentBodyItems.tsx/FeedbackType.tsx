@@ -1,5 +1,9 @@
-const FeedbackType = ({ type }) => {
-  const bgColorHanlder = {
+type FeedbackTypeProps = {
+  type: "Live" | "Progress" | "Planned";
+};
+
+const FeedbackType = ({ type }: FeedbackTypeProps) => {
+  const bgColorHanlder: Record<FeedbackTypeProps["type"], string> = {
     Live: "bg-[#62bcfa]",
     Progress: "bg-[#ad1fea]",
     Planned: "bg-[#f49f85]",
