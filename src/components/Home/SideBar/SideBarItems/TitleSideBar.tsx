@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import Wrapper from "../../../UX/Wrapper";
 import { useSelector } from "react-redux";
 import Logout from "../../../../auth/Logout";
+import { RootState } from "../../../store/store";
 
 const TitleSideBar = () => {
-  const currentUser = useSelector((user) => user.user.user);
+  const currentUser = useSelector((user: RootState) => user.user.user);
   console.log(currentUser, "currentUser");
   return (
     <Wrapper type="sideBarTitle">
