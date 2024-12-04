@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import { RootState } from "../../store/store";
 import { CommentState } from "../../types/types";
 
-const AddComment = ({ id }: { id: string }) => {
+const AddComment = ({ id }: { id: string | undefined }) => {
   const [lengthComment, setLengthComment] = useState(225);
   const [updateComment, setUpdateComment] = useState<CommentState>({
     user_comment: "",

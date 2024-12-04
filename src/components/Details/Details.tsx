@@ -2,18 +2,19 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchFeedbackById } from "../../supabase/supabaseFunctions";
 import { useDispatch, useSelector } from "react-redux";
-import { setComments, setFeedBack } from "../store/slices/feedBackSlice";
+import { setFeedBack } from "../store/slices/feedBackSlice";
 import UserFeedBack from "../Home/Content/UserFeedBack";
 import Action from "../UX/Action";
 import Button from "../UX/Button";
 import FeedBackComments from "./feedBackComments/FeedBackComments";
 import AddComment from "./addComment.tsx/AddComment";
+import { RootState } from "../store/store";
 
 const Details = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigation = useNavigate();
-  const feedback = useSelector((state) => state.feedback.feedback);
+  const feedback = useSelector((state: RootState) => state.feedback.feedback);
 
   useEffect(() => {
     const fetchFeedBack = async () => {

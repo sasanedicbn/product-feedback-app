@@ -1,7 +1,7 @@
 import { ChangeEvent, ReactNode } from "react";
 
 export type ButtonProps = {
-    type: 'login' | 'cancelFeedBack' | 'addFeedBack' | 'replay' | 'iconSignUp' | 'buttonType' ;
+    type: 'login' | 'cancelFeedBack' | 'addFeedBack' | 'replay' | 'iconSignUp' | 'buttonType' | 'editFeedBack';
     buttonType?: 'button' | 'submit' | 'reset'; 
     children: React.ReactNode;
     onClick?: () => void; 
