@@ -4,7 +4,7 @@ import ContentItem from "./ContentBodyItems.tsx/ContentItem";
 import FeedbackType from "./ContentBodyItems.tsx/FeedbackType";
 import Upvotes from "./ContentBodyItems.tsx/Upvotes";
 
-const UserFeedBack = ({ item, roadmap = false }) => {
+const UserFeedBack = ({ item, roadmap = false }: any) => {
   return (
     <Wrapper type="feedBackContainer">
       <div className={roadmap ? "gap-6 flex-col" : "flex items-start gap-8 "}>
