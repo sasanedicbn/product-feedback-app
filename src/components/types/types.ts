@@ -134,3 +134,10 @@ export type lengthCommentsProps = {
   length: number,
   postCommentHandler: () => void,
 }
+export  type ContentItemProps = {
+    title: string;
+    feedback: string;
+    category: string;
+    itemId?: string | number | null;
+  };
+  

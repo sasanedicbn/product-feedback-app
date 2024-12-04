@@ -1,7 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import SingleCategory from "../../../UX/SingleCategory";
+import { ContentItemProps } from "../../../types/types";
 
-const ContentItem = ({ title, feedback, category, itemId = null }) => {
+const ContentItem = ({
+  title,
+  feedback,
+  category,
+  itemId = null,
+}: ContentItemProps) => {
   const navigate = useNavigate();
 
   const handleItemClick = () => {
