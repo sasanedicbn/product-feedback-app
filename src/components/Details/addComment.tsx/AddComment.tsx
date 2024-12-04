@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import FeedBackTitle from "../../FeedBack/FeedBackItems/FeedBackTitle";
 import Wrapper from "../../UX/Wrapper";
 import LengthComments from "./LengthComments";
@@ -7,14 +7,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { postComment } from "../../../supabase/supabaseFunctions";
 import { addComment } from "../../store/slices/feedBackSlice";
 import { toast } from "react-toastify";
+import { RootState } from "../../store/store";
+import { CommentState } from "../../types/types";
 
-const AddComment = ({ id }) => {
+const AddComment = ({ id }: { id: string }) => {
   const [lengthComment, setLengthComment] = useState(225);
-  const [updateComment, setUpdateComment] = useState({ user_comment: "" });
-  const currentUser = useSelector((user) => user.user.user);
+  const [updateComment, setUpdateComment] = useState<CommentState>({
+    user_comment: "",
+  });
+  const currentUser = useSelector((user: RootState) => user.user.user);
   const dispatch = useDispatch();
 
-  const updateCommentHandler = (e) => {
+  const updateCommentHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const comment = e.target.value;
     setUpdateComment({
       ...updateComment,
@@ -36,12 +40,12 @@ const AddComment = ({ id }) => {
     }
   };
 
-  const updateLengthComment = (e) => {
+  const updateLengthComment = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const remainingLength = 225 - e.target.value.length;
     setLengthComment(remainingLength >= 0 ? remainingLength : 0);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     updateLengthComment(e);
     updateCommentHandler(e);
   };

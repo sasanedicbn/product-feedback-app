@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ChangeEvent, ReactNode } from "react";
 
 export type ButtonProps = {
     type: 'login' | 'cancelFeedBack' | 'addFeedBack' | 'replay' | 'iconSignUp' ;
@@ -90,12 +90,14 @@ export type DropDownProps = {
 };
 
 export type TextareaProps = {
-    placeholder: string,
-    rows: number,
-    additionalStyles: string | null,
-    onChange: () => void,
-    maxLength: number
-}
+  placeholder?: string;
+  rows?: number;
+  value: string;
+  additionalStyles?: string;
+  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  maxLength?: number;
+};
+
 
 export type Comments = {
     id: string; 
@@ -118,3 +120,10 @@ export type CommentCardProps = {
     buttonType?: string;
     containerClass?: string;
 }
+export type CommentState = {
+    user_comment: string;
+    user?: string;
+    user_name?: string;
+    user_image?: string;
+    feedback_id?: string;
+  };
