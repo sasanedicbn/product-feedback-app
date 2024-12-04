@@ -127,3 +127,7 @@ export type CommentState = {
     user_image?: string;
     feedback_id?: string;
   };
+export type lengthCommentsProps = {
+  length: number,
+  postCommentHandler: () => void,
+}
