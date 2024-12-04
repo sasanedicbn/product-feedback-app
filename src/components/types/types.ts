@@ -1,7 +1,7 @@
 import { ChangeEvent, ReactNode } from "react";
 
 export type ButtonProps = {
-    type: 'login' | 'cancelFeedBack' | 'addFeedBack' | 'replay' | 'iconSignUp' ;
+    type: 'login' | 'cancelFeedBack' | 'addFeedBack' | 'replay' | 'iconSignUp' | 'buttonType' ;
     buttonType?: 'button' | 'submit' | 'reset'; 
     children: React.ReactNode;
     onClick?: () => void; 
@@ -117,8 +117,11 @@ export type CommentCardProps = {
     user: string;
     user_name: string;
     user_comment: string;
+    answers?:[];
     buttonType?: string;
     containerClass?: string;
+    type: string,
+    postId: string;
 }
 export type CommentState = {
     user_comment: string;

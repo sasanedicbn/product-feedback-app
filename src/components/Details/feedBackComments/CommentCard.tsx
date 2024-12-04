@@ -13,7 +13,6 @@ const CommentCard = ({
   containerClass = "",
   answers = [],
   type,
-  id,
   postId,
 }: CommentCardProps) => {
   const [isReplyOpen, setIsReplyOpen] = useState(false);
