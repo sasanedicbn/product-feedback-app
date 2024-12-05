@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 import Wrapper from "../../../UX/Wrapper";
 import RoadmapItem from "./RoadmapItem/RoadmapItem";
 import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const Roadmap = () => {
-  const feedbacks = useSelector((state) => state.categories.items);
+  const feedbacks = useSelector((state: RootState) => state.categories.items);
   const inProgressFeedbacks = feedbacks.filter(
-    (item) => item.type === "Progress"
+    (item: any) => item.type === "Progress"
   );
-  const liveFeedbacks = feedbacks.filter((item) => item.type === "Live");
-  const plannedFeedbacks = feedbacks.filter((item) => item.type === "Planned");
+  const liveFeedbacks = feedbacks.filter((item: any) => item.type === "Live");
+  const plannedFeedbacks = feedbacks.filter(
+    (item: any) => item.type === "Planned"
+  );
   return (
     <Wrapper type="sideBarItem">
       <motion.section
