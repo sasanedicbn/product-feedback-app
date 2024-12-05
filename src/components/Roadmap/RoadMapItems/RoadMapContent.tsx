@@ -5,7 +5,6 @@ import FeedbackList from "./FeedbackList";
 const RoadMapContent = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
-  // Predefinišemo sekcije
   const sections = [
     {
       title: "Planned",
@@ -27,7 +26,7 @@ const RoadMapContent = () => {
   useEffect(() => {
     const fetchFeedbacksHandler = async () => {
       const feedbacksData = await fetchFeedbacksWithAllRelations();
-      setFeedbacks(feedbacksData);
+      setFeedbacks(feedbacksData as any);
     };
 
     fetchFeedbacksHandler();
