@@ -140,4 +140,16 @@ export  type ContentItemProps = {
     category: string;
     itemId?: string | number | null;
   };
-  
+export type  Feedback = {
+    id: number;
+    title: string;
+    description: string;
+    type: "Planned" | "Progress" | "Live";
+    [key: string]: any; 
+  }
+export type  FeedbackListProps = {
+    title: string;
+    description: string;
+    type: "Planned" | "Progress" | "Live";
+    feedbacks: Feedback[];
+  }

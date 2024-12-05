@@ -1,6 +1,12 @@
 import UserFeedBack from "../../Home/Content/UserFeedBack";
+import { FeedbackListProps } from "../../types/types";
 
-const FeedbackList = ({ title, description, type, feedbacks }) => {
+const FeedbackList = ({
+  title,
+  description,
+  type,
+  feedbacks,
+}: FeedbackListProps) => {
   const filteredFeedbacks = feedbacks.filter((item) => item.type === type);
 
   return (
