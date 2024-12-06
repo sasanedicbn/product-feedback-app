@@ -28,7 +28,6 @@ const FeedBack = () => {
       [name]: value,
     }));
   };
-  console.log(feedbackData, "gledaj");
 
   const postNewFeedback = async () => {
     const feedback = await postFeedback(feedbackData);
@@ -46,9 +45,9 @@ const FeedBack = () => {
   };
 
   return (
-    <div className="bg-gray-100 flex justify-center items-center flex-col px-12 pt-6 pb-6 font-serif ">
+    <div className="bg-gray-100 flex justify-center items-center flex-col px-4 lg:px-12 pt-6 pb-6 font-serif">
       <motion.div
-        className="bg-white w-[500px] p-8 rounded-lg shadow-lg"
+        className="bg-white w-full sm:w-[500px] lg:w-[600px] p-8 rounded-lg shadow-lg"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -131,7 +130,7 @@ const FeedBack = () => {
         </motion.div>
 
         <motion.section
-          className="flex justify-between"
+          className="flex flex-col sm:flex-row justify-between gap-4 sm:gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.5 }}
