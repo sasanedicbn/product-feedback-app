@@ -3,7 +3,7 @@ import ContentTitle from "./ContentTitle";
 
 const Content = () => {
   return (
-    <div className="w-full lg:w-[800px] pb-12">
+    <div className="w-full max-w-[800px] pb-12 px-4 sm:px-6 lg:px-8">
       <ContentTitle />
       <ContentBody />
     </div>
