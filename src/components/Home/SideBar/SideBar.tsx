@@ -4,7 +4,7 @@ import TitleSideBar from "./SideBarItems/TitleSideBar";
 
 const SideBar = () => {
   return (
-    <div className="xl:flex flex-col lg:flex w-[300px]  bg-red-200  lg:gap-4">
+    <div className="bg-slate-500 flex flex-row gap-4 items-center lg:flex-col lg:bg-red-200 lg:max-w-[290px]">
       <TitleSideBar />
       <Category />
       <Roadmap />
