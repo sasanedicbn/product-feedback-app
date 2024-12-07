@@ -7,7 +7,7 @@ const Wrapper = ({ children, type }: WrapperProps) => {
     pageWrapper: `${base} w-full sm:w-1/2 md:w-1/3 lg:w-1/4`,
     sideBarTitle: `${baseSideBar} bg-diagonal-gradient mb-4`,
     sideBarItem: `${baseSideBar} bg-white mb-4 `,
-    feedBackContainer: `bg-white w-full p-5 rounded-lg flex justify-between items-center px-6 mb-4`,
+    feedBackContainer: `bg-white w-full p-5 rounded-lg flex justify-between items-center px-6 mb-4 mr-2`,
     feedBackComments: `bg-white flex flex-col w-full pt-5 rounded-lg flex justify-between items-center px-6 pb-4`,
   };
   return <div className={styles[type]}>{children}</div>;
