@@ -2,7 +2,7 @@ import { WrapperProps } from "../types/types";
 
 const Wrapper = ({ children, type }: WrapperProps) => {
   const base = "flex justify-between my-8 mx-auto";
-  const baseSideBar = "h-[175px] rounded-lg p-6 w-[260px]";
+  const baseSideBar = "h-[175px] rounded-lg p-6 w-1/3";
   const styles = {
     pageWrapper: `${base} w-full sm:w-1/2 md:w-1/3 lg:w-1/4`,
     sideBarTitle: `${baseSideBar} bg-diagonal-gradient mb-4`,
