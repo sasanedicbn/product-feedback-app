@@ -11,7 +11,7 @@ const Logout = () => {
   return (
     <p
       onClick={LogoutHandler}
-      className=" text-sm mt-4 text-blue-600 cursor-pointer"
+      className=" text-sm mt-1 text-blue-600 cursor-pointer md:mt-4"
     >
       Log out
     </p>

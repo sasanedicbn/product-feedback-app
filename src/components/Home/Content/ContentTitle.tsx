@@ -28,11 +28,11 @@ const ContentTitle = () => {
   );
 
   return (
-    <div className="flex items-center justify-between bg-[#464f79] p-4 rounded-lg mb-4">
+    <div className="flex items-center justify-between rounded-none bg-[#464f79] p-4 px-4 sm:px-2 mb-4 md:rounded-lg">
       <div className="flex items-center">
         <Icon name="suggestion" size={26} color="white" />
-        <p className="text-white text-lg pl-4 mr-8 font-semibold">
-          {commentsData.length} Suggestions{" "}
+        <p className="text-white text-sm md:text-base pl-4 mr-8 font-semibold">
+          {commentsData.length} Suggestions
         </p>
         <DropDown
           options={sortOptions}
@@ -43,7 +43,7 @@ const ContentTitle = () => {
       <div className="flex items-center">
         <Button type="addFeedBack" onClick={feedBackPageHandler}>
           <Icon name="plus" size={14} color="white" />
-          <span className="text-sm ml-1">Add Feedback</span>
+          <span className="text-xs md:text-sm ml-1">Add Feedback</span>
         </Button>
       </div>
     </div>
