@@ -24,7 +24,7 @@ const ContentBody = () => {
     return <EmptyFeedback />;
   }
   return (
-    <div className="space-y-4 px-4">
+    <div className="space-y-4 px-2 sm:px-4">
       {commentsData.map((item: FeedbackItem) => (
         <UserFeedBack item={item} key={item.id} />
       ))}
