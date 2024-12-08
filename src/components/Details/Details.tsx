@@ -30,7 +30,7 @@ const Details = () => {
   if (!feedback) return <div>Loading...</div>;
   return (
     <div className="bg-gray-100 flex gap-5 flex-col pb-12 justify-center pt-16 font-serif">
-      <div className="md:max-w-[725px] md:bg-red-200 mx-auto sm: bg-red-400 max-w-[650px]">
+      <div className="px-2 md:max-w-[725px] md: mx-auto sm: max-w-[650px]">
         <div className="flex items-center justify-between mb-4">
           <Action
             iconName="back"

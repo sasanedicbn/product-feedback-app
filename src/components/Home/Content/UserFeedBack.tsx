@@ -7,7 +7,7 @@ import Upvotes from "./ContentBodyItems.tsx/Upvotes";
 const UserFeedBack = ({ item, roadmap = false }: any) => {
   return (
     <Wrapper type="feedBackContainer">
-      <div className={roadmap ? "gap-6 flex-col" : "flex items-start gap-8 "}>
+      <div className={roadmap ? "gap-6 flex-col" : "flex items-start gap-6  "}>
         {roadmap ? <FeedbackType type={item.type} /> : ""}
         {roadmap ? "" : <Upvotes upvotes={item.upvotes} />}
         <ContentItem

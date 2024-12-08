@@ -16,7 +16,7 @@ const ContentItem = ({
 
   return (
     <div onClick={handleItemClick} className="text-dark-blue  cursor-pointer">
-      <h2 className="md:text-blue-950 opacity-90  text-xl font-bold sm:text-orange-300">
+      <h2 className="text-blue-950  opacity-90  md:text-xl font-bold sm:text-lg">
         {title}
       </h2>
       <p className="text-gray-500 text-sm font-light my-1">{feedback}</p>
