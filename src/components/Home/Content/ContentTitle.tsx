@@ -30,8 +30,13 @@ const ContentTitle = () => {
   return (
     <div className="flex items-center justify-between rounded-none bg-[#464f79] p-4 px-4 sm:px-2 mb-4 md:rounded-lg">
       <div className="flex items-center">
-        <Icon name="suggestion" size={26} color="white" />
-        <p className="text-white text-sm md:text-base pl-4 mr-8 font-semibold">
+        <Icon
+          name="suggestion"
+          size={26}
+          color="white"
+          className="hidden sm:block"
+        />
+        <p className="hidden sm:block text-white text-sm md:text-base pl-4 mr-8 font-semibold">
           {commentsData.length} Suggestions
         </p>
         <DropDown
