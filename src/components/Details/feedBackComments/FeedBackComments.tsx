@@ -12,7 +12,7 @@ const FeedBackComments = ({
   return (
     <Wrapper type="feedBackComments">
       {!Comments || Comments.length === 0 ? (
-        <p className="text-gray-500">No comments available.</p>
+        <p className="text-gray-500 mb-2">No comments available.</p>
       ) : (
         Comments.map((comment) => (
           <CommentCard

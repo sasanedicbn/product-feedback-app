@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <div className="flex h-screen">
       <ImageBackgorund />
-      <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-gray-100 p-8">
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-gray-100 p-4">
         <Title />
         <AuthForm />
         <SocialSignIn />
