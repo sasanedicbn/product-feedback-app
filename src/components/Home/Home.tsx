@@ -3,7 +3,7 @@ import SideBar from "./SideBar/SideBar";
 
 const Home = () => {
   return (
-    <div className="bg-gray-100 flex flex-col lg:flex-row justify-center gap-6 px-2 pt-16 font-serif">
+    <div className="bg-gray-100 flex flex-col lg:flex-row justify-center gap-6 px-2  font-serif md:pt-16">
       <div className="flex flex-col lg:flex-row justify-center">
         <SideBar />
         <Content />
