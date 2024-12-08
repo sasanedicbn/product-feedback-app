@@ -3,6 +3,7 @@ import Wrapper from "../../../UX/Wrapper";
 import { useSelector } from "react-redux";
 import Logout from "../../../../auth/Logout";
 import { RootState } from "../../../store/store";
+import Icon from "../../../UX/Icon";
 
 const TitleSideBar = () => {
   const currentUser = useSelector((user: RootState) => user.user.user);
@@ -34,6 +35,9 @@ const TitleSideBar = () => {
           </div>
         </div>
       </motion.div>
+      <div>
+        <Icon name="menuBurger" size={24} color="orange" onClick={() => {}} />
+      </div>
     </Wrapper>
   );
 };

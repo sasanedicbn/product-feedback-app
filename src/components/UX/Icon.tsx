@@ -7,6 +7,7 @@ import {
 import { IconProps } from "../types/types";
 import { FaArrowLeft, FaCheck, FaRegComment } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const Icon = ({
   name,
@@ -31,6 +32,14 @@ const Icon = ({
     message: <FaRegComment size={size} color={color} onClick={onClick} />,
     back: <FaArrowLeft size={size} color={color} onClick={onClick} />,
     search: <FiSearch size={size} color={color} onClick={onClick} />,
+    menuBurger: (
+      <AiOutlineMenu
+        size={size}
+        color={color}
+        onClick={onClick}
+        className={className}
+      />
+    ),
   };
 
   return icons[name] || null;
