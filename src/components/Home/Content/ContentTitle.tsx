@@ -28,7 +28,7 @@ const ContentTitle = () => {
   );
 
   return (
-    <div className="flex items-center justify-between rounded-none bg-[#464f79] p-4 px-4 sm:px-2 mb-4 md:rounded-lg">
+    <div className="flex items-center justify-between rounded-none bg-[#464f79] p-2 px-4 sm:px-2 mb-4 md:rounded-lg md:mx-4">
       <div className="flex items-center">
         <Icon
           name="suggestion"

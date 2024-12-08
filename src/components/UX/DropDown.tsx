@@ -39,7 +39,7 @@ const DropDown = ({
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 text-sm"
+        className="flex items-center gap-1 text-xs sm:text-sm"
       >
         <span className="text-gray-300">Sort by:</span>{" "}
         <strong className="text-gray-200">{selectedOption}</strong>
@@ -56,7 +56,7 @@ const DropDown = ({
           <motion.li
             key={option}
             onClick={() => handleOptionClick(option)}
-            className="p-2 cursor-pointer flex justify-between items-center font-light text-gray-500 text-sm border-b border-solid border-gray-300 last:border-b-0"
+            className="p-2 cursor-pointer flex justify-between items-center text-xs sm:text-sm font-light text-gray-500 border-b border-solid border-gray-300 last:border-b-0"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
