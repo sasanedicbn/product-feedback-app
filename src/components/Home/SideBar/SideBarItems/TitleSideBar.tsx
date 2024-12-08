@@ -23,10 +23,10 @@ const TitleSideBar = () => {
         <div className="flex-1">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-semibold text-blue-950">
+              <p className="font-semibold text-blue-950 text-base sm:text-lg">
                 {currentUser.full_name}
               </p>
-              <p className="text-gray-500 text-sm font-light">
+              <p className="text-gray-500 text-xs sm:text-sm font-light">
                 {currentUser.user_name}
               </p>
               <Logout />
