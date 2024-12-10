@@ -10,7 +10,7 @@ const UserFeedBack = ({ item, roadmap = false }: any) => {
       <div
         className={
           roadmap
-            ? "gap-2 flex-col sm:gap-6 bg-b"
+            ? "gap-2 flex-col sm:gap-6"
             : "flex items-start gap-2 sm:gap-6  "
         }
       >

@@ -29,7 +29,7 @@ const Details = () => {
   };
   if (!feedback) return <div>Loading...</div>;
   return (
-    <div className="bg-gray-100 flex gap-5 flex-col pb-12 justify-center pt-4 font-serif md:pt-16 sm:pt-8">
+    <div className="bg-gray-100  flex gap-5 flex-col pb-12 justify-center pt-4 font-serif md:pt-16 sm:pt-8">
       <div className="px-2 md:max-w-[725px] md: mx-auto sm: max-w-[650px]">
         <div className="flex items-center justify-between mb-4">
           <Action

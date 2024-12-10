@@ -24,7 +24,7 @@ const CommentCard = ({
   };
 
   return (
-    <div className={`flex w-full mb-0 ${containerClass}`}>
+    <div className={`flex w-full mb-2 ${containerClass}`}>
       <img
         src={user_image}
         alt={`${user}'s avatar`}
