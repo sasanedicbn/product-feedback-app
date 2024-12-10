@@ -9,6 +9,7 @@ import Button from "../UX/Button";
 import FeedBackComments from "./feedBackComments/FeedBackComments";
 import AddComment from "./addComment.tsx/AddComment";
 import { RootState } from "../store/store";
+import Spinner from "../UX/Spinner";
 
 const Details = () => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const Details = () => {
   const homePageHanlder = () => {
     navigation("/");
   };
-  if (!feedback) return <div>Loading...</div>;
+  if (!feedback) return <Spinner />;
   return (
     <div className="bg-gray-100  flex gap-5 flex-col pb-12 justify-center pt-4 font-serif md:pt-16 sm:pt-8">
       <div className="px-2 md:max-w-[725px] md: mx-auto sm: max-w-[650px]">
