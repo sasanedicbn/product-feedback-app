@@ -15,7 +15,7 @@ const RoadmapPage = () => {
   };
   return (
     // <Wrapper type="pageWrapper">
-    <div className="bg-gray-100 flex gap-5 flex-col px-32 pt-16 pb-10 font-serif">
+    <div className="bg-gray-100 flex gap-5 flex-col px-6 pt-16 pb-10  font-serif sm:px-12 md:px-16 lg:px-28">
       <div className="flex items-center justify-between bg-[#464f79] p-6 rounded-lg mb-4">
         <div className="">
           <Action
