@@ -15,8 +15,8 @@ const RoadmapPage = () => {
   };
   return (
     // <Wrapper type="pageWrapper">
-    <div className="bg-gray-100 flex gap-5 flex-col px-6 pt-16 pb-10  font-serif sm:px-12 md:px-16 lg:px-28">
-      <div className="flex items-center justify-between bg-[#464f79] p-6 rounded-lg mb-4">
+    <div className="bg-gray-100 flex gap-5 flex-col px-0 pt-0 pb-10  font-serif sm:px-0 md:px-16 md:pt-16 lg:px-16 ">
+      <div className="flex items-center justify-between bg-[#464f79] p-6 mb-4 md:rounded-lg ">
         <div className="">
           <Action
             iconName="back"
