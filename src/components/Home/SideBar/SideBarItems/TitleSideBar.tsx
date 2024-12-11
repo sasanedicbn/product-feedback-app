@@ -11,11 +11,12 @@ import Roadmap from "./Roadmap";
 
 const TitleSideBar = () => {
   const currentUser = useSelector((user: RootState) => user.user.user);
-  console.log(currentUser, "currentUser");
   const [openMenu, setOpenMenu] = useState(false);
+
   const toggleMenu = () => {
     setOpenMenu((prev) => !prev);
   };
+
   return (
     <Wrapper type="sideBarTitle">
       <motion.div
@@ -52,7 +53,8 @@ const TitleSideBar = () => {
         />
         {openMenu && (
           <Menu>
-            <Category /> <Roadmap />
+            <Category />
+            <Roadmap />
           </Menu>
         )}
       </div>
