@@ -43,11 +43,18 @@ const TitleSideBar = () => {
           </div>
         </div>
       </motion.div>
-      <div className="bg-red-400">
-        <Icon name="menuBurger" size={26} color="black" onClick={() => {}} />
-        <Menu>
-          <Category /> <Roadmap />
-        </Menu>
+      <div className="block md:hidden">
+        <Icon
+          name="menuBurger"
+          size={26}
+          color="black"
+          onClick={() => toggleMenu()}
+        />
+        {openMenu && (
+          <Menu>
+            <Category /> <Roadmap />
+          </Menu>
+        )}
       </div>
     </Wrapper>
   );
