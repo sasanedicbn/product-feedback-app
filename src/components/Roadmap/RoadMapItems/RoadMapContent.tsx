@@ -33,7 +33,7 @@ const RoadMapContent = () => {
   }, []);
 
   return (
-    <div className="flex justify-between flex-col px-2 gap-2 md:gap-8 sm:gap-4 md:mx-2 bg-red-400">
+    <div className="flex flex-col md:flex-row justify-between px-2 gap-2 sm:gap-4 md:gap-8 md:mx-2">
       {sections.map((section) => (
         <FeedbackList
           key={section.type}
