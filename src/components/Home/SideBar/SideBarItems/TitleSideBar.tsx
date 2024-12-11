@@ -5,6 +5,9 @@ import Logout from "../../../../auth/Logout";
 import { RootState } from "../../../store/store";
 import Icon from "../../../UX/Icon";
 import { useState } from "react";
+import Menu from "../../../UX/Menu";
+import Category from "./Category";
+import Roadmap from "./Roadmap";
 
 const TitleSideBar = () => {
   const currentUser = useSelector((user: RootState) => user.user.user);
@@ -42,6 +45,9 @@ const TitleSideBar = () => {
       </motion.div>
       <div className="bg-red-400">
         <Icon name="menuBurger" size={26} color="black" onClick={() => {}} />
+        <Menu>
+          <Category /> <Roadmap />
+        </Menu>
       </div>
     </Wrapper>
   );
