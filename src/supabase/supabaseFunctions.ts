@@ -162,15 +162,14 @@ export async function postFeedback(feedback) {
     }
 }
 
-
-export async function sortFeedBacksByCategory(categoryId = "", upvotesOrComments = "") {
-    console.log(categoryId, 'prvi arg' , upvotesOrComments, "drugi arg unutar fn");
+export async function sortFeedBacksByCategory(categoryId = "All", upvotesOrComments = "") {
+    console.log(categoryId, "prvi arg", upvotesOrComments, "drugi arg unutar fn");
     try {
         let query = supabase
             .from("Feedbacks")
-            .select(`*, Comments(*), Category(*)`); 
+            .select(`*, Comments(*), Category(*)`);
 
-        if (categoryId !== "All") {
+        if (categoryId !== "All" && categoryId !== "") {
             query = query.eq("category_id", categoryId);
         }
 
@@ -180,23 +179,25 @@ export async function sortFeedBacksByCategory(categoryId = "", upvotesOrComments
             throw new Error(error.message);
         }
 
-        let sortedData = data;
+        let sortedData = data || [];
 
-        switch (upvotesOrComments) {
-            case "Most Upvotes":
-                sortedData = data.sort((a, b) => b.upvotes - a.upvotes);
-                break;
-            case "Least Upvotes":
-                sortedData = data.sort((a, b) => a.upvotes - b.upvotes);
-                break;
-            case "Most Comments":
-                sortedData = data.sort((a, b) => b.Comments.length - a.Comments.length);
-                break;
-            case "Least Comments":
-                sortedData = data.sort((a, b) => a.Comments.length - b.Comments.length);
-                break;
-            default:
-                break; 
+        if (upvotesOrComments) {
+            switch (upvotesOrComments) {
+                case "Most Upvotes":
+                    sortedData = sortedData.sort((a, b) => b.upvotes - a.upvotes);
+                    break;
+                case "Least Upvotes":
+                    sortedData = sortedData.sort((a, b) => a.upvotes - b.upvotes);
+                    break;
+                case "Most Comments":
+                    sortedData = sortedData.sort((a, b) => b.Comments.length - a.Comments.length);
+                    break;
+                case "Least Comments":
+                    sortedData = sortedData.sort((a, b) => a.Comments.length - b.Comments.length);
+                    break;
+                default:
+                    break;
+            }
         }
 
         return sortedData;
