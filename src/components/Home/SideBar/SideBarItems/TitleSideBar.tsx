@@ -8,6 +8,7 @@ import { useState } from "react";
 import Menu from "../../../UX/Menu";
 import Category from "./Category";
 import Roadmap from "./Roadmap";
+import Overlay from "../../../UX/Overlay";
 
 const TitleSideBar = () => {
   const currentUser = useSelector((user: RootState) => user.user.user);
@@ -44,20 +45,20 @@ const TitleSideBar = () => {
           </div>
         </div>
       </motion.div>
-      <div className="block md:hidden">
+      <div className="block pointer md:hidden  ">
         <Icon
           name="menuBurger"
           size={26}
           color="black"
           onClick={() => toggleMenu()}
         />
-        {openMenu && (
-          <Menu>
-            <Category />
-            <Roadmap />
-          </Menu>
-        )}
       </div>
+      {openMenu && (
+        <Menu>
+          <Category />
+          <Roadmap />
+        </Menu>
+      )}
     </Wrapper>
   );
 };
