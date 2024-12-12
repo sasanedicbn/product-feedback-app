@@ -8,7 +8,6 @@ import { useState } from "react";
 import Menu from "../../../UX/Menu";
 import Category from "./Category";
 import Roadmap from "./Roadmap";
-import Overlay from "../../../UX/Overlay";
 
 const TitleSideBar = () => {
   const currentUser = useSelector((user: RootState) => user.user.user);
@@ -45,7 +44,7 @@ const TitleSideBar = () => {
           </div>
         </div>
       </motion.div>
-      <div className="block pointer md:hidden  ">
+      <div className="block pointer md:hidden mr-5 ">
         <Icon
           name="menuBurger"
           size={26}
@@ -54,7 +53,7 @@ const TitleSideBar = () => {
         />
       </div>
       {openMenu && (
-        <Menu>
+        <Menu onClose={toggleMenu}>
           <Category />
           <Roadmap />
         </Menu>

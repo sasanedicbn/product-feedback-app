@@ -7,7 +7,7 @@ import {
 import { IconProps } from "../types/types";
 import { FaArrowLeft, FaCheck, FaRegComment } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Icon = ({
   name,
@@ -34,6 +34,14 @@ const Icon = ({
     search: <FiSearch size={size} color={color} onClick={onClick} />,
     menuBurger: (
       <AiOutlineMenu
+        size={size}
+        color={color}
+        onClick={onClick}
+        className={className}
+      />
+    ),
+    close: (
+      <AiOutlineClose
         size={size}
         color={color}
         onClick={onClick}
