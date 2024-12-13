@@ -10,7 +10,10 @@ const ContentTitle = () => {
   const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
   const navigation = useNavigate();
 
-  const handleSo
+  const handleSortOptionChange = (option: any) => {
+    setSelectedSortOption(option);
+  };
+  const feedBackPageHandler = () => {
     navigation("/add");
   };
 
