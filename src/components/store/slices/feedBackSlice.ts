@@ -30,7 +30,6 @@ const feedBackSlice = createSlice({
       };
     }
   },
-  
 }
 });
 
