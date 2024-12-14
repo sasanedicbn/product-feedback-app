@@ -8,6 +8,7 @@ const store = configureStore({
     categories: categoryReducer,
     feedback: feedbackReducer, 
     user: userReducer,
+
   },
 });
 

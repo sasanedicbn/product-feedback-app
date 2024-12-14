@@ -8,9 +8,11 @@ const userAction = createSlice({
   name: "user",
   initialState,
   reducers: {
-   
+   addLike:(state,action) {
+
+   }
   },
 });
 
-export const {  } = userAction.actions;
+export const { addLike, } = userAction.actions;
 export default userAction.reducer;
