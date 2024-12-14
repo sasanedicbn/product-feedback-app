@@ -46,7 +46,7 @@ const DropDown = ({
         <Icon name={isOpen ? "up" : "down"} size={16} color="#e1e1e6" />
       </button>
       <motion.ul
-        className="absolute bg-white w-[200px] h-[150px] mt-9 rounded-lg shadow-xl border border-solid border-gray-200"
+        className="absolute bg-white w-[200px] h-[150px] mt-9 rounded-lg shadow-xl border border-solid border-gray-200 z-20"
         initial={{ maxHeight: 0, opacity: 0 }}
         animate={{ maxHeight: isOpen ? 500 : 0, opacity: isOpen ? 1 : 0 }}
         transition={{ duration: 0.3 }}
