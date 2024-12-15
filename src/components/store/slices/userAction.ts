@@ -9,10 +9,10 @@ const userAction = createSlice({
   initialState,
   reducers: {
    addLike:(state,action) {
-
+    
    }
   },
 });
 
-export const { addLike, } = userAction.actions;
+export const {  } = userAction.actions;
 export default userAction.reducer;

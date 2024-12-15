@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 import Wrapper from "../../UX/Wrapper";
 import Comments from "./ContentBodyItems.tsx/Comments";
 import ContentItem from "./ContentBodyItems.tsx/ContentItem";
@@ -15,7 +16,7 @@ const UserFeedBack = ({ item, roadmap = false }: any) => {
         }
       >
         {roadmap ? <FeedbackType type={item.type} /> : ""}
-        {roadmap ? "" : <Upvotes upvotes={item.upvotes} />}
+        {roadmap ? "" : <Upvotes upvotes={item.upvotes} feedbackId={item.id} />}
         <ContentItem
           title={item.title}
           feedback={item.feedback}
