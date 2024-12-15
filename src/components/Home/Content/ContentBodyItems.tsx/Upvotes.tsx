@@ -4,9 +4,7 @@ import Icon from "../../../UX/Icon";
 const Upvotes = ({ upvotes, feedbackId }: { upvotes: number | null }) => {
   console.log(feedbackId, "feedbackid");
   const dispatch = useDispatch();
-  const addLikeHandler = () => {
-    // dispatch(addLike(feedbackId));
-  };
+
   return (
     <div
       className="bg-blue-100 px-3 py-2 h-[54px] rounded-lg flex flex-col items-center cursor-pointer hover:bg-blue-200"
