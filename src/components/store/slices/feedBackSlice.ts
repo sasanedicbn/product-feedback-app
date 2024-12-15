@@ -7,6 +7,7 @@ const feedBackSlice = createSlice({
   },
   reducers: {
     setFeedBack: (state, action) => {
+      console.log('setfeedback', action.payload)
       state.feedback = action.payload; 
     },
     addComment: (state, action) => {
@@ -29,19 +30,9 @@ const feedBackSlice = createSlice({
         };
       }
     },
-    addLike: (state, action) => {
-      // console.log(action.payload, 'action.payload iz reduxa')
-      const id = action.payload
-      const currentFeedback = state.feedback.filter((feed) => feed.id === id)
-      console.log('currentFeedback', currentFeedback)
-      const { comment_id } = action.payload;
-
-     
-
-      
-    },
+   
   },
 });
 
-export const { setFeedBack, addComment, addAnswer, addLike } = feedBackSlice.actions;
+export const { setFeedBack, addComment, addAnswer} = feedBackSlice.actions;
 export default feedBackSlice.reducer;

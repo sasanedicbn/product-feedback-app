@@ -14,7 +14,7 @@ const ContentBody = () => {
       const data = await fetchFeedbacksWithAllRelations();
       dispatch(setCategories(data));
     };
-    fetchComments();
+    // fetchComments();
   }, []);
 
   const commentsData = useSelector(
