@@ -1,12 +1,11 @@
 import { useDispatch } from "react-redux";
 import Icon from "../../../UX/Icon";
-import { addLike } from "../../../store/slices/categorySlice";
 
 const Upvotes = ({ upvotes, feedbackId }: { upvotes: number | null }) => {
   console.log(feedbackId, "feedbackid");
   const dispatch = useDispatch();
   const addLikeHandler = () => {
-    dispatch(addLike(feedbackId));
+    // dispatch(addLike(feedbackId));
   };
   return (
     <div

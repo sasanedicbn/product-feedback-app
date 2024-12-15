@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchFeedbackById } from "../../supabase/supabaseFunctions";
 import { useDispatch, useSelector } from "react-redux";
-import { addLike, setFeedBack } from "../store/slices/feedBackSlice";
+import { setFeedBack } from "../store/slices/feedBackSlice";
 import UserFeedBack from "../Home/Content/UserFeedBack";
 import Action from "../UX/Action";
 import Button from "../UX/Button";

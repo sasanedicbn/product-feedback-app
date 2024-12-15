@@ -9,6 +9,7 @@ const categorySlice = createSlice({
   },
   reducers: {
     setCategories: (state, action) => {
+      console.log(action.payload, 'mozda')
       state.items = action.payload; 
     },
     addCategory: (state, action) => {
@@ -20,14 +21,8 @@ const categorySlice = createSlice({
     setCurrentSort: (state, action) => {
       state.currentSort = action.payload
     },
-    addLike: (state, action) => {
-      // console.log(action.payload, 'action.payload iz reduxa')
-      const id = action.payload
-      const currentFeedback = state.feedback.filter((feed) => feed.id === id)
-      console.log('currentFeedback', currentFeedback) 
-    },
   },
 });
 
-export const { setCategories, addCategory, setCurrentCategory, setCurrentSort, addLike } = categorySlice.actions;
+export const { setCategories, addCategory, setCurrentCategory, setCurrentSort } = categorySlice.actions;
 export default categorySlice.reducer;
