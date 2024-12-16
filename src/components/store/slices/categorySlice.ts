@@ -23,11 +23,13 @@ const categorySlice = createSlice({
     addLike: (state, action) => {
       const feedbackId = action.payload;
       const feedback = state.items.find((item) => item.id === feedbackId);
-      console.log(feedback, 'jesi nasao jedan')
+    
       if (feedback) {
-        feedback.upvotes = (feedback.upvotes || 0) + 1;
+        feedback.upvotes = feedback.isLiked ? feedback.upvotes - 1 : feedback.upvotes + 1;
+        feedback.isLiked = !feedback.isLiked;
       }
     },
+       
   },
 });
 
