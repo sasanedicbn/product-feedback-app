@@ -47,7 +47,7 @@ export type RoadmapItemProps = {
 }
 
 export type IconProps = {
-    name: 'suggestion' | 'plus' | 'down' | 'up' | 'check' | 'message' | 'back' | 'search' | 'close' | 'menuBurger';
+    name: 'suggestion' | 'plus' | 'down' | 'up' | 'check' | 'message' | 'back' | 'search' | 'close' | 'menuBurger' | string;
     size?: number;
     color?: string;
     onClick?: () => void;

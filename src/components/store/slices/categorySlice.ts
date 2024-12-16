@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import { Feedback } from '../../types/types';
 
+
 const initialState: {
   items: Feedback[];
   currentCategory: string;

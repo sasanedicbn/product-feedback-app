@@ -14,7 +14,7 @@ const Icon = ({
   size = 84,
   color = "black",
   onClick = () => {},
-  className = null,
+  className = "",
 }: IconProps) => {
   const icons = {
     suggestion: (
@@ -50,7 +50,7 @@ const Icon = ({
     ),
   };
 
-  return icons[name] || null;
+  return icons[name as keyof typeof icons] || null;
 };
 
 export default Icon;
