@@ -4,20 +4,21 @@ import Icon from "../../UX/Icon";
 import DropDown from "../../UX/DropDown";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FeedbackItem } from "../../types/types";
+import { FeedbackItem, OptionType } from "../../types/types";
 
 const ContentTitle = () => {
-  const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
+  const [selectedSortOption, setSelectedSortOption] =
+    useState<OptionType>("Most Upvotes");
   const navigation = useNavigate();
 
-  const handleSortOptionChange = (option: any) => {
+  const handleSortOptionChange = (option: OptionType) => {
     setSelectedSortOption(option);
   };
   const feedBackPageHandler = () => {
     navigation("/add");
   };
 
-  const sortOptions = [
+  const sortOptions: OptionType[] = [
     "Most Upvotes",
     "Least Upvotes",
     "Most Comments",

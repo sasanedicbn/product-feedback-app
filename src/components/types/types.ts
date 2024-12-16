@@ -52,6 +52,7 @@ export type IconProps = {
     color?: string;
     onClick?: () => void;
     type?: string;
+    className?: string;
   }
 
 
