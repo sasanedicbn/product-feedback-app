@@ -12,7 +12,6 @@ const CommentCard = ({
   buttonType = "replay",
   containerClass = "",
   answers = [],
-  type,
   postId,
 }: CommentCardProps) => {
   const [isReplyOpen, setIsReplyOpen] = useState(false);
@@ -23,6 +22,7 @@ const CommentCard = ({
     setIsReplyOpen((prev) => !prev);
   };
 
+  console.log(answers, "odgovori ovjde");
   return (
     <div className={`flex w-full mb-4 ${containerClass}`}>
       <img
@@ -43,13 +43,11 @@ const CommentCard = ({
         <p className="text-gray-500 text-sm font-light mt-4 break-all">
           {` ${user_comment}`}
         </p>
-        {isReplyOpen && (
-          <PostReplay type={type} postId={postId} replyTo={replyTo} />
-        )}
+        {isReplyOpen && <PostReplay postId={postId} replyTo={replyTo} />}
         {answers.length > 0 && (
           <div className="mt-4 space-y-4">
             {answers.map((answer) => (
-              <CommentAnswers key={answer.id} answer={answer} />
+              <CommentAnswers key={answer} answer={answer} />
             ))}
           </div>
         )}

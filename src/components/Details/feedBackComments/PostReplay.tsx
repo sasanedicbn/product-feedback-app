@@ -10,8 +10,8 @@ const PostReplay = ({
   postId,
   replyTo,
 }: {
-  postId: string;
-  replyTo: string;
+  postId: string | undefined;
+  replyTo: string | null;
 }) => {
   const [reply, setReply] = useState<string>(replyTo ? `${replyTo} ` : "");
   const currentUser = useSelector((state: RootState) => state.user.user);
