@@ -2,12 +2,8 @@ import { FeedBackCommentsProps } from "../../types/types";
 import Wrapper from "../../UX/Wrapper";
 import CommentCard from "./CommentCard";
 
-const FeedBackComments = ({
-  comments,
-}: {
-  comments: FeedBackCommentsProps;
-}) => {
-  const { Comments } = comments;
+const FeedBackComments = ({ comments }: FeedBackCommentsProps) => {
+  const { Comments } = comments.feedback;
 
   return (
     <Wrapper type="feedBackComments">
@@ -23,6 +19,7 @@ const FeedBackComments = ({
             user_name={comment.user_name}
             user_comment={comment.user_comment}
             answers={comment.Answers}
+            answerId={comment.answerId}
             type={true}
           />
         ))

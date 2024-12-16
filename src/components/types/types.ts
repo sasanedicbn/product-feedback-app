@@ -108,23 +108,41 @@ export type Comments = {
 }
 
 export type FeedBackCommentsProps = {
+  comments: {
     feedback: {
-        Comments: Comments[] | null;
+      Comments: CommentProps[] | null;
     };
-}
-export type CommentCardProps = {
-    user_image: string;
-    user: string;
-    user_name: string;
-    user_comment: string;
-    answers?:[];
-    buttonType?: string;
-    containerClass?: string;
-    type?: boolean,
-    postId?: string,
-    answerId:string,
+  };
+};
 
-}
+export type CommentProps = {
+  id: number;
+  user_image: string;
+  user: string;
+  user_name: string;
+  user_comment: string;
+  Answers: AnswerProps[];
+  answerId?: number; 
+};
+
+export type AnswerProps = {
+  id: number;
+  user_image: string;
+  user_name: string;
+  user_comment: string;
+};
+
+export type CommentCardProps = {
+  postId: number;
+  user_image: string;
+  user: string;
+  user_name: string;
+  user_comment: string;
+  answers?: AnswerProps[]; 
+  answerId?: number; 
+  type: boolean;
+};
+
 export type CommentState = {
     user_comment: string;
     user?: string;
@@ -170,7 +188,7 @@ export type  FeedbackListProps = {
     answer: AnswerType;
   };
 
-  type Credentials = {
+ export type Credentials = {
     email: string;
     password: string;
   }
@@ -181,7 +199,7 @@ export type  FeedbackListProps = {
     user_name: string;
   }
   
-  interface SignInResponse {
+ export type SignInResponse = {
     data: {
       user: {
         id: string;

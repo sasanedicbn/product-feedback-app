@@ -1,7 +1,13 @@
 import Overlay from "./Overlay";
 import Icon from "./Icon";
 
-const Menu = ({ children, onClose }) => {
+const Menu = ({
+  children,
+  onClose,
+}: {
+  children: any;
+  onClose: () => void;
+}) => {
   return (
     <>
       <Overlay />

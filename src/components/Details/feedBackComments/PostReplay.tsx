@@ -28,12 +28,19 @@ const PostReplay = ({
     }
 
     try {
+      const commentId = postId ? parseInt(postId, 10) : null;
+
+      if (!commentId) {
+        console.error("Invalid postId.");
+        return;
+      }
+
       const newAnswer = await addCommentAndAnswer(currentUser, reply);
 
       if (newAnswer) {
         dispatch(
           addAnswer({
-            comment_id: postId,
+            comment_id: commentId, // Koristimo konvertovani commentId
             answer: newAnswer,
           })
         );
