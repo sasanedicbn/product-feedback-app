@@ -47,14 +47,13 @@ export type RoadmapItemProps = {
 }
 
 export type IconProps = {
-    name: 'suggestion' | 'plus' | 'down' | 'up' | 'check' | 'message' | 'back' | 'search' | 'close';
+    name: 'suggestion' | 'plus' | 'down' | 'up' | 'check' | 'message' | 'back' | 'search' | 'close' | 'menuBurger';
     size?: number;
     color?: string;
     onClick?: () => void;
     type?: string;
     className?: string;
   }
-
 
   export type ActionProps = {
     iconName: string;  
@@ -153,7 +152,7 @@ export type  Feedback = {
 export type  FeedbackListProps = {
     title: string;
     description: string;
-    type: "Planned" | "Progress" | "Live";
+    type: "Planned" | "Progress" | "Live" | string;
     feedbacks: Feedback[];
   }
   type AnswerType = {
