@@ -1,5 +1,6 @@
 import { toast } from "react-toastify";
 import { supabase } from "./supabase";
+import { Credentials, SignInResponse } from "../components/types/types";
 
 export const fetchCategory = async (tableName: string) => {
     try {
@@ -39,7 +40,7 @@ export async function fetchFeedbacksWithAllRelations() {
         return null;
     }
 }
-export async function fetchFeedbackById(id) {
+export async function fetchFeedbackById(id:string) {
     try {
         let { data: feedback, error } = await supabase
             .from('Feedbacks')
@@ -76,38 +77,36 @@ export async function fetchFeedbackById(id) {
     }
 }
 
+export async function signIn(credentials: Credentials): Promise<SignInResponse | null> {
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: credentials.email,
+      password: credentials.password,
+    });
 
-
-export async function signIn(credentials) {
-    try {
-        let { data, error } = await supabase.auth.signInWithPassword({
-            email: credentials.email,
-            password: credentials.password
-          })
-
-
-        if (error) {
-            console.error("Error fetching feedback by ID:", error);
-            return null;
-        }
-
-        let { data: users, userError } = await supabase
-         .from('Users')
-         .select("user_image, full_name, user_name")
-         .eq('id', data.user.id )
-         .single()
-
-         if(userError){
-            console.log('UserError', userError.message)
-         }
-        return {data, users};
-    } catch (error) {
-        console.error("Unexpected error:", error);
-        return null;
+    if (error) {
+      console.error("Error during sign-in:", error.message);
+      return null;
     }
+
+    const { data: users, error: userError } = await supabase
+      .from("Users")
+      .select("user_image, full_name, user_name")
+      .eq("id", data.user.id)
+      .single();
+
+    if (userError) {
+      console.error("Error fetching user details:", userError.message);
+    }
+
+    return { data, users };
+  } catch (error) {
+    console.error("Unexpected error:", (error as Error).message);
+    return null;
+  }
 }
 
-export async function postComment(commentData) {
+export async function postComment(commentData:any) {
     const randomId = Math.floor(Math.random() * 100000);
     try {
         const { data, error } = await supabase
@@ -134,7 +133,7 @@ export async function postComment(commentData) {
     }
 }
 
-export async function postFeedback(feedback) {
+export async function postFeedback(feedback:any) {
     const randomId = Math.floor(Math.random() * 100000);
     try {
         const { data, error } = await supabase
@@ -157,7 +156,6 @@ export async function postFeedback(feedback) {
         return data;
     } catch (error) {
         toast.error("Unexpected error");
-        console.log(error.message, 'za post');
         return null;
     }
 }
@@ -203,13 +201,11 @@ export async function sortFeedBacksByCategory(categoryId = "All", upvotesOrComme
         return sortedData;
     } catch (error) {
         toast.error("Unexpected error");
-        console.error(error.message);
         return null;
     }
 }
 
-export async function addCommentAndAnswer(commentData, answerText) {
-    console.log(commentData, answerText);
+export async function addCommentAndAnswer(commentData:any, answerText:any) {
     const randomId = Math.floor(Math.random() * 100000);
     try {
       const { data: newComment, error: commentError } = await supabase
@@ -240,13 +236,12 @@ export async function addCommentAndAnswer(commentData, answerText) {
         ]);
   
       if (answerError) {
-        throw new Error('Greška pri dodavanju odgovora: ' + answerError.message);
+        throw new Error('Error');
       }
-
+      console.log(newAnswer)
   
       return { comment_user_answer: newComment, answer: answerText };
     } catch (error) {
-      console.error(error.message);
       throw error;
     }
   }

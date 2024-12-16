@@ -19,7 +19,7 @@ export type InputProps = {
 
 export type LabelProps = {
     text: string;
-    type: 'addFeedBack' | 'back' | 'backRoadMap';
+    type: 'addFeedBack' | 'back' | 'backRoadMap' | string;
 }
 
 export type SelectProps = {
@@ -169,3 +169,24 @@ export type  FeedbackListProps = {
  export  type CommentAnswersProps = {
     answer: AnswerType;
   };
+
+  type Credentials = {
+    email: string;
+    password: string;
+  }
+  
+  type UserData = {
+    user_image: string;
+    full_name: string;
+    user_name: string;
+  }
+  
+  interface SignInResponse {
+    data: {
+      user: {
+        id: string;
+        [key: string]: any; 
+      };
+    } | null;
+    users: UserData | null;
+  }
