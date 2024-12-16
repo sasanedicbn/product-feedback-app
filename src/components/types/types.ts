@@ -120,8 +120,10 @@ export type CommentCardProps = {
     answers?:[];
     buttonType?: string;
     containerClass?: string;
-    type: boolean,
-    postId: string;
+    type?: boolean,
+    postId?: string,
+    answerId:string,
+
 }
 export type CommentState = {
     user_comment: string;
@@ -153,3 +155,17 @@ export type  FeedbackListProps = {
     type: "Planned" | "Progress" | "Live";
     feedbacks: Feedback[];
   }
+  type AnswerType = {
+    comment_user_answer?: {
+      user_image?: string;
+      user?: string;
+      user_name?: string;
+      id?: string;
+      answerId?:string,
+    };
+    answer: string;
+  };
+  
+ export  type CommentAnswersProps = {
+    answer: AnswerType;
+  };

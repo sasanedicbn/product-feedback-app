@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFeedBack } from "../store/slices/feedBackSlice";
 import UserFeedBack from "../Home/Content/UserFeedBack";
 import Action from "../UX/Action";
-import Button from "../UX/Button";
 import FeedBackComments from "./feedBackComments/FeedBackComments";
 import AddComment from "./addComment.tsx/AddComment";
 import { RootState } from "../store/store";
@@ -41,9 +40,6 @@ const Details = () => {
             labelType="back"
             onClick={() => homePageHanlder()}
           />
-          <Button type="editFeedBack" onClick={() => console.log("Cancelled")}>
-            Edit Feedback
-          </Button>
         </div>
         <UserFeedBack item={feedback} roadmap={false} />
         <FeedBackComments comments={feedback} />

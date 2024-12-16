@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux";
 import Wrapper from "../../UX/Wrapper";
 import Comments from "./ContentBodyItems.tsx/Comments";
 import ContentItem from "./ContentBodyItems.tsx/ContentItem";

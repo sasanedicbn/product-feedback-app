@@ -1,9 +1,5 @@
-import { Answer } from "../../types/types";
+import { CommentAnswersProps } from "../../types/types";
 import CommentCard from "./CommentCard";
-
-interface CommentAnswersProps {
-  answer: Answer;
-}
 
 const CommentAnswers = ({ answer }: CommentAnswersProps) => {
   return (

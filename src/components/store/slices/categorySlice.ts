@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 const categorySlice = createSlice({
   name: 'categories',
@@ -25,11 +26,16 @@ const categorySlice = createSlice({
       const feedback = state.items.find((item) => item.id === feedbackId);
     
       if (feedback) {
-        feedback.upvotes = feedback.isLiked ? feedback.upvotes - 1 : feedback.upvotes + 1;
+        if (feedback.isLiked) {
+          feedback.upvotes -= 1; 
+          toast.success('Successfully disliked feedback');
+        } else {
+          feedback.upvotes += 1;
+          toast.success('Successfully liked feedback');
+        }
         feedback.isLiked = !feedback.isLiked;
       }
     },
-       
   },
 });
 
