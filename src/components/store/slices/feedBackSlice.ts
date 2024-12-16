@@ -30,18 +30,17 @@ const feedBackSlice = createSlice({
         };
       }
     },
-    addLike: (state, action) => {
-      // console.log(action.payload, 'action.payload iz reduxa')
-      const id = action.payload
-      const currentFeedback = state.feedback.filter((feed) => feed.id === id)
-      console.log('currentFeedback', currentFeedback)
-
-     
-
-      
-    },
+    // addLike: (state, action) => {
+    //   const feedbackId = action.payload;
+    //   const feedback = state.feedback.find((item) => item.id === feedbackId);
+    //   console.log(feedback, 'jesi nasao jedan')
+    //   if (feedback) {
+    //     feedback.upvotes = (feedback.upvotes || 0) + 1;
+    //   }
+    // },
+    
   },
 });
 
-export const { setFeedBack, addComment, addAnswer, addLike } = feedBackSlice.actions;
+export const { setFeedBack, addComment, addAnswer,  } = feedBackSlice.actions;
 export default feedBackSlice.reducer;

@@ -1,11 +1,14 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Icon from "../../../UX/Icon";
+import { addLike } from "../../../store/slices/categorySlice";
 
 const Upvotes = ({ upvotes, feedbackId }: { upvotes: number | null }) => {
   console.log(feedbackId, "feedbackid");
   const dispatch = useDispatch();
+  const alldata = useSelector((state) => state.categories.items);
   const addLikeHandler = () => {
-    // dispatch(addLike(feedbackId));
+    dispatch(addLike(feedbackId));
+    console.log(alldata, "alldata na klik");
   };
   return (
     <div

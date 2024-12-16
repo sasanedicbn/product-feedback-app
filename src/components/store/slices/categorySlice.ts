@@ -9,7 +9,6 @@ const categorySlice = createSlice({
   },
   reducers: {
     setCategories: (state, action) => {
-      console.log(action.payload, 'mozda')
       state.items = action.payload; 
     },
     addCategory: (state, action) => {
@@ -21,8 +20,16 @@ const categorySlice = createSlice({
     setCurrentSort: (state, action) => {
       state.currentSort = action.payload
     },
+    addLike: (state, action) => {
+      const feedbackId = action.payload;
+      const feedback = state.items.find((item) => item.id === feedbackId);
+      console.log(feedback, 'jesi nasao jedan')
+      if (feedback) {
+        feedback.upvotes = (feedback.upvotes || 0) + 1;
+      }
+    },
   },
 });
 
-export const { setCategories, addCategory, setCurrentCategory, setCurrentSort } = categorySlice.actions;
+export const { setCategories, addCategory, setCurrentCategory, setCurrentSort, addLike } = categorySlice.actions;
 export default categorySlice.reducer;
