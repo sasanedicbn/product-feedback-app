@@ -1,39 +1,64 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+interface Answer {
+  id: number;
+  text: string;
+}
+
+interface Comment {
+  id: number;
+  text: string;
+  Answers?: Answer[];
+}
+
+interface Feedback {
+  id: number;
+  title: string;
+  description: string;
+  Comments?: Comment[];
+}
+
+interface FeedbackState {
+  feedback: Feedback | null;
+}
+
+const initialState: FeedbackState = {
+  feedback: null,
+};
 
 const feedBackSlice = createSlice({
   name: 'feedback',
-  initialState: {
-    feedback: null, 
-  },
+  initialState,
   reducers: {
-    setFeedBack: (state, action) => {
-      console.log('setfeedback', action.payload)
-      state.feedback = action.payload; 
+    setFeedBack: (state, action: PayloadAction<Feedback>) => {
+      console.log('setfeedback', action.payload);
+      state.feedback = action.payload;
     },
-    addComment: (state, action) => {
-      state.feedback.Comments = [
-        ...(state.feedback.Comments || []),
+    addComment: (state, action: PayloadAction<Comment[]>) => {
+      state.feedback!.Comments = [
+        ...(state.feedback?.Comments || []),
         ...action.payload,
       ];
     },
-    addAnswer: (state, action) => {
+    addAnswer: (
+      state,
+      action: PayloadAction<{ comment_id: number; answer: Answer }>
+    ) => {
       const { comment_id, answer } = action.payload;
-      const commentIndex = state.feedback.Comments.findIndex(
+      const commentIndex = state.feedback?.Comments?.findIndex(
         (comment) => comment.id === comment_id
       );
 
-      if (commentIndex !== -1) {
-        const commentToUpdate = state.feedback.Comments[commentIndex];
-        state.feedback.Comments[commentIndex] = {
+      if (commentIndex !== undefined && commentIndex !== -1) {
+        const commentToUpdate = state.feedback!.Comments![commentIndex];
+        state.feedback!.Comments![commentIndex] = {
           ...commentToUpdate,
           Answers: [...(commentToUpdate.Answers || []), answer],
         };
       }
     },
-    
   },
 });
 
-export const { setFeedBack, addComment, addAnswer} = feedBackSlice.actions;
+export const { setFeedBack, addComment, addAnswer } = feedBackSlice.actions;
 export default feedBackSlice.reducer;
