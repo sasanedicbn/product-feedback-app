@@ -1,26 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface Answer {
-  id: number;
-  text: string;
-}
-
-interface Comment {
-  id: number;
-  text: string;
-  Answers?: Answer[];
-}
-
-interface Feedback {
-  id: number;
-  title: string;
-  description: string;
-  Comments?: Comment[];
-}
-
-interface FeedbackState {
-  feedback: Feedback | null;
-}
 
 const initialState: FeedbackState = {
   feedback: null,
@@ -62,3 +41,24 @@ const feedBackSlice = createSlice({
 
 export const { setFeedBack, addComment, addAnswer } = feedBackSlice.actions;
 export default feedBackSlice.reducer;
+type Answer = {
+  id: number;
+  text: string;
+}
+
+type Comment = {
+  id: number;
+  text: string;
+  Answers?: Answer[];
+}
+
+type Feedback = {
+  id: number;
+  title: string;
+  description: string;
+  Comments?: Comment[];
+}
+
+type  FeedbackState = {
+  feedback: Feedback | null;
+}
