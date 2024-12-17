@@ -7,7 +7,10 @@ import CommentAnswers from "./CommentAnswers";
 const CommentCard = ({
   user_image,
   user,
-  Class = "",
+  user_name,
+  user_comment,
+  buttonType = "replay",
+  containerClass = "",
   answers = [],
   postId,
 }: CommentCardProps) => {
