@@ -16,6 +16,7 @@ const Details = () => {
   const navigation = useNavigate();
   const feedback = useSelector((state: RootState) => state.feedback.feedback);
 
+  console.log(feedback, "displejati");
   useEffect(() => {
     const fetchFeedBack = async () => {
       const feedbackData = await fetchFeedbackById(id);

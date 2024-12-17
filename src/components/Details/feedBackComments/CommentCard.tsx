@@ -21,8 +21,7 @@ const CommentCard = ({
     setReplyTo(user_name);
     setIsReplyOpen((prev) => !prev);
   };
-
-  console.log(answers, "odgovori ovjde");
+  console.log(user, user_image, user_comment, "lklklk");
   return (
     <div className={`flex w-full mb-4 ${containerClass}`}>
       <img
@@ -47,7 +46,7 @@ const CommentCard = ({
         {answers.length > 0 && (
           <div className="mt-4 space-y-4">
             {answers.map((answer) => (
-              <CommentAnswers key={answer} answer={answer} />
+              <CommentAnswers key={answer.id} answer={answer} />
             ))}
           </div>
         )}

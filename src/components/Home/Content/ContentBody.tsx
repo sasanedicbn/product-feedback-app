@@ -12,7 +12,6 @@ const ContentBody = () => {
   useEffect(() => {
     const fetchComments = async () => {
       const data = await fetchFeedbacksWithAllRelations();
-      console.log("data iz useeffecta", data);
       dispatch(setCategories(data));
     };
     fetchComments();
