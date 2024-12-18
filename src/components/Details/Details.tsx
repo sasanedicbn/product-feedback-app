@@ -16,10 +16,9 @@ const Details = () => {
   const navigation = useNavigate();
   const feedback = useSelector((state: RootState) => state.feedback.feedback);
 
-  console.log(feedback, "displejati");
   useEffect(() => {
     const fetchFeedBack = async () => {
-      const feedbackData = await fetchFeedbackById(id);
+      const feedbackData = await fetchFeedbackById(id as string);
       dispatch(setFeedBack(feedbackData));
     };
     fetchFeedBack();
@@ -43,7 +42,7 @@ const Details = () => {
           />
         </div>
         <UserFeedBack item={feedback} roadmap={false} />
-        <FeedBackComments comments={feedback} />
+        <FeedBackComments comments={feedback as any} />
         <AddComment id={id} />
       </div>
     </div>

@@ -108,7 +108,7 @@ export type Comments = {
 }
 
 export type FeedBackCommentsProps = {
-  comments: {
+  Comments: {
     feedback: {
       Comments: CommentProps[] | null;
     };
@@ -123,6 +123,9 @@ export type CommentProps = {
   user_comment: string;
   Answers: AnswerProps[];
   answerId?: number; 
+};
+export type Feedbackk = {
+  Comments: CommentProps[] | undefined;
 };
 
 export type AnswerProps = {
@@ -142,6 +145,7 @@ export interface CommentCardProps {
   postId: string;  
   buttonType?: string;
   containerClass?: string;
+  type?:boolean;
 }
 
 
@@ -212,4 +216,8 @@ export type  FeedbackListProps = {
     } | null;
     users: UserData | null;
   }
- 
+  export type Answer = {
+    id: string;   
+    text: string; 
+  }
+  

@@ -41,6 +41,7 @@ const PostReplay = ({
         dispatch(
           addAnswer({
             comment_id: commentId,
+            //@ts-ignore
             answer: newAnswer,
           })
         );

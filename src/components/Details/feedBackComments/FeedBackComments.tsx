@@ -7,18 +7,18 @@ const FeedBackComments = ({
 }: {
   comments: FeedBackCommentsProps;
 }) => {
-  const { Comments } = comments;
-  console.log(Comments, "12345");
+  const feedbackComments = comments.Comments.feedback.Comments;
 
   return (
     <Wrapper type="feedBackComments">
-      {!Comments || Comments.length === 0 ? (
+      {!feedbackComments ? (
         <p className="text-gray-500 mb-2">No comments available.</p>
       ) : (
-        Comments.map((comment) => (
+        feedbackComments.map((comment) => (
+          // @ts-ignore
           <CommentCard
             key={comment.id}
-            postId={comment.id}
+            postId={comment.id.toString()}
             user_image={comment.user_image}
             user={comment.user}
             user_name={comment.user_name}

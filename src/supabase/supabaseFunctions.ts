@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import { supabase } from "./supabase";
-import { Credentials, SignInResponse } from "../components/types/types";
+import {Credentials, SignInResponse } from "../components/types/types";
 
 export const fetchCategory = async (tableName: string) => {
     try {
