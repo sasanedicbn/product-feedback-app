@@ -132,16 +132,18 @@ export type AnswerProps = {
   user_comment: string;
 };
 
-export type CommentCardProps = {
-  postId: number;
+export interface CommentCardProps {
   user_image: string;
   user: string;
   user_name: string;
   user_comment: string;
-  answers?: AnswerProps[]; 
-  answerId?: number; 
-  type: boolean;
-};
+  answers: any[];
+  answerId: string;
+  postId: string;  
+  buttonType?: string;
+  containerClass?: string;
+}
+
 
 export type CommentState = {
     user_comment: string;
@@ -174,6 +176,8 @@ export type  FeedbackListProps = {
     feedbacks: Feedback[];
   }
   type AnswerType = {
+    postId: string | '';
+    id: string | number;
     comment_user_answer?: {
       user_image?: string;
       user?: string;
@@ -208,3 +212,4 @@ export type  FeedbackListProps = {
     } | null;
     users: UserData | null;
   }
+ 

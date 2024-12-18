@@ -40,7 +40,7 @@ const PostReplay = ({
       if (newAnswer) {
         dispatch(
           addAnswer({
-            comment_id: commentId, // Koristimo konvertovani commentId
+            comment_id: commentId,
             answer: newAnswer,
           })
         );
