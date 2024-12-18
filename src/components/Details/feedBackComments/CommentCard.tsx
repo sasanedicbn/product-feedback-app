@@ -21,7 +21,6 @@ const CommentCard = ({
     setReplyTo(user_name);
     setIsReplyOpen((prev) => !prev);
   };
-  console.log(user, user_image, user_comment, "lklklk");
   return (
     <div className={`flex w-full mb-4 ${containerClass}`}>
       <img

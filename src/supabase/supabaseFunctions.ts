@@ -69,10 +69,8 @@ export async function fetchFeedbackById(id:string) {
             return null;
         }
 
-        console.log("SVE TI JEBEM RADI", feedback);
         return feedback;
     } catch (error) {
-        console.error("Unexpected error:", error);
         return null;
     }
 }
@@ -161,7 +159,6 @@ export async function postFeedback(feedback:any) {
 }
 
 export async function sortFeedBacksByCategory(categoryId = "All", upvotesOrComments = "") {
-    console.log(categoryId, "prvi arg", upvotesOrComments, "drugi arg unutar fn");
     try {
         let query = supabase
             .from("Feedbacks")

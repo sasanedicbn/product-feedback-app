@@ -10,7 +10,6 @@ const Upvotes = ({
   upvotes: number | null;
   feedbackId: string;
 }) => {
-  console.log(feedbackId, "feedbackid");
   const dispatch = useDispatch();
   const alldata = useSelector((state: RootState) => state.categories.items);
   const addLikeHandler = () => {
