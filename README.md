@@ -14,10 +14,11 @@ The Product Feedback App is designed to collect and manage user feedback interac
 - **Feedback Sorting** – Sort feedback by:  
   - Most comments  
   - Most upvotes  
-  - Category (All, Featured, etc.)  
+  - Category (All, Featured, Ux, Ul etc.)  
 - **Add Feedback** – Submit your own feedback.  
 - **Comments and Replies** – Add comments and reply to existing ones.  
 - **Post Upvotes** – Upvote posts to support great ideas.  
+- **Responsive** – Full esponsive app.  
 
 ## **Environment Variables**
 To ensure security, sensitive information such as API keys and database credentials is stored in a `.env` file. These values are **not** included in the repository and must be configured manually.
