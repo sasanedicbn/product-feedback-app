@@ -15,6 +15,7 @@ const Details = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
   const feedback = useSelector((state: RootState) => state.feedback.feedback);
+  console.log(feedback, "fed");
 
   useEffect(() => {
     const fetchFeedBack = async () => {

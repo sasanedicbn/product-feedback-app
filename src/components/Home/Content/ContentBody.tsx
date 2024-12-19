@@ -21,6 +21,7 @@ const ContentBody = () => {
     (state: { categories: { items: FeedbackItem[] } }) => state.categories.items
   );
 
+  console.log(commentsData, "commentsData");
   return (
     <div className="space-y-4 px-2 sm:px-4">
       {commentsData.length === 0 && <EmptyFeedback />}

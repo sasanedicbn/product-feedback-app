@@ -5,6 +5,7 @@ import FeedbackType from "./ContentBodyItems.tsx/FeedbackType";
 import Upvotes from "./ContentBodyItems.tsx/Upvotes";
 
 const UserFeedBack = ({ item, roadmap = false }: any) => {
+  console.log(item, "nema logike da ga ima");
   return (
     <Wrapper type="feedBackContainer">
       <div

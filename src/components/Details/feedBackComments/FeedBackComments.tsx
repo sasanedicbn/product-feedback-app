@@ -7,13 +7,15 @@ const FeedBackComments = ({
 }: {
   comments: FeedBackCommentsProps;
 }) => {
-  const feedbackComments = comments.Comments.feedback.Comments;
+  const feedbackComments = comments.Comments;
 
+  console.log(comments, "komo");
   return (
     <Wrapper type="feedBackComments">
       {!feedbackComments ? (
         <p className="text-gray-500 mb-2">No comments available.</p>
       ) : (
+        // @ts-ignore
         feedbackComments.map((comment) => (
           // @ts-ignore
           <CommentCard
