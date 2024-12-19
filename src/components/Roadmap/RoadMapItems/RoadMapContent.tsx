@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { fetchFeedbacksWithAllRelations } from "../../../supabase/supabaseFunctions";
 import FeedbackList from "./FeedbackList";
+import Spinner from "../../UX/Spinner";
 
 const RoadMapContent = () => {
   const [feedbacks, setFeedbacks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const sections = [
     {
@@ -25,12 +27,22 @@ const RoadMapContent = () => {
 
   useEffect(() => {
     const fetchFeedbacksHandler = async () => {
-      const feedbacksData = await fetchFeedbacksWithAllRelations();
-      setFeedbacks(feedbacksData as any);
+      try {
+        const feedbacksData = await fetchFeedbacksWithAllRelations();
+        setFeedbacks(feedbacksData as any);
+      } catch (error) {
+        console.error("Error fetching feedbacks:", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchFeedbacksHandler();
   }, []);
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="flex flex-col md:flex-row justify-between px-2 gap-2 sm:gap-4 md:gap-8 md:mx-2">
