@@ -9,7 +9,6 @@ const FeedBackComments = ({
 }) => {
   const feedbackComments = comments.Comments;
 
-  console.log(comments, "komo");
   return (
     <Wrapper type="feedBackComments">
       {!feedbackComments ? (

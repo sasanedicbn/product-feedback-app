@@ -10,7 +10,6 @@ const feedBackSlice = createSlice({
   initialState,
   reducers: {
     setFeedBack: (state, action: PayloadAction<Feedback>) => {
-      console.log('setfeedback', action.payload);
       state.feedback = action.payload;
     },
     addComment: (state, action: PayloadAction<Comment[]>) => {
